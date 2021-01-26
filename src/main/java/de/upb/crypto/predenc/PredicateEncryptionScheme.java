@@ -1,7 +1,14 @@
-package de.upb.crypto.predenc.interfaces;
+package de.upb.crypto.predenc;
 
-import de.upb.crypto.craco.abe.interfaces.AbePredicate;
-import de.upb.crypto.craco.common.interfaces.*;
+import de.upb.crypto.craco.common.PlainText;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.EncryptionScheme;
+import de.upb.crypto.craco.kem.MasterSecret;
+import de.upb.crypto.craco.secretsharing.policy.CiphertextIndex;
+import de.upb.crypto.craco.secretsharing.policy.KeyIndex;
+import de.upb.crypto.predenc.abe.interfaces.AbePredicate;
 import de.upb.crypto.math.serialization.Representation;
 
 /**
@@ -64,8 +71,8 @@ public interface PredicateEncryptionScheme extends EncryptionScheme {
 
     /**
      * Shorthand for {@code encrypt(plainText, generateEncryptionKey(cind))}.
-     * 
-     * @see #encrypt(PlainText, EncryptionKey) 
+     *
+     * @see #encrypt(PlainText, EncryptionKey)
      *
      * @param plainText the plaintext to encrypt
      * @param cind ciphertext index defining who should be able to read the ciphertext

@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
 import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
 import de.upb.crypto.math.hash.annotations.AnnotatedUbrUtil;
 import de.upb.crypto.math.hash.annotations.UniqueByteRepresented;
@@ -119,7 +119,7 @@ public class Identity implements StandaloneRepresentable, KeyIndex, CiphertextIn
      * @return the resulting {@link ThresholdPolicy}
      */
     public Policy toPolicy(int threshold) {
-        return new de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(threshold, attributes);
+        return new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(threshold, attributes);
     }
 
     @Override

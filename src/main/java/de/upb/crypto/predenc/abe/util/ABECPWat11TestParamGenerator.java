@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.util;
 
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
+import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11MasterSecret;
 import de.upb.crypto.predenc.abe.cp.large.AbstractABECPWat11;
@@ -32,9 +32,9 @@ public class ABECPWat11TestParamGenerator {
         }
 
         // build up policy
-        de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy leftNode = new de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(1, attributes[0], attributes[1]);
-        de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy rightNode = new de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
-        Policy policy = new de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, leftNode, rightNode);
+        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy leftNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(1, attributes[0], attributes[1]);
+        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy rightNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
+        Policy policy = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, leftNode, rightNode);
 
         EncryptionKey pk = scheme.generateEncryptionKey(policy);
 

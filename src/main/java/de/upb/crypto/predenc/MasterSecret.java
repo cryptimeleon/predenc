@@ -1,6 +1,6 @@
-package de.upb.crypto.predenc.interfaces;
+package de.upb.crypto.predenc;
 
-import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.predenc.enc.DecryptionKey;
 import de.upb.crypto.math.serialization.Representable;
 
 /**

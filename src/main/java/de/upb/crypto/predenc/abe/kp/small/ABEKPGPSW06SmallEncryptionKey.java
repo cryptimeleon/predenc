@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.abe.kp.small;
 
-import de.upb.crypto.craco.common.interfaces.EncryptionKey;
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.EncryptionKey;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
 import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.math.hash.annotations.AnnotatedUbrUtil;
 import de.upb.crypto.math.hash.annotations.UniqueByteRepresented;

@@ -1,12 +1,12 @@
 package de.upb.crypto.predenc.abe.fuzzy.small;
 
-import de.upb.crypto.craco.common.GroupElementPlainText;
-import de.upb.crypto.craco.common.interfaces.*;
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.secretsharing.accessstructure.MonotoneSpanProgram;
-import de.upb.crypto.craco.secretsharing.accessstructure.exception.NoSatisfyingSet;
-import de.upb.crypto.craco.secretsharing.accessstructure.exception.WrongAccessStructureException;
+import de.upb.crypto.predenc.common.GroupElementPlainText;
+import de.upb.crypto.predenc.common.interfaces.*;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.secretsharing.accessstructure.MonotoneSpanProgram;
+import de.upb.crypto.predenc.secretsharing.accessstructure.exception.NoSatisfyingSet;
+import de.upb.crypto.predenc.secretsharing.accessstructure.exception.WrongAccessStructureException;
 import de.upb.crypto.predenc.abe.fuzzy.large.Identity;
 import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
@@ -14,7 +14,7 @@ import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
-import de.upb.crypto.predenc.interfaces.PredicateEncryptionScheme;
+import de.upb.crypto.predenc.PredicateEncryptionScheme;
 
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -119,7 +119,7 @@ public class IBEFuzzySW05Small implements PredicateEncryptionScheme {
         IBEFuzzySW05SmallCipherText ct = (IBEFuzzySW05SmallCipherText) cipherText;
         IBEFuzzySW05SmallDecryptionKey sk = (IBEFuzzySW05SmallDecryptionKey) privateKey;
 
-        de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy policy = new de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(pp.getD().intValue(), sk.getIdentity());
+        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy policy = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(pp.getD().intValue(), sk.getIdentity());
         // the msp of the private key
         MonotoneSpanProgram msp = new MonotoneSpanProgram(policy, zp);
 
@@ -221,7 +221,7 @@ public class IBEFuzzySW05Small implements PredicateEncryptionScheme {
         IBEFuzzySW05SmallMasterSecret masterSecret = (IBEFuzzySW05SmallMasterSecret) msk;
         SetOfAttributes id = (SetOfAttributes) kind;
 
-        de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy policy = new de.upb.crypto.craco.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(pp.getD().intValue(), id);
+        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy policy = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(pp.getD().intValue(), id);
         MonotoneSpanProgram msp = new MonotoneSpanProgram(policy, zp);
 
         Map<BigInteger, GroupElement> d = new HashMap<>();

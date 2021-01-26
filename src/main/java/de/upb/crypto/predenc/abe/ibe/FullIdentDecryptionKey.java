@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.ibe;
 
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
+import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;

@@ -1,17 +1,17 @@
 package de.upb.crypto.predenc.abe.cp.small;
 
-import de.upb.crypto.craco.common.GroupElementPlainText;
-import de.upb.crypto.craco.common.interfaces.*;
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.secretsharing.accessstructure.MonotoneSpanProgram;
+import de.upb.crypto.predenc.common.GroupElementPlainText;
+import de.upb.crypto.predenc.common.interfaces.*;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.secretsharing.accessstructure.MonotoneSpanProgram;
 import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
-import de.upb.crypto.predenc.interfaces.PredicateEncryptionScheme;
+import de.upb.crypto.predenc.PredicateEncryptionScheme;
 
 import java.math.BigInteger;
 import java.util.*;

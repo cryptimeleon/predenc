@@ -1,10 +1,10 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.common.utils.LagrangeUtil;
-import de.upb.crypto.craco.kem.fuzzy.large.IBEFuzzySW05KEMCipherText;
+import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.common.utils.LagrangeUtil;
+import de.upb.crypto.predenc.kem.fuzzy.large.IBEFuzzySW05KEMCipherText;
 import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;

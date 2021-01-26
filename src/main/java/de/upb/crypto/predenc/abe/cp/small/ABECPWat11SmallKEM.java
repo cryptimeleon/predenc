@@ -1,13 +1,13 @@
 package de.upb.crypto.predenc.abe.cp.small;
 
-import de.upb.crypto.craco.common.GroupElementPlainText;
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
-import de.upb.crypto.craco.common.interfaces.PlainText;
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
-import de.upb.crypto.craco.kem.AbstractHybridPredicateKEM;
-import de.upb.crypto.craco.kem.HashBasedKeyDerivationFunction;
+import de.upb.crypto.predenc.common.GroupElementPlainText;
+import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
+import de.upb.crypto.predenc.common.interfaces.PlainText;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.enc.sym.streaming.aes.ByteArrayImplementation;
+import de.upb.crypto.predenc.kem.AbstractHybridPredicateKEM;
+import de.upb.crypto.predenc.kem.HashBasedKeyDerivationFunction;
 import de.upb.crypto.math.serialization.Representation;
 
 import java.util.Objects;

@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.craco.kem.fuzzy.large.IBEFuzzySW05KEMCipherText;
+import de.upb.crypto.predenc.kem.fuzzy.large.IBEFuzzySW05KEMCipherText;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;

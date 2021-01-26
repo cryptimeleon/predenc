@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.kp.large;
 
-import de.upb.crypto.craco.kem.abe.kp.large.ABEKPGPSW06KEMCipherText;
+import de.upb.crypto.predenc.kem.abe.kp.large.ABEKPGPSW06KEMCipherText;
 import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.math.structures.groups.GroupElement;

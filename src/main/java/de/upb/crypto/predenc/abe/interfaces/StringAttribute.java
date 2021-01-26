@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.interfaces;
 
-import de.upb.crypto.craco.common.interfaces.policy.PolicyFact;
+import de.upb.crypto.predenc.common.interfaces.policy.PolicyFact;
 import de.upb.crypto.math.hash.ByteAccumulator;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.StringRepresentation;

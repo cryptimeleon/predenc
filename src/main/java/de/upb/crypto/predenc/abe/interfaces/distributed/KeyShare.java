@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.interfaces.distributed;
 
-import de.upb.crypto.craco.common.interfaces.pe.KeyIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
 import de.upb.crypto.math.serialization.Representable;
 
 /**

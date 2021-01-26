@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.kp.small;
 
-import de.upb.crypto.craco.common.interfaces.PublicParameters;
+import de.upb.crypto.predenc.common.interfaces.PublicParameters;
 import de.upb.crypto.predenc.abe.cp.small.ABECPWat11SmallSetup;
 import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.math.structures.groups.Group;

@@ -1,6 +1,6 @@
-package de.upb.crypto.predenc.interfaces;
+package de.upb.crypto.predenc;
 
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
 
 /**
  * Defines who gets to decrypt which ciphertexts.

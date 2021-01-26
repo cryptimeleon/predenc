@@ -1,9 +1,9 @@
 package de.upb.crypto.predenc.abe.cp.large.distributed;
 
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
-import de.upb.crypto.craco.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.common.utils.LagrangeUtil;
+import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
+import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.common.utils.LagrangeUtil;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11DecryptionKey;
 import de.upb.crypto.predenc.abe.interfaces.Attribute;

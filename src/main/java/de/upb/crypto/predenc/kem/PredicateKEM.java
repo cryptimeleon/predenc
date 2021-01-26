@@ -1,11 +1,12 @@
-package de.upb.crypto.predenc.interfaces;
+package de.upb.crypto.predenc.kem;
 
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
-import de.upb.crypto.craco.common.interfaces.EncryptionKey;
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.craco.kem.KeyEncapsulationMechanism;
+import de.upb.crypto.craco.kem.MasterSecret;
+import de.upb.crypto.craco.kem.Predicate;
+import de.upb.crypto.craco.secretsharing.policy.CiphertextIndex;
+import de.upb.crypto.craco.secretsharing.policy.KeyIndex;
 import de.upb.crypto.math.serialization.Representation;
 
 /**
@@ -17,7 +18,6 @@ import de.upb.crypto.math.serialization.Representation;
  * but will instead be able to generate random message-ciphertext
  * pairs (m, c). See {@link KeyEncapsulationMechanism} for details.
  *
- * @see PredicateEncryptionScheme
  * @see KeyEncapsulationMechanism
  *
  * @param <T> type of the encapsulated key

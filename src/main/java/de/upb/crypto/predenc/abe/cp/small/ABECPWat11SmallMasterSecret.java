@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.cp.small;
 
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;

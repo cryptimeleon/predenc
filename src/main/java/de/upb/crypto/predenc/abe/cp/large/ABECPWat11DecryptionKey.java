@@ -1,8 +1,8 @@
 package de.upb.crypto.predenc.abe.cp.large;
 
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
-import de.upb.crypto.craco.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
+import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
 import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.math.structures.groups.GroupElement;

@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.craco.common.WatersHash;
+import de.upb.crypto.predenc.common.WatersHash;
 import de.upb.crypto.math.structures.groups.counting.CountingBilinearGroup;
 import de.upb.crypto.math.structures.groups.elliptic.BilinearGroup;
 import de.upb.crypto.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;

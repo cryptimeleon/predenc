@@ -1,8 +1,8 @@
 package de.upb.crypto.predenc.abe.interfaces;
 
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.craco.common.interfaces.policy.Policy;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
+import de.upb.crypto.predenc.common.interfaces.policy.Policy;
 import de.upb.crypto.predenc.interfaces.Predicate;
 
 /**

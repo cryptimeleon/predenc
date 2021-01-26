@@ -1,20 +1,20 @@
 package de.upb.crypto.predenc.abe.ibe;
 
-import de.upb.crypto.craco.common.interfaces.CipherText;
-import de.upb.crypto.craco.common.interfaces.DecryptionKey;
-import de.upb.crypto.craco.common.interfaces.PlainText;
-import de.upb.crypto.craco.common.interfaces.UnqualifiedKeyException;
-import de.upb.crypto.craco.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.common.utils.ByteUtil;
-import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import de.upb.crypto.predenc.common.interfaces.CipherText;
+import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
+import de.upb.crypto.predenc.common.interfaces.PlainText;
+import de.upb.crypto.predenc.common.interfaces.UnqualifiedKeyException;
+import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.common.utils.ByteUtil;
+import de.upb.crypto.predenc.enc.sym.streaming.aes.ByteArrayImplementation;
 import de.upb.crypto.math.hash.impl.ByteArrayAccumulator;
 import de.upb.crypto.math.hash.impl.SHA256HashFunction;
 import de.upb.crypto.math.hash.ByteAccumulator;
 import de.upb.crypto.math.hash.HashFunction;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
-import de.upb.crypto.predenc.interfaces.PredicateEncryptionScheme;
+import de.upb.crypto.predenc.PredicateEncryptionScheme;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;

@@ -1,10 +1,10 @@
 package de.upb.crypto.predenc.abe.ibe;
 
-import de.upb.crypto.craco.common.interfaces.PlainText;
-import de.upb.crypto.craco.common.interfaces.SymmetricKey;
-import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
-import de.upb.crypto.craco.kem.AbstractHybridConstructionKEM;
-import de.upb.crypto.craco.kem.HashBasedKeyDerivationFunction;
+import de.upb.crypto.predenc.common.interfaces.PlainText;
+import de.upb.crypto.predenc.common.interfaces.SymmetricKey;
+import de.upb.crypto.predenc.enc.sym.streaming.aes.ByteArrayImplementation;
+import de.upb.crypto.predenc.kem.AbstractHybridConstructionKEM;
+import de.upb.crypto.predenc.kem.HashBasedKeyDerivationFunction;
 import de.upb.crypto.math.serialization.Representation;
 
 import java.security.SecureRandom;

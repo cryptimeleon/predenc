@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.kp.large;
 
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;

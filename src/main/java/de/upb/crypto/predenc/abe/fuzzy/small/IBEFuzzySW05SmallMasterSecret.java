@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.fuzzy.small;
 
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
 import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
