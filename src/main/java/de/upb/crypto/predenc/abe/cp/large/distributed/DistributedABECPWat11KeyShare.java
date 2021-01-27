@@ -2,7 +2,7 @@ package de.upb.crypto.predenc.abe.cp.large.distributed;
 
 import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.predenc.abe.interfaces.distributed.KeyShare;
+import de.upb.crypto.predenc.abe.distributed.KeyShare;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;

@@ -14,7 +14,7 @@ import de.upb.crypto.math.hash.ByteAccumulator;
 import de.upb.crypto.math.hash.HashFunction;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
-import de.upb.crypto.predenc.PredicateEncryptionScheme;
+import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;

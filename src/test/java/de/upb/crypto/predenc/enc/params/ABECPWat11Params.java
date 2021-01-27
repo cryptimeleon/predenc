@@ -4,7 +4,7 @@ import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11MasterSecret;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11PublicParameters;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11Setup;
-import de.upb.crypto.predenc.abe.util.ABECPWat11TestParamGenerator;
+import de.upb.crypto.predenc.paramgens.ABECPWat11TestParamGenerator;
 import de.upb.crypto.predenc.common.GroupElementPlainText;
 import de.upb.crypto.predenc.enc.KeyPair;
 import de.upb.crypto.predenc.common.PlainText;

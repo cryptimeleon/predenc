@@ -1,5 +1,6 @@
 package de.upb.crypto.predenc;
 
+import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
 import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
 
 /**

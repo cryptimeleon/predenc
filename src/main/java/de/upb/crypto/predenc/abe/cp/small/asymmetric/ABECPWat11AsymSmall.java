@@ -11,7 +11,7 @@ import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
-import de.upb.crypto.predenc.PredicateEncryptionScheme;
+import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
 
 import java.math.BigInteger;
 import java.util.*;

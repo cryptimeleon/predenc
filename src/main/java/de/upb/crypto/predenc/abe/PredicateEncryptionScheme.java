@@ -1,4 +1,4 @@
-package de.upb.crypto.predenc;
+package de.upb.crypto.predenc.abe;
 
 import de.upb.crypto.craco.common.PlainText;
 import de.upb.crypto.craco.enc.CipherText;
@@ -8,7 +8,8 @@ import de.upb.crypto.craco.enc.EncryptionScheme;
 import de.upb.crypto.craco.kem.MasterSecret;
 import de.upb.crypto.craco.secretsharing.policy.CiphertextIndex;
 import de.upb.crypto.craco.secretsharing.policy.KeyIndex;
-import de.upb.crypto.predenc.abe.interfaces.AbePredicate;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
 import de.upb.crypto.math.serialization.Representation;
 
 /**

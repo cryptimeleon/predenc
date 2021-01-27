@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.enc.params;
 
 import de.upb.crypto.predenc.abe.fuzzy.large.*;
-import de.upb.crypto.predenc.abe.util.IBEFuzzySW05TestParamGenerator;
+import de.upb.crypto.predenc.paramgens.IBEFuzzySW05TestParamGenerator;
 import de.upb.crypto.predenc.common.GroupElementPlainText;
 import de.upb.crypto.predenc.enc.DecryptionKey;
 import de.upb.crypto.predenc.enc.EncryptionKey;

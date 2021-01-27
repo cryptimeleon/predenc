@@ -1,8 +1,8 @@
-package de.upb.crypto.predenc.abe.util;
+package de.upb.crypto.predenc.paramgens;
 
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
 import de.upb.crypto.predenc.abe.fuzzy.large.IBEFuzzySW05;
 import de.upb.crypto.predenc.abe.fuzzy.large.Identity;
-import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
 
 import java.math.BigInteger;
 

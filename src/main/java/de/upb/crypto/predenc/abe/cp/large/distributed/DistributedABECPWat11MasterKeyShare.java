@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.cp.large.distributed;
 
-import de.upb.crypto.predenc.abe.interfaces.distributed.MasterKeyShare;
+import de.upb.crypto.predenc.abe.distributed.MasterKeyShare;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.StandaloneRepresentable;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;

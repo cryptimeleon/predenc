@@ -8,7 +8,7 @@ import de.upb.crypto.predenc.abe.interfaces.Attribute;
 import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
 import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.predenc.abe.interfaces.StringAttribute;
-import de.upb.crypto.predenc.abe.interfaces.distributed.KeyShare;
+import de.upb.crypto.predenc.abe.distributed.KeyShare;
 import de.upb.crypto.predenc.common.GroupElementPlainText;
 import de.upb.crypto.predenc.enc.DecryptionKey;
 import de.upb.crypto.predenc.enc.EncryptionKey;

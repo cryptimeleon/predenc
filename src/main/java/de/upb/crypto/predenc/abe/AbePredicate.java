@@ -1,4 +1,4 @@
-package de.upb.crypto.predenc.abe.interfaces;
+package de.upb.crypto.predenc.abe;
 
 import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
 import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;

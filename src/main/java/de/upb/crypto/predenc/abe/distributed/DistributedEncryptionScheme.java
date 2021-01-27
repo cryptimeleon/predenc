@@ -1,4 +1,4 @@
-package de.upb.crypto.predenc.abe.interfaces.distributed;
+package de.upb.crypto.predenc.abe.distributed;
 
 import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
 import de.upb.crypto.predenc.common.interfaces.EncryptionScheme;

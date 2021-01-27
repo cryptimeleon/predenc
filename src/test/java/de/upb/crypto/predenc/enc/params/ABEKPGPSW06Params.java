@@ -5,7 +5,7 @@ import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06MasterSecret;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06PublicParameters;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06Setup;
-import de.upb.crypto.predenc.abe.util.ABEKPGPSW06TestParamsGenerator;
+import de.upb.crypto.predenc.paramgens.ABEKPGPSW06TestParamsGenerator;
 import de.upb.crypto.predenc.common.GroupElementPlainText;
 import de.upb.crypto.predenc.enc.KeyPair;
 import de.upb.crypto.predenc.common.PlainText;

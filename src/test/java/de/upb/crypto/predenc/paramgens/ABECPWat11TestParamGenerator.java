@@ -1,4 +1,4 @@
-package de.upb.crypto.predenc.abe.util;
+package de.upb.crypto.predenc.paramgens;
 
 import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
