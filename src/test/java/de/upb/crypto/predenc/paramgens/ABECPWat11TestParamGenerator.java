@@ -1,14 +1,21 @@
 package de.upb.crypto.predenc.paramgens;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.KeyPair;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11MasterSecret;
 import de.upb.crypto.predenc.abe.cp.large.AbstractABECPWat11;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.predenc.abe.interfaces.StringAttribute;
+import de.upb.crypto.predenc.kem.abe.cp.large.ABECPWat11KEM;
+
 import java.util.Arrays;
+import java.util.List;
 
 public class ABECPWat11TestParamGenerator {
     /**
@@ -32,9 +39,9 @@ public class ABECPWat11TestParamGenerator {
         }
 
         // build up policy
-        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy leftNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(1, attributes[0], attributes[1]);
-        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy rightNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
-        Policy policy = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, leftNode, rightNode);
+        ThresholdPolicy leftNode = new ThresholdPolicy(1, attributes[0], attributes[1]);
+        ThresholdPolicy rightNode = new ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
+        Policy policy = new ThresholdPolicy(2, leftNode, rightNode);
 
         EncryptionKey pk = scheme.generateEncryptionKey(policy);
 

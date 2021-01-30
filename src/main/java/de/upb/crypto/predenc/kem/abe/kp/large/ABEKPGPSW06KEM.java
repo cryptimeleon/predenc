@@ -1,19 +1,19 @@
 package de.upb.crypto.predenc.kem.abe.kp.large;
 
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.Attribute;
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.abe.kp.large.*;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.CipherText;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.DecryptionKey;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.EncryptionKey;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.UnqualifiedKeyException;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.PredicateKEM;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.craco.kem.KeyMaterial;
-import de.upb.crypto.craco.kem.SymmetricKeyPredicateKEM;
 import de.upb.crypto.craco.kem.UniqueByteKeyMaterial;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
+import de.upb.crypto.predenc.abe.kp.large.*;
+import de.upb.crypto.predenc.kem.PredicateKEM;
+import de.upb.crypto.predenc.kem.SymmetricKeyPredicateKEM;
 
 import java.util.Map;
 
@@ -30,8 +30,6 @@ import java.util.Map;
  * <p>
  * This scheme only supplies {@link KeyMaterial}. It needs to be used in combination with a KDF to obtain a symmetric
  * key. For this, see {@link SymmetricKeyPredicateKEM}.
- *
- * @author Denis Diemert (based on {@link ABEKPGPSW06})
  */
 public class ABEKPGPSW06KEM extends AbstractABEKPGPSW06 implements PredicateKEM<KeyMaterial> {
     public ABEKPGPSW06KEM(ABEKPGPSW06PublicParameters pp) {

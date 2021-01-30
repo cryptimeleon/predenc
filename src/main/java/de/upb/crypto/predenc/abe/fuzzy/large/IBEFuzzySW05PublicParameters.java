@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.predenc.common.interfaces.PublicParameters;
+import de.upb.crypto.craco.common.PublicParameters;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.structures.groups.HashIntoGroup;
@@ -16,8 +16,6 @@ import java.util.Objects;
 /**
  * The public parameters for the {@link IBEFuzzySW05} generated in
  * the {@link IBEFuzzySW05Setup}.
- *
- * @author Mirko Jürgens, refactoring: Denis Diemert
  */
 public class IBEFuzzySW05PublicParameters implements PublicParameters {
 

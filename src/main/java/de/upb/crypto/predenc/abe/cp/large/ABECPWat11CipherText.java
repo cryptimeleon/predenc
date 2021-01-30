@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.abe.cp.large;
 
-import de.upb.crypto.predenc.common.interfaces.CipherText;
-import de.upb.crypto.predenc.common.interfaces.policy.Policy;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.predenc.kem.abe.cp.large.ABECPWat11KEMCipherText;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;

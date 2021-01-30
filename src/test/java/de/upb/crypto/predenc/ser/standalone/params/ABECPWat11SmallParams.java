@@ -1,12 +1,12 @@
 package de.upb.crypto.predenc.ser.standalone.params;
 
-import de.upb.crypto.craco.abe.cp.small.ABECPWat11Small;
-import de.upb.crypto.craco.abe.cp.small.ABECPWat11SmallKEM;
-import de.upb.crypto.craco.abe.cp.small.ABECPWat11SmallPublicParameters;
-import de.upb.crypto.craco.abe.cp.small.ABECPWat11SmallSetup;
-import de.upb.crypto.craco.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.abe.interfaces.StringAttribute;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTestParams;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
+import de.upb.crypto.predenc.abe.cp.small.ABECPWat11Small;
+import de.upb.crypto.predenc.abe.cp.small.ABECPWat11SmallKEM;
+import de.upb.crypto.predenc.abe.cp.small.ABECPWat11SmallPublicParameters;
+import de.upb.crypto.predenc.abe.cp.small.ABECPWat11SmallSetup;
 
 import java.util.ArrayList;
 import java.util.Collection;

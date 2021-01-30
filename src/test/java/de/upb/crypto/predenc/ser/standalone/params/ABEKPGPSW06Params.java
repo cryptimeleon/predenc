@@ -1,10 +1,10 @@
 package de.upb.crypto.predenc.ser.standalone.params;
 
-import de.upb.crypto.craco.abe.kp.large.ABEKPGPSW06;
-import de.upb.crypto.craco.abe.kp.large.ABEKPGPSW06PublicParameters;
-import de.upb.crypto.craco.abe.kp.large.ABEKPGPSW06Setup;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTest;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTestParams;
+import de.upb.crypto.craco.ser.standalone.StandaloneTest;
+import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
+import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06;
+import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06PublicParameters;
+import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06Setup;
 import de.upb.crypto.predenc.kem.abe.kp.large.ABEKPGPSW06KEM;
 
 import java.util.ArrayList;

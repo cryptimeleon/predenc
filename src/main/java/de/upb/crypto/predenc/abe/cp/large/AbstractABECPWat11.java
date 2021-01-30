@@ -1,24 +1,24 @@
 package de.upb.crypto.predenc.abe.cp.large;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.EncryptionKey;
-import de.upb.crypto.predenc.common.interfaces.PlainText;
-import de.upb.crypto.predenc.common.interfaces.UnqualifiedKeyException;
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.common.interfaces.policy.Policy;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
+import de.upb.crypto.craco.secretsharing.accessstructure.MonotoneSpanProgram;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
 import de.upb.crypto.predenc.kem.abe.cp.large.ABECPWat11KEM;
 import de.upb.crypto.predenc.kem.abe.cp.large.ABECPWat11KEMCipherText;
-import de.upb.crypto.predenc.secretsharing.accessstructure.MonotoneSpanProgram;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;
 import de.upb.crypto.math.structures.rings.zn.Zp;
-import de.upb.crypto.predenc.interfaces.Predicate;
 
 import java.math.BigInteger;
 import java.util.*;

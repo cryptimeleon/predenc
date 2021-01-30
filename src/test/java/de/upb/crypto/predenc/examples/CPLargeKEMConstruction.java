@@ -1,23 +1,23 @@
 package de.upb.crypto.predenc.examples;
 
-import de.upb.crypto.craco.abe.cp.large.ABECPWat11;
-import de.upb.crypto.craco.abe.cp.large.ABECPWat11Setup;
-import de.upb.crypto.craco.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.abe.interfaces.StringAttribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.craco.enc.SymmetricKey;
-import de.upb.crypto.craco.secretsharing.policy.CiphertextIndex;
-import de.upb.crypto.craco.secretsharing.policy.KeyIndex;
-import de.upb.crypto.craco.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.common.interfaces.pe.PredicateEncryptionScheme;
-import de.upb.crypto.craco.common.interfaces.policy.ThresholdPolicy;
 import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
 import de.upb.crypto.craco.kem.HashBasedKeyDerivationFunction;
 import de.upb.crypto.craco.kem.KeyEncapsulationMechanism;
 import de.upb.crypto.craco.kem.KeyEncapsulationMechanism.KeyAndCiphertext;
-import de.upb.crypto.craco.kem.SymmetricKeyPredicateKEM;
-import de.upb.crypto.craco.kem.abe.cp.large.ABECPWat11KEM;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
+import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
+import de.upb.crypto.predenc.abe.cp.large.ABECPWat11Setup;
+import de.upb.crypto.predenc.kem.SymmetricKeyPredicateKEM;
+import de.upb.crypto.predenc.kem.abe.cp.large.ABECPWat11KEM;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -32,6 +32,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Random;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CPLargeKEMConstruction {
@@ -53,33 +54,33 @@ public class CPLargeKEMConstruction {
     }
 
     public void setup() {
-        /** Creates a setup class that provides the algorithm parameters */
+        /* Creates a setup class that provides the algorithm parameters */
         ABECPWat11Setup setup = new ABECPWat11Setup();
 
-        /**
+        /*
          * Generates algorithm parameters: 80 = security level, 5 = the maximum number of attributes in a key, 5 =
          * maximum number of leaf-node attributes in a policy
          */
         setup.doKeyGen(80, 5, 5, false, false);
 
-        /** Generates the encryption scheme */
+        /* Generates the encryption scheme */
         predicateEncryptionScheme = new ABECPWat11(setup.getPublicParameters());
-        /** The master secret is needed for the generation of a DecryptioKey */
+        /* The master secret is needed for the generation of a DecryptioKey */
         masterSecret = setup.getMasterSecret();
         kem = new SymmetricKeyPredicateKEM(new ABECPWat11KEM(setup.getPublicParameters()),
                 new HashBasedKeyDerivationFunction());
     }
 
     public void generateKeys() {
-        /** Generate a policy for the encryption key (CipherTextIndex) */
+        /* Generate a policy for the encryption key (CipherTextIndex) */
         ThresholdPolicy leftNode = new ThresholdPolicy(1, new StringAttribute("A"), new StringAttribute("B"));
         ThresholdPolicy rightNode = new ThresholdPolicy(2, new StringAttribute("C"), new StringAttribute("D"),
                 new StringAttribute("E"));
-        /** Policy is ((A,B)'1 ,(B, C, D)'2)'2 := (A + B) * (CD + DE + CE) */
+        /* Policy is ((A,B)'1 ,(B, C, D)'2)'2 := (A + B) * (CD + DE + CE) */
         CiphertextIndex ciphertextIndex = new ThresholdPolicy(2, leftNode, rightNode);
         encryptionKey = predicateEncryptionScheme.generateEncryptionKey(ciphertextIndex);
 
-        /** Generate a KeyIndex for the decryption key */
+        /* Generate a KeyIndex for the decryption key */
         KeyIndex keyIndex = new SetOfAttributes(new StringAttribute("A"), new StringAttribute("C"),
                 new StringAttribute("D"));
         decryptionKey = predicateEncryptionScheme.generateDecryptionKey(masterSecret, keyIndex);
@@ -87,15 +88,15 @@ public class CPLargeKEMConstruction {
 
     public void encryptDecrypt() {
         try {
-            /** Encapsulate a key */
+            /* Encapsulate a key */
             KeyAndCiphertext<SymmetricKey> kac = kem.encaps(encryptionKey);
-            /**
+            /*
              * Use the symmetric key provided in KeyAndCipherText to encrypt the payload
              */
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-            /** Set up an AES scheme */
+            /* Set up an AES scheme */
             SecretKeySpec keySpec = new SecretKeySpec(((ByteArrayImplementation) kac.key).getData(), "AES");
-            /** CBC initial vector */
+            /* CBC initial vector */
             byte[] initialVector = new byte[128 / 8];
             new Random().nextBytes(initialVector);
 
@@ -103,20 +104,20 @@ public class CPLargeKEMConstruction {
             byte[] plainText = "randomPlainText".getBytes(StandardCharsets.UTF_8);
             byte[] ciphertext = cipher.doFinal(plainText);
 
-            /**
+            /*
              * Transmit the KeyAndCipherText, the inital vector and the cipher text
              */
 
-            /** Decryption */
-            /** Get the encapsulated symmetric key */
+            /* Decryption */
+            /* Get the encapsulated symmetric key */
             SymmetricKey symmetricKey = kem.decaps(kac.encapsulatedKey, decryptionKey);
             keySpec = new SecretKeySpec(((ByteArrayImplementation) symmetricKey).getData(), "AES");
-            /** set up an aes scheme */
+            /* set up an aes scheme */
             cipher.init(Cipher.DECRYPT_MODE, keySpec, new IvParameterSpec(initialVector));
-            /** decryption */
+            /* decryption */
             byte[] decryptedCipertext = cipher.doFinal(ciphertext);
 
-            assertTrue(Arrays.equals(plainText, decryptedCipertext));
+            assertArrayEquals(plainText, decryptedCipertext);
 
         } catch (NoSuchAlgorithmException | InvalidKeyException | InvalidAlgorithmParameterException
                 | IllegalBlockSizeException | BadPaddingException | NoSuchPaddingException e) {

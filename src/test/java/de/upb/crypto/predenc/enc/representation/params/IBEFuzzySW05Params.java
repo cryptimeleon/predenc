@@ -1,17 +1,20 @@
 package de.upb.crypto.predenc.enc.representation.params;
 
-import de.upb.crypto.craco.abe.fuzzy.large.*;
-import de.upb.crypto.craco.abe.util.IBEFuzzySW05TestParamGenerator;
-import de.upb.crypto.craco.common.GroupElementPlainText;
-import de.upb.crypto.craco.common.PlainText;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
 import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.representation.RepresentationTest;
+import de.upb.crypto.craco.enc.representation.RepresentationTestParams;
+import de.upb.crypto.predenc.abe.fuzzy.large.*;
+import de.upb.crypto.predenc.enc.representation.PredEncRepresentationTestParams;
+import de.upb.crypto.predenc.paramgens.IBEFuzzySW05TestParamGenerator;
 
 import java.math.BigInteger;
 
 /**
- * Parameters used in the {@link RepresentationTest} for the Fuzzy IBE scheme {@link IBEFuzzySW05}.
+ * Parameters used in the {@link RepresentationSubTest} for the Fuzzy IBE scheme {@link IBEFuzzySW05}.
  */
 public class IBEFuzzySW05Params {
 
@@ -36,6 +39,6 @@ public class IBEFuzzySW05Params {
         PlainText plaintext = new GroupElementPlainText(pp.getGroupGT().getUniformlyRandomElement());
         CipherText ciphertext = fuzzy.encrypt(plaintext, publicKey);
 
-        return new RepresentationTestParams(fuzzy, publicKey, validSecretKey, plaintext, ciphertext, msk);
+        return new PredEncRepresentationTestParams(fuzzy, publicKey, validSecretKey, plaintext, ciphertext, msk);
     }
 }

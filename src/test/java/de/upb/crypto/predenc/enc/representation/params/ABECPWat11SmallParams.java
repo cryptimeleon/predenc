@@ -1,15 +1,17 @@
 package de.upb.crypto.predenc.enc.representation.params;
 
-import de.upb.crypto.craco.abe.cp.small.*;
-import de.upb.crypto.craco.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.abe.interfaces.StringAttribute;
-import de.upb.crypto.craco.common.GroupElementPlainText;
-import de.upb.crypto.craco.common.PlainText;
-import de.upb.crypto.craco.common.interfaces.policy.ThresholdPolicy;
-import de.upb.crypto.craco.common.policy.Policy;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
 import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.representation.RepresentationTestParams;
+import de.upb.crypto.predenc.abe.cp.small.*;
+import de.upb.crypto.predenc.enc.representation.PredEncRepresentationTestParams;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -46,9 +48,9 @@ public class ABECPWat11SmallParams {
 
         PlainText plaintext = new GroupElementPlainText(publicParams.getGroupGT().getUniformlyRandomElement());
 
-        CipherText ciphertext = (ABECPWat11SmallCipherText) smallScheme.encrypt(plaintext, validPK);
+        CipherText ciphertext = smallScheme.encrypt(plaintext, validPK);
 
-        return new RepresentationTestParams(smallScheme, validPK, validSK, plaintext, ciphertext, msk);
+        return new PredEncRepresentationTestParams(smallScheme, validPK, validSK, plaintext, ciphertext, msk);
     }
 
 }

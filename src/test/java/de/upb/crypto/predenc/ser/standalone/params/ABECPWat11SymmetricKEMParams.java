@@ -1,8 +1,9 @@
 package de.upb.crypto.predenc.ser.standalone.params;
 
-import de.upb.crypto.craco.abe.cp.large.ABECPWat11Setup;
 import de.upb.crypto.craco.kem.HashBasedKeyDerivationFunction;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTestParams;
+import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
+import de.upb.crypto.predenc.abe.cp.large.ABECPWat11Setup;
+import de.upb.crypto.predenc.kem.SymmetricKeyPredicateKEM;
 import de.upb.crypto.predenc.kem.abe.cp.large.ABECPWat11KEM;
 
 public class ABECPWat11SymmetricKEMParams {

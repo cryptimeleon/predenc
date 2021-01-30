@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.kem;
 
-import de.upb.crypto.craco.kem.test.KeyEncapsulationMechanismTest;
-import de.upb.crypto.craco.kem.test.KeyEncapsulationMechanismTestParams;
+import de.upb.crypto.craco.kem.KeyEncapsulationMechanismTest;
+import de.upb.crypto.craco.kem.KeyEncapsulationMechanismTestParams;
 import de.upb.crypto.predenc.kem.params.ABECPWat11KEMParams;
 import de.upb.crypto.predenc.kem.params.ABEKPGPSW06KEMParams;
 import de.upb.crypto.predenc.kem.params.ElgamalLargeDelegKEMParams;

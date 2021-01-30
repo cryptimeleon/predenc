@@ -1,10 +1,10 @@
 package de.upb.crypto.predenc.ser.standalone.params;
 
-import de.upb.crypto.craco.abe.ibe.FullIdent;
-import de.upb.crypto.craco.abe.ibe.FullIdentKEM;
-import de.upb.crypto.craco.abe.ibe.FullIdentPublicParameters;
-import de.upb.crypto.craco.abe.ibe.FullIdentSetup;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTestParams;
+import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
+import de.upb.crypto.predenc.abe.ibe.FullIdent;
+import de.upb.crypto.predenc.abe.ibe.FullIdentKEM;
+import de.upb.crypto.predenc.abe.ibe.FullIdentPublicParameters;
+import de.upb.crypto.predenc.abe.ibe.FullIdentSetup;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

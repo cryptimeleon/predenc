@@ -2,8 +2,8 @@ package de.upb.crypto.predenc.kem.params;
 
 import de.upb.crypto.craco.enc.KeyPair;
 import de.upb.crypto.craco.kem.HashBasedKeyDerivationFunction;
-import de.upb.crypto.craco.kem.test.KeyEncapsulationMechanismTest;
-import de.upb.crypto.craco.kem.test.KeyEncapsulationMechanismTestParams;
+import de.upb.crypto.craco.kem.KeyEncapsulationMechanismTest;
+import de.upb.crypto.craco.kem.KeyEncapsulationMechanismTestParams;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11MasterSecret;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11PublicParameters;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11Setup;

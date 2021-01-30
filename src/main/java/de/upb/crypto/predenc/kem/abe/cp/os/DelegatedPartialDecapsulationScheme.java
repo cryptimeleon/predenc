@@ -1,4 +1,4 @@
-package de.upb.crypto.predenc.kem.abe.interfaces.proxy;
+package de.upb.crypto.predenc.kem.abe.cp.os;
 
 import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.craco.enc.DecryptionKey;

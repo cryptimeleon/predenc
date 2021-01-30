@@ -1,13 +1,13 @@
 package de.upb.crypto.predenc.kem.abe.kp.large;
 
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.Attribute;
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.abe.kp.large.ABEKPGPSW06PublicParameters;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.CipherText;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;
+import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06PublicParameters;
 
 import java.util.Map;
 import java.util.Objects;

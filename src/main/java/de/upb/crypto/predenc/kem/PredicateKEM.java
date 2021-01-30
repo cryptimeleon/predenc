@@ -1,13 +1,13 @@
 package de.upb.crypto.predenc.kem;
 
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.craco.kem.KeyEncapsulationMechanism;
-import de.upb.crypto.craco.kem.MasterSecret;
-import de.upb.crypto.craco.kem.Predicate;
-import de.upb.crypto.craco.secretsharing.policy.CiphertextIndex;
-import de.upb.crypto.craco.secretsharing.policy.KeyIndex;
 import de.upb.crypto.math.serialization.Representation;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
 
 /**
  * Interface for implementing predicate encryption based KEMs.
@@ -21,8 +21,6 @@ import de.upb.crypto.math.serialization.Representation;
  * @see KeyEncapsulationMechanism
  *
  * @param <T> type of the encapsulated key
- *
- * @author Jan
  */
 public interface PredicateKEM<T> extends KeyEncapsulationMechanism<T> {
     /**

@@ -1,7 +1,10 @@
 package de.upb.crypto.predenc.kem;
 
-import de.upb.crypto.craco.common.policy.Policy;
-import de.upb.crypto.craco.common.policy.ThresholdPolicy;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
 import de.upb.crypto.craco.enc.SymmetricKey;
 import de.upb.crypto.craco.enc.asym.elgamal.ElgamalCipherText;
 import de.upb.crypto.craco.enc.asym.elgamal.ElgamalPrivateKey;
@@ -25,10 +28,8 @@ import de.upb.crypto.math.structures.groups.elliptic.type3.bn.BarretoNaehrigBili
 import de.upb.crypto.math.structures.rings.zn.Zn.ZnElement;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.predenc.abe.interfaces.StringAttribute;
 import de.upb.crypto.predenc.kem.abe.cp.os.*;
-import de.upb.crypto.predenc.kem.abe.interfaces.proxy.DelegatedPartialDecapsulationScheme.TransformationAndDecryptionKey;
+import de.upb.crypto.predenc.kem.abe.cp.os.DelegatedPartialDecapsulationScheme.TransformationAndDecryptionKey;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -117,7 +118,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
         checkConvertStandalone(scheme);
     }
 
-    static Policy setupPolicy() {
+    public static Policy setupPolicy() {
         StringAttribute A = new StringAttribute("A");
         StringAttribute B = new StringAttribute("B");
         StringAttribute C = new StringAttribute("C");
@@ -164,12 +165,12 @@ public class ElgamalLargeUniverseDelegationKEMTest {
 
     }
 
-    static SetOfAttributes getFulfilling() {
+    public static SetOfAttributes getFulfilling() {
         //return new SetOfAttributes(new StringAttribute("A"));
         return new SetOfAttributes(new StringAttribute("B"), new StringAttribute("C"), new StringAttribute("hello"));
     }
 
-    static SetOfAttributes getNonFulfilling() {
+    public static SetOfAttributes getNonFulfilling() {
         return new SetOfAttributes(new StringAttribute("C"), new StringAttribute("hello"));
     }
 

@@ -1,15 +1,16 @@
 package de.upb.crypto.predenc.enc.params;
 
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.enc.EncryptionSchemeTest;
+import de.upb.crypto.craco.enc.KeyPair;
+import de.upb.crypto.craco.enc.TestParams;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06MasterSecret;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06PublicParameters;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06Setup;
 import de.upb.crypto.predenc.paramgens.ABEKPGPSW06TestParamsGenerator;
-import de.upb.crypto.predenc.common.GroupElementPlainText;
-import de.upb.crypto.predenc.enc.KeyPair;
-import de.upb.crypto.predenc.common.PlainText;
-import de.upb.crypto.predenc.enc.test.TestParams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
 
 /**
  * Params for the {@link ABEKPGPSW06} used in
- * {@link de.upb.crypto.predenc.enc.test.EncryptionSchemeTest}.
+ * {@link EncryptionSchemeTest}.
  */
 public class ABEKPGPSW06Params {
 

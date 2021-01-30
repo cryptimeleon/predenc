@@ -1,19 +1,17 @@
 package de.upb.crypto.predenc.abe.cp.small;
 
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;
+import de.upb.crypto.predenc.MasterSecret;
 
 import java.util.Objects;
 
 /**
  * The master secret for the {@link ABECPWat11Small} generated in the
  * {@link ABECPWat11SmallSetup}.
- *
- * @author Mirko Jürgens
  */
 public class ABECPWat11SmallMasterSecret implements MasterSecret {
 

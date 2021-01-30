@@ -1,11 +1,11 @@
 package de.upb.crypto.predenc.abe.cp.small.asymmetric;
 
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;
+import de.upb.crypto.predenc.MasterSecret;
 
 import java.util.Objects;
 

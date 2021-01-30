@@ -1,34 +1,46 @@
 package de.upb.crypto.predenc.enc.params;
 
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.policies.BooleanPolicy;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.KeyPair;
+import de.upb.crypto.craco.enc.TestParams;
 import de.upb.crypto.predenc.abe.cp.small.asymmetric.ABECPWat11AsymSmall;
 import de.upb.crypto.predenc.abe.cp.small.asymmetric.ABECPWat11AsymSmallMasterSecret;
 import de.upb.crypto.predenc.abe.cp.small.asymmetric.ABECPWat11AsymSmallPublicParameters;
 import de.upb.crypto.predenc.abe.cp.small.asymmetric.ABECPWat11AsymSmallSetup;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.predenc.abe.interfaces.StringAttribute;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.function.Supplier;
 
 public class ABECPWat11AsymSmallParams {
-    public static ArrayList<de.upb.crypto.craco.enc.test.TestParams> getParams() {
-        Attribute[] stringAttributes = {new StringAttribute("A"), new StringAttribute("B"), new StringAttribute("C"),
-                new StringAttribute("D"), new StringAttribute("E")};
-        de.upb.crypto.craco.enc.test.TestParams stringAttrParams = createGenericParams(stringAttributes);
+    public static ArrayList<TestParams> getParams() {
+        Attribute[] stringAttributes = {
+                new StringAttribute("A"), new StringAttribute("B"), new StringAttribute("C"),
+                new StringAttribute("D"), new StringAttribute("E")
+        };
+        TestParams stringAttrParams = createGenericParams(stringAttributes);
         Attribute[] integerAttribute =
                 {new BigIntegerAttribute(0), new BigIntegerAttribute(1), new BigIntegerAttribute(2),
                         new BigIntegerAttribute(3), new BigIntegerAttribute(4)};
-        de.upb.crypto.craco.enc.test.TestParams integerAttrParams = createGenericParams(integerAttribute);
+        TestParams integerAttrParams = createGenericParams(integerAttribute);
 
-        ArrayList<de.upb.crypto.craco.enc.test.TestParams> toReturn = new ArrayList<>();
+        ArrayList<TestParams> toReturn = new ArrayList<>();
         toReturn.add(stringAttrParams);
         toReturn.add(integerAttrParams);
         return toReturn;
     }
 
-    private static de.upb.crypto.craco.enc.test.TestParams createGenericParams(Attribute[] attributes) {
+    private static TestParams createGenericParams(Attribute[] attributes) {
 
         ABECPWat11AsymSmallSetup setup = new ABECPWat11AsymSmallSetup();
 
@@ -38,17 +50,11 @@ public class ABECPWat11AsymSmallParams {
         ABECPWat11AsymSmallMasterSecret msk = setup.getMasterSecret();
         ABECPWat11AsymSmall smallScheme = new ABECPWat11AsymSmall(publicParams);
 
-        de.upb.crypto.craco.secretsharing.policy.ThresholdPolicy leftNode = new de.upb.crypto.craco.secretsharing.policy.ThresholdPolicy(1, attributes[0], attributes[1]);
+        BooleanPolicy bleftNode = new BooleanPolicy(BooleanPolicy.BooleanOperator.OR, attributes[0], attributes[1]);
 
-        de.upb.crypto.craco.secretsharing.policy.BooleanPolicy bleftNode = new de.upb.crypto.craco.secretsharing.policy.BooleanPolicy(de.upb.crypto.craco.secretsharing.policy.BooleanPolicy.BooleanOperator.OR, attributes[0], attributes[1]);
+        BooleanPolicy bright2 = new BooleanPolicy(BooleanPolicy.BooleanOperator.AND, attributes[3], attributes[4]);
 
-        de.upb.crypto.craco.secretsharing.policy.BooleanPolicy bright2 = new de.upb.crypto.craco.secretsharing.policy.BooleanPolicy(de.upb.crypto.craco.secretsharing.policy.BooleanPolicy.BooleanOperator.AND, attributes[3], attributes[4]);
-
-
-        de.upb.crypto.craco.secretsharing.policy.ThresholdPolicy rightNode = new de.upb.crypto.craco.secretsharing.policy.ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
-
-        Policy bPolicy = new de.upb.crypto.craco.secretsharing.policy.BooleanPolicy(de.upb.crypto.craco.secretsharing.policy.BooleanPolicy.BooleanOperator.AND, bleftNode, bright2);
-        Policy policy = new de.upb.crypto.craco.secretsharing.policy.ThresholdPolicy(2, leftNode, rightNode);
+        Policy bPolicy = new BooleanPolicy(BooleanPolicy.BooleanOperator.AND, bleftNode, bright2);
 
         EncryptionKey validPK = smallScheme.generateEncryptionKey(bPolicy);
 
@@ -61,15 +67,15 @@ public class ABECPWat11AsymSmallParams {
         invalidAttributes.add(attributes[0]);
         invalidAttributes.add(attributes[3]);
 
-        de.upb.crypto.craco.enc.DecryptionKey validSK = smallScheme.generateDecryptionKey(msk, validAttributes);
-        de.upb.crypto.craco.enc.DecryptionKey invalidSK = smallScheme.generateDecryptionKey(msk, invalidAttributes);
+        DecryptionKey validSK = smallScheme.generateDecryptionKey(msk, validAttributes);
+        DecryptionKey invalidSK = smallScheme.generateDecryptionKey(msk, invalidAttributes);
 
         KeyPair validKeyPair = new KeyPair(validPK, validSK);
         KeyPair invalidKeyPair = new KeyPair(validPK, invalidSK);
 
-        Supplier<de.upb.crypto.craco.common.PlainText> abeCPSmallSupplier = () -> ((de.upb.crypto.craco.common.PlainText) new de.upb.crypto.craco.common.GroupElementPlainText(
+        Supplier<PlainText> abeCPSmallSupplier = () -> ((PlainText) new GroupElementPlainText(
                 publicParams.getGroupGT().getUniformlyRandomElement()));
 
-        return new de.upb.crypto.craco.enc.test.TestParams(smallScheme, abeCPSmallSupplier, validKeyPair, invalidKeyPair);
+        return new TestParams(smallScheme, abeCPSmallSupplier, validKeyPair, invalidKeyPair);
     }
 }

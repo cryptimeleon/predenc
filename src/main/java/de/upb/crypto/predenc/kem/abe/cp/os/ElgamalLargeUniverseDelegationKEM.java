@@ -1,20 +1,22 @@
 package de.upb.crypto.predenc.kem.abe.cp.os;
 
-import de.upb.crypto.craco.abe.accessStructure.MonotoneSpanProgram;
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.AbePredicate;
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.Attribute;
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.*;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.*;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.policy.Policy;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.SymmetricKey;
 import de.upb.crypto.craco.enc.asym.elgamal.ElgamalCipherText;
 import de.upb.crypto.craco.enc.asym.elgamal.ElgamalPrivateKey;
 import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
-import de.upb.crypto.predenc.kem.abe.de.upb.crypto.craco.interfaces.proxy.DelegatedPartialDecapsulationScheme;
-import de.upb.crypto.predenc.kem.abe.de.upb.crypto.craco.interfaces.proxy.TransformationKey;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
 import de.upb.crypto.craco.kem.asym.elgamal.ElgamalKEM;
 import de.upb.crypto.craco.kem.asym.elgamal.ElgamalKEM.KeyAndCiphertextAndNonce;
 import de.upb.crypto.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
+import de.upb.crypto.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import de.upb.crypto.math.structures.HashIntoStructure;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.structures.groups.elliptic.BilinearMap;
@@ -23,6 +25,10 @@ import de.upb.crypto.math.structures.rings.zn.HashIntoZn;
 import de.upb.crypto.math.structures.rings.zn.Zn.ZnElement;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
+import de.upb.crypto.predenc.abe.AbePredicate;
+import de.upb.crypto.predenc.kem.PredicateKEM;
 
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -39,8 +45,6 @@ import java.util.Set;
  * [1] Blömer J., Günther P., Krummel V., Löken N. (2018) Attribute-Based Encryption as a Service for Access Control
  * in Large-Scale Organizations. In: Foundations and Practice of Security. FPS 2017. Lecture Notes in Computer Science,
  * vol 10723. Springer, Cham.
- *
- * @author peter.guenther
  */
 
 public class ElgamalLargeUniverseDelegationKEM

@@ -1,18 +1,23 @@
 package de.upb.crypto.predenc.kem.fuzzy.large;
 
-import de.upb.crypto.craco.abe.fuzzy.large.*;
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.BigIntegerAttribute;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.*;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.KeyIndex;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.MasterSecret;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.PredicateKEM;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.kem.KeyEncapsulationMechanism.KeyAndCiphertext;
 import de.upb.crypto.craco.kem.KeyMaterial;
-import de.upb.crypto.craco.kem.SymmetricKeyPredicateKEM;
 import de.upb.crypto.craco.kem.UniqueByteKeyMaterial;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.abe.fuzzy.large.*;
+import de.upb.crypto.predenc.kem.PredicateKEM;
+import de.upb.crypto.predenc.kem.SymmetricKeyPredicateKEM;
 
 import java.math.BigInteger;
 import java.util.HashSet;
@@ -33,8 +38,6 @@ import java.util.Set;
  * <p>
  * This scheme only supplies {@link KeyMaterial}. It needs to be used in combination with a KDF to obtain a symmetric
  * key. For this, see {@link SymmetricKeyPredicateKEM}.
- *
- * @author Denis Diemert (based on {@link IBEFuzzySW05})
  */
 public class IBEFuzzySW05KEM extends AbstractIBEFuzzySW05 implements PredicateKEM<KeyMaterial> {
 

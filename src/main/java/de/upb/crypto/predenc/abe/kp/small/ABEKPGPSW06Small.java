@@ -1,20 +1,23 @@
 package de.upb.crypto.predenc.abe.kp.small;
 
-import de.upb.crypto.predenc.common.GroupElementPlainText;
-import de.upb.crypto.predenc.common.interfaces.CipherText;
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.EncryptionKey;
-import de.upb.crypto.predenc.common.interfaces.PlainText;
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.secretsharing.accessstructure.MonotoneSpanProgram;
-import de.upb.crypto.predenc.secretsharing.accessstructure.exception.WrongAccessStructureException;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.secretsharing.accessstructure.MonotoneSpanProgram;
+import de.upb.crypto.craco.secretsharing.accessstructure.exceptions.WrongAccessStructureException;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
 import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
 
 import java.math.BigInteger;
@@ -40,8 +43,6 @@ import java.util.Map.Entry;
  * Attribute-based encryption for fine-grained access control of encrypted data.
  * In ACM Conference on Computer and Communications Security, pages 89–98. ACM,
  * 2006.
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens, Mirko Jürgens
  */
 public class ABEKPGPSW06Small implements PredicateEncryptionScheme {
 

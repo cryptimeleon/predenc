@@ -1,9 +1,10 @@
 package de.upb.crypto.predenc.abe;
 
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.predenc.common.interfaces.policy.Policy;
-import de.upb.crypto.predenc.interfaces.Predicate;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.predenc.Predicate;
 
 /**
  * A predicate that can check whether a given {@link Policy} is fulfilled by a {@link SetOfAttributes}.

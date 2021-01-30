@@ -1,13 +1,18 @@
 package de.upb.crypto.predenc.abe.kp.large;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.UnqualifiedKeyException;
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
+import de.upb.crypto.craco.secretsharing.accessstructure.MonotoneSpanProgram;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
+import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
 import de.upb.crypto.predenc.kem.abe.kp.large.ABEKPGPSW06KEMCipherText;
-import de.upb.crypto.predenc.secretsharing.accessstructure.MonotoneSpanProgram;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;

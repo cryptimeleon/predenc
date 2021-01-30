@@ -14,8 +14,6 @@ import java.util.Objects;
  * Ciphertext for {@link IBEFuzzySW05}.
  * <p>
  * It extends {@link IBEFuzzySW05KEMCipherText} by the component {@link #ePrime}.
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens, Mirko Jürgens, Denis Diemert
  */
 public class IBEIBEFuzzySW05SW05CipherText extends IBEFuzzySW05KEMCipherText {
 

@@ -1,8 +1,12 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.predenc.common.GroupElementPlainText;
-import de.upb.crypto.predenc.common.interfaces.*;
-import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
@@ -17,8 +21,6 @@ import java.util.Set;
 /**
  * Fuzzy IBE, Large Universe Construction from "Fuzzy Identity-Based Encryption"
  * by Sahai,Waters.
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens, Mirko Jürgens, Denis Diemert
  */
 public class IBEFuzzySW05 extends AbstractIBEFuzzySW05 implements PredicateEncryptionScheme {
 

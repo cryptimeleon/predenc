@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.cp.large.distributed;
 
-import de.upb.crypto.predenc.common.interfaces.PublicParameters;
+import de.upb.crypto.craco.common.PublicParameters;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11PublicParameters;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;

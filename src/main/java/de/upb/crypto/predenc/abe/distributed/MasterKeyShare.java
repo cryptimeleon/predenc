@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.abe.distributed;
 
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
 import de.upb.crypto.math.serialization.Representable;
+import de.upb.crypto.predenc.MasterSecret;
 
 /**
  * A share of a {@link MasterSecret}.

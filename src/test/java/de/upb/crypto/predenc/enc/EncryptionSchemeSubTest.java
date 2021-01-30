@@ -1,13 +1,14 @@
 package de.upb.crypto.predenc.enc;
 
-import de.upb.crypto.craco.enc.test.TestParams;
+import de.upb.crypto.craco.enc.EncryptionSchemeTest;
+import de.upb.crypto.craco.enc.TestParams;
 import de.upb.crypto.predenc.enc.params.*;
 import org.junit.runners.Parameterized;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class EncryptionSchemeSubTest extends EncryptionSchemeSubTest {
+public class EncryptionSchemeSubTest extends EncryptionSchemeTest {
     public EncryptionSchemeSubTest(TestParams params) {
         super(params);
     }

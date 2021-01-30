@@ -1,8 +1,8 @@
 package de.upb.crypto.predenc.abe.fuzzy.small;
 
-import de.upb.crypto.predenc.common.interfaces.CipherText;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
@@ -13,8 +13,6 @@ import java.util.Objects;
 
 /**
  * The {@link CipherText} for the {@link IBEFuzzySW05Small}
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens, Mirko Jürgens
  */
 public class IBEFuzzySW05SmallCipherText implements CipherText {
 
@@ -28,7 +26,6 @@ public class IBEFuzzySW05SmallCipherText implements CipherText {
     // in G_1
     @Represented(restorer = "attr -> G1")
     private Map<Attribute, GroupElement> e;
-
 
     public IBEFuzzySW05SmallCipherText(SetOfAttributes identity, GroupElement E_prime,
                                        Map<Attribute, GroupElement> e2) {

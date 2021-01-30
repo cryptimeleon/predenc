@@ -1,13 +1,13 @@
 package de.upb.crypto.predenc.abe.kp.small;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.common.interfaces.policy.Policy;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;
+import de.upb.crypto.predenc.MasterSecret;
 
 import java.math.BigInteger;
 import java.util.Map;
@@ -19,8 +19,6 @@ import java.util.Objects;
  * <p>
  * This key should be created by
  * {@link ABEKPGPSW06Small#generateDecryptionKey(MasterSecret, KeyIndex)}
- *
- * @author Mirko Jürgens
  */
 public class ABEKPGPSW06SmallDecryptionKey implements DecryptionKey {
 

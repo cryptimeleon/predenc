@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.kem.abe.cp.os;
 
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.EncryptionKey;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.policy.Policy;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.math.hash.ByteAccumulator;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.StandaloneRepresentable;
@@ -14,8 +14,6 @@ import java.util.Objects;
  * Class for encryption keys of ElgamalLargeUniverseDelegationKEM.
  * <p>
  * This class is a wrapper around the policy of this encryption key.
- *
- * @author peter.guenther
  */
 public class LUDEncryptionKey implements EncryptionKey, StandaloneRepresentable {
 

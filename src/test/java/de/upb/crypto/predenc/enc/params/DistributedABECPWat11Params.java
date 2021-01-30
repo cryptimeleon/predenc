@@ -1,23 +1,23 @@
 package de.upb.crypto.predenc.enc.params;
 
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.KeyPair;
+import de.upb.crypto.craco.enc.TestParams;
 import de.upb.crypto.predenc.abe.cp.large.distributed.DistributedABECPWat11;
 import de.upb.crypto.predenc.abe.cp.large.distributed.DistributedABECPWat11MasterKeyShare;
 import de.upb.crypto.predenc.abe.cp.large.distributed.DistributedABECPWat11PublicParameters;
 import de.upb.crypto.predenc.abe.cp.large.distributed.DistributedABECPWat11Setup;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.predenc.abe.interfaces.StringAttribute;
 import de.upb.crypto.predenc.abe.distributed.KeyShare;
-import de.upb.crypto.predenc.common.GroupElementPlainText;
-import de.upb.crypto.predenc.enc.DecryptionKey;
-import de.upb.crypto.predenc.enc.EncryptionKey;
-import de.upb.crypto.predenc.enc.KeyPair;
-import de.upb.crypto.predenc.common.PlainText;
-import de.upb.crypto.predenc.enc.test.TestParams;
-import de.upb.crypto.predenc.secretsharing.policy.CiphertextIndex;
-import de.upb.crypto.predenc.secretsharing.policy.Policy;
-import de.upb.crypto.predenc.secretsharing.policy.ThresholdPolicy;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,12 +28,17 @@ import java.util.function.Supplier;
 public class DistributedABECPWat11Params {
 
     public static ArrayList<TestParams> getParams() {
-        Attribute[] stringAttributes = {new StringAttribute("A"), new StringAttribute("B"), new StringAttribute("C"),
-                new StringAttribute("D"), new StringAttribute("E")};
+        Attribute[] stringAttributes = {
+                new StringAttribute("A"), new StringAttribute("B"),
+                new StringAttribute("C"), new StringAttribute("D"),
+                new StringAttribute("E")
+        };
         TestParams stringAttrParams = createGenericParams(stringAttributes);
-        Attribute[] integerAttribute =
-                {new BigIntegerAttribute(0), new BigIntegerAttribute(1), new BigIntegerAttribute(2),
-                        new BigIntegerAttribute(3), new BigIntegerAttribute(4)};
+        Attribute[] integerAttribute = {
+                new BigIntegerAttribute(0), new BigIntegerAttribute(1),
+                new BigIntegerAttribute(2), new BigIntegerAttribute(3),
+                new BigIntegerAttribute(4)
+        };
         TestParams integerAttrParams = createGenericParams(integerAttribute);
 
         ArrayList<TestParams> toReturn = new ArrayList<>();

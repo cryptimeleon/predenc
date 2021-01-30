@@ -1,11 +1,16 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.common.utils.LagrangeUtil;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.common.utils.LagrangeUtil;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
+import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
+import de.upb.crypto.predenc.kem.fuzzy.large.IBEFuzzySW05KEM;
 import de.upb.crypto.predenc.kem.fuzzy.large.IBEFuzzySW05KEMCipherText;
-import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.RingElement;
@@ -22,8 +27,6 @@ import java.util.stream.Collectors;
 
 /**
  * Combines shared functionality of {@link IBEFuzzySW05} and {@link IBEFuzzySW05KEM}.
- *
- * @author Denis Diemert (based on {@link IBEFuzzySW05})
  */
 public class AbstractIBEFuzzySW05 {
     /**

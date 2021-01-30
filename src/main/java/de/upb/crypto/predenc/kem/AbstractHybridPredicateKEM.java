@@ -1,11 +1,11 @@
 package de.upb.crypto.predenc.kem;
 
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.EncryptionKey;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.EncryptionScheme;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.SymmetricKey;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.PredicateKEM;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.EncryptionScheme;
+import de.upb.crypto.craco.enc.SymmetricKey;
 import de.upb.crypto.craco.kem.AbstractHybridConstructionKEM;
 import de.upb.crypto.craco.kem.HashBasedKeyDerivationFunction;
+import de.upb.crypto.craco.kem.KeyDerivationFunction;
 
 /**
  * A KEM that implements the standard hybrid construction, meaning {@link #encaps(EncryptionKey)}

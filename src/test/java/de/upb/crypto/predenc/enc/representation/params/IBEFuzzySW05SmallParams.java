@@ -1,16 +1,18 @@
 package de.upb.crypto.predenc.enc.representation.params;
 
-import de.upb.crypto.craco.abe.fuzzy.small.IBEFuzzySW05Small;
-import de.upb.crypto.craco.abe.fuzzy.small.IBEFuzzySW05SmallMasterSecret;
-import de.upb.crypto.craco.abe.fuzzy.small.IBEFuzzySW05SmallPublicParameters;
-import de.upb.crypto.craco.abe.fuzzy.small.IBEFuzzySW05SmallSetup;
-import de.upb.crypto.craco.abe.interfaces.BigIntegerAttribute;
-import de.upb.crypto.craco.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.common.GroupElementPlainText;
-import de.upb.crypto.craco.common.PlainText;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
 import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.representation.RepresentationTestParams;
+import de.upb.crypto.predenc.abe.fuzzy.small.IBEFuzzySW05Small;
+import de.upb.crypto.predenc.abe.fuzzy.small.IBEFuzzySW05SmallMasterSecret;
+import de.upb.crypto.predenc.abe.fuzzy.small.IBEFuzzySW05SmallPublicParameters;
+import de.upb.crypto.predenc.abe.fuzzy.small.IBEFuzzySW05SmallSetup;
+import de.upb.crypto.predenc.enc.representation.PredEncRepresentationTestParams;
 
 import java.math.BigInteger;
 
@@ -55,6 +57,6 @@ public class IBEFuzzySW05SmallParams {
 
         CipherText ciphertext = fuzzy.encrypt(plaintext, publicKey);
 
-        return new RepresentationTestParams(fuzzy, publicKey, validSecretKey, plaintext, ciphertext, msk);
+        return new PredEncRepresentationTestParams(fuzzy, publicKey, validSecretKey, plaintext, ciphertext, msk);
     }
 }

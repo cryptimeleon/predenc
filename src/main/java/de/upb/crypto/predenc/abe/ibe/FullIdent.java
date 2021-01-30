@@ -1,19 +1,22 @@
 package de.upb.crypto.predenc.abe.ibe;
 
-import de.upb.crypto.predenc.common.interfaces.CipherText;
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.PlainText;
-import de.upb.crypto.predenc.common.interfaces.UnqualifiedKeyException;
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.common.utils.ByteUtil;
-import de.upb.crypto.predenc.enc.sym.streaming.aes.ByteArrayImplementation;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.common.utils.ByteUtil;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
 import de.upb.crypto.math.hash.impl.ByteArrayAccumulator;
 import de.upb.crypto.math.hash.impl.SHA256HashFunction;
 import de.upb.crypto.math.hash.ByteAccumulator;
 import de.upb.crypto.math.hash.HashFunction;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
 import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
 
 import java.math.BigInteger;
@@ -24,8 +27,6 @@ import java.util.Objects;
 /**
  * Implementation of FullIdent scheme from "Identity-Based Encryption from the
  * Weil Pairing" by Boneh and Franklin.
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens
  */
 public class FullIdent implements PredicateEncryptionScheme {
 

@@ -1,21 +1,22 @@
 package de.upb.crypto.predenc.abe.kp.small;
 
-import de.upb.crypto.predenc.common.GroupElementPlainText;
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.PlainText;
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.enc.sym.streaming.aes.ByteArrayImplementation;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import de.upb.crypto.craco.kem.HashBasedKeyDerivationFunction;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
 import de.upb.crypto.predenc.kem.AbstractHybridPredicateKEM;
-import de.upb.crypto.predenc.kem.HashBasedKeyDerivationFunction;
 import de.upb.crypto.math.serialization.Representation;
 
 import java.util.Objects;
 
 /**
  * A KEM that produces AES keys encapsulated via ABE
- *
- * @author Jan
  */
 public class ABEKPGPSW06SmallKEM extends AbstractHybridPredicateKEM {
 

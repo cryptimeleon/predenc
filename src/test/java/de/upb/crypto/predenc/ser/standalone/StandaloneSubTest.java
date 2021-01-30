@@ -1,6 +1,5 @@
 package de.upb.crypto.predenc.ser.standalone;
 
-
 import de.upb.crypto.craco.ser.standalone.StandaloneTest;
 import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
 import de.upb.crypto.math.serialization.StandaloneRepresentable;
@@ -35,6 +34,7 @@ public class StandaloneSubTest extends StandaloneTest {
         toReturn.addAll(IBEFuzzySW05Params.get());
         toReturn.addAll(IBEFuzzySW05SmallParams.get());
         toReturn.addAll(FullIdentParams.get());
+        toReturn.add(IdentityParams.get());
         toReturn.add(ABECPWat11KEMParams.get());
         toReturn.add(ABECPWat11SymmetricKEMParams.get());
         toReturn.addAll(LUDParams.get());

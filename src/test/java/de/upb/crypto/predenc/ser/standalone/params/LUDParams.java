@@ -1,9 +1,9 @@
 package de.upb.crypto.predenc.ser.standalone.params;
 
-import de.upb.crypto.craco.abe.interfaces.StringAttribute;
-import de.upb.crypto.craco.common.interfaces.policy.BooleanPolicy;
-import de.upb.crypto.craco.common.interfaces.policy.BooleanPolicy.BooleanOperator;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTestParams;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.policies.BooleanPolicy;
+import de.upb.crypto.craco.common.policies.BooleanPolicy.BooleanOperator;
+import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
 import de.upb.crypto.math.hash.impl.SHA256HashFunction;
 import de.upb.crypto.math.structures.groups.counting.CountingBilinearGroup;
 import de.upb.crypto.math.structures.groups.elliptic.BilinearGroup;

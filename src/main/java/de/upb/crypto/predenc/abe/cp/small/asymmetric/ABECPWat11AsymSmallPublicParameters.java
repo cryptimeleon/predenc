@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.abe.cp.small.asymmetric;
 
-import de.upb.crypto.predenc.common.interfaces.PublicParameters;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
+import de.upb.crypto.craco.common.PublicParameters;
+import de.upb.crypto.craco.common.attributes.Attribute;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.structures.groups.elliptic.BilinearGroup;

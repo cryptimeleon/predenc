@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.kem.abe.cp.os;
 
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.PublicParameters;
+import de.upb.crypto.craco.common.PublicParameters;
 import de.upb.crypto.craco.enc.asym.elgamal.ElgamalPublicKey;
 import de.upb.crypto.craco.kem.asym.elgamal.ElgamalKEM;
 import de.upb.crypto.math.structures.groups.GroupElement;
@@ -15,8 +15,6 @@ import java.util.Objects;
 
 /**
  * Container for public parameters of ElgmalLargeUniverseDelegationKEM.
- *
- * @author peter.guenther
  */
 public class LUDPublicParameters implements PublicParameters {
 

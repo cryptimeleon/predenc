@@ -1,14 +1,13 @@
 package de.upb.crypto.predenc;
 
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
 import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
 
 /**
  * Defines who gets to decrypt which ciphertexts.
  *
  * @see PredicateEncryptionScheme#getPredicate()
- *
- * @author Jan
  */
 public interface Predicate {
     /**

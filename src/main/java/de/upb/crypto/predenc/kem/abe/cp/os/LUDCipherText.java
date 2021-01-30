@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.kem.abe.cp.os;
 
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.CipherText;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.policy.Policy;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.craco.enc.sym.streaming.aes.ByteArrayImplementation;
 import de.upb.crypto.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
 import de.upb.crypto.math.structures.groups.Group;
@@ -16,8 +16,6 @@ import java.util.Map;
 
 /**
  * Ciphertexts for encapsulation of symmetric keys with ElgamalLargeUniverseDelegationKEM.
- *
- * @author peter.guenther
  */
 public class LUDCipherText implements CipherText {
 

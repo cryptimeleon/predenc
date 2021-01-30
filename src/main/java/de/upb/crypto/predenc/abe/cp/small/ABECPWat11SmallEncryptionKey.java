@@ -1,5 +1,8 @@
 package de.upb.crypto.predenc.abe.cp.small;
 
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.math.hash.annotations.AnnotatedUbrUtil;
 import de.upb.crypto.math.hash.annotations.UniqueByteRepresented;
 import de.upb.crypto.math.hash.ByteAccumulator;
@@ -14,9 +17,7 @@ import java.util.Objects;
  * {@link Policy} as {@link CiphertextIndex}.
  * <p>
  * This key should be created by
- * {@link ABECPWat11Small#generateEncryptionKey(de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex)}
- *
- * @author Mirko Jürgens
+ * {@link ABECPWat11Small#generateEncryptionKey(CiphertextIndex)}
  */
 public class ABECPWat11SmallEncryptionKey implements EncryptionKey {
 

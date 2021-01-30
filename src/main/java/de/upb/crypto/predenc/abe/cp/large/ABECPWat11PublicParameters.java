@@ -1,6 +1,6 @@
 package de.upb.crypto.predenc.abe.cp.large;
 
-import de.upb.crypto.predenc.common.interfaces.PublicParameters;
+import de.upb.crypto.craco.common.PublicParameters;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.structures.groups.HashIntoGroup;
@@ -15,8 +15,6 @@ import java.util.Objects;
 /**
  * The public parameters for the {@link ABECPWat11}, generated in
  * the {@link ABECPWat11Setup}.
- *
- * @author Mirko Jürgens, Jan Bobolz
  */
 public class ABECPWat11PublicParameters implements PublicParameters {
 

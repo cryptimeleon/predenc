@@ -1,9 +1,8 @@
 package de.upb.crypto.predenc.kem.abe.cp.os;
 
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.Attribute;
-import de.upb.crypto.craco.abe.de.upb.crypto.craco.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.kem.abe.de.upb.crypto.craco.interfaces.proxy.TransformationKey;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
@@ -26,8 +25,6 @@ import java.util.Set;
  * For attributes ai:
  * K_ai,2 = g1^r_ai
  * K_ai,3 = (u1^H(ai) h1)^r_ai v^-r
- *
- * @author peter.guenther
  */
 public class LUDDecryptionKey implements DecryptionKey, TransformationKey {
 

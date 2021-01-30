@@ -1,14 +1,19 @@
 package de.upb.crypto.predenc.kem.abe.cp.large;
 
-import de.upb.crypto.craco.abe.accessStructure.MonotoneSpanProgram;
-import de.upb.crypto.craco.abe.cp.large.*;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.*;
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.PredicateKEM;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.craco.kem.KeyMaterial;
 import de.upb.crypto.craco.kem.UniqueByteKeyMaterial;
+import de.upb.crypto.craco.kem.UnqualifiedKeyException;
+import de.upb.crypto.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
+import de.upb.crypto.predenc.abe.cp.large.*;
+import de.upb.crypto.predenc.kem.PredicateKEM;
 
 import java.math.BigInteger;
 import java.util.Map;
@@ -25,8 +30,6 @@ import java.util.Map;
  * <p>
  * This scheme only supplies {@link KeyMaterial}. It needs to be used in combination with a KDF to obtain a symmetric
  * key.
- *
- * @author Denis Diemert (based on {@link ABECPWat11})
  */
 public class ABECPWat11KEM extends AbstractABECPWat11 implements PredicateKEM<KeyMaterial> {
 
@@ -47,7 +50,7 @@ public class ABECPWat11KEM extends AbstractABECPWat11 implements PredicateKEM<Ke
      * #E) component as the encapsulation of this key.
      *
      * @param publicKey {@link ABECPWat11EncryptionKey} created by
-     *                  {@link ABECPWat11#generateEncryptionKey(de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.CiphertextIndex)}
+     *                  {@link ABECPWat11#generateEncryptionKey(CiphertextIndex)}
      * @return (Y ^ s, ( g ^ s, ( g ^ { a \ lambda_i } * T ( \ rho ( i))^{-s})))
      */
     public KeyAndCiphertext<KeyMaterial> encaps(EncryptionKey publicKey) {

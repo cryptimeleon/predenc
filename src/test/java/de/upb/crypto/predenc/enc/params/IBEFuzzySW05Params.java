@@ -1,13 +1,13 @@
 package de.upb.crypto.predenc.enc.params;
 
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.KeyPair;
+import de.upb.crypto.craco.enc.TestParams;
 import de.upb.crypto.predenc.abe.fuzzy.large.*;
 import de.upb.crypto.predenc.paramgens.IBEFuzzySW05TestParamGenerator;
-import de.upb.crypto.predenc.common.GroupElementPlainText;
-import de.upb.crypto.predenc.enc.DecryptionKey;
-import de.upb.crypto.predenc.enc.EncryptionKey;
-import de.upb.crypto.predenc.enc.KeyPair;
-import de.upb.crypto.predenc.common.PlainText;
-import de.upb.crypto.predenc.enc.test.TestParams;
 
 import java.math.BigInteger;
 import java.util.function.Supplier;

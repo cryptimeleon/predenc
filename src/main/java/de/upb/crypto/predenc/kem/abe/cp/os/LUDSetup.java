@@ -13,8 +13,6 @@ import java.util.Objects;
 
 /**
  * Factory for ElgamalLargeUniverseDelegationKEM.
- *
- * @author peter.guenther
  */
 public class LUDSetup {
 

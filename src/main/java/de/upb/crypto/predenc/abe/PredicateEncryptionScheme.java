@@ -1,13 +1,12 @@
 package de.upb.crypto.predenc.abe;
 
-import de.upb.crypto.craco.common.PlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
 import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.craco.enc.EncryptionScheme;
-import de.upb.crypto.craco.kem.MasterSecret;
-import de.upb.crypto.craco.secretsharing.policy.CiphertextIndex;
-import de.upb.crypto.craco.secretsharing.policy.KeyIndex;
 import de.upb.crypto.predenc.MasterSecret;
 import de.upb.crypto.predenc.Predicate;
 import de.upb.crypto.math.serialization.Representation;
@@ -35,8 +34,6 @@ import de.upb.crypto.math.serialization.Representation;
  * <p>
  * One special case of predicate encryption is attribute-based encryption.
  * See {@link AbePredicate} for more details on how the predicate works there.
- *
- * @author Jan
  */
 public interface PredicateEncryptionScheme extends EncryptionScheme {
     /**

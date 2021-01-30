@@ -1,10 +1,10 @@
 package de.upb.crypto.predenc.ser.standalone.params;
 
-import de.upb.crypto.craco.abe.fuzzy.large.IBEFuzzySW05;
-import de.upb.crypto.craco.abe.fuzzy.large.IBEFuzzySW05PublicParameters;
-import de.upb.crypto.craco.abe.fuzzy.large.IBEFuzzySW05Setup;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTest;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTestParams;
+import de.upb.crypto.craco.ser.standalone.StandaloneTest;
+import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
+import de.upb.crypto.predenc.abe.fuzzy.large.IBEFuzzySW05;
+import de.upb.crypto.predenc.abe.fuzzy.large.IBEFuzzySW05PublicParameters;
+import de.upb.crypto.predenc.abe.fuzzy.large.IBEFuzzySW05Setup;
 import de.upb.crypto.predenc.kem.fuzzy.large.IBEFuzzySW05KEM;
 
 import java.math.BigInteger;

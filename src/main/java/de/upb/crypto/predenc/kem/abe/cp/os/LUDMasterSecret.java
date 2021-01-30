@@ -1,14 +1,12 @@
 package de.upb.crypto.predenc.kem.abe.cp.os;
 
-import de.upb.crypto.craco.common.de.upb.crypto.craco.interfaces.pe.MasterSecret;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
+import de.upb.crypto.predenc.MasterSecret;
 
 
 /**
  * Class for master secret key alpha in Zp.
- *
- * @author peter.guenther
  */
 public class LUDMasterSecret implements MasterSecret {
 

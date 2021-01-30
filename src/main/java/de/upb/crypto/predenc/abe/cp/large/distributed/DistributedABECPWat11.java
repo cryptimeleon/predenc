@@ -1,13 +1,13 @@
 package de.upb.crypto.predenc.abe.cp.large.distributed;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.common.utils.LagrangeUtil;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.common.utils.LagrangeUtil;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.predenc.MasterSecret;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11DecryptionKey;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.predenc.abe.distributed.DistributedEncryptionScheme;
 import de.upb.crypto.predenc.abe.distributed.KeyShare;
 import de.upb.crypto.predenc.abe.distributed.MasterKeyShare;
@@ -42,8 +42,6 @@ import java.util.*;
  * {@link ABECPWat11#generateDecryptionKey(MasterSecret, KeyIndex)}
  * with the {@link MasterSecret} of
  * {@link DistributedABECPWat11Setup#getMasterSecret()}.
- *
- * @author Christian Stroh, refactoring: Fabian Eidens, Mirko Jürgens
  */
 public class DistributedABECPWat11 extends ABECPWat11 implements DistributedEncryptionScheme {
     

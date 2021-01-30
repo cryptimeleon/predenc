@@ -1,11 +1,12 @@
 package de.upb.crypto.predenc.paramgens;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.EncryptionKey;
-import de.upb.crypto.predenc.common.interfaces.KeyPair;
-import de.upb.crypto.predenc.common.interfaces.policy.Policy;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.KeyPair;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06DecryptionKey;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06EncryptionKey;
 import de.upb.crypto.predenc.abe.kp.large.ABEKPGPSW06MasterSecret;
@@ -52,9 +53,9 @@ public class ABEKPGPSW06TestParamsGenerator {
      */
     private static DecryptionKey generateInvalidPrivateKey(AbstractABEKPGPSW06 scheme, ABEKPGPSW06MasterSecret msk,
                                                            Attribute[] attributes) {
-        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy invalidLeftNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, attributes[0], attributes[1]);
-        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy invalidRightNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
-        Policy invalidPolicy = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, invalidLeftNode, invalidRightNode);
+        ThresholdPolicy invalidLeftNode = new ThresholdPolicy(2, attributes[0], attributes[1]);
+        ThresholdPolicy invalidRightNode = new ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
+        Policy invalidPolicy = new ThresholdPolicy(2, invalidLeftNode, invalidRightNode);
         return scheme.generateDecryptionKey(msk, invalidPolicy);
     }
 
@@ -65,9 +66,9 @@ public class ABEKPGPSW06TestParamsGenerator {
      */
     private static DecryptionKey generateValidPrivateKey(AbstractABEKPGPSW06 scheme, ABEKPGPSW06MasterSecret msk,
                                                          Attribute[] attributes) {
-        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy leftNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(1, attributes[0], attributes[1]);
-        de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy rightNode = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
-        Policy validPolicy = new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(2, leftNode, rightNode);
+        ThresholdPolicy leftNode = new ThresholdPolicy(1, attributes[0], attributes[1]);
+        ThresholdPolicy rightNode = new ThresholdPolicy(2, attributes[2], attributes[3], attributes[4]);
+        Policy validPolicy = new ThresholdPolicy(2, leftNode, rightNode);
         return scheme.generateDecryptionKey(msk, validPolicy);
     }
 

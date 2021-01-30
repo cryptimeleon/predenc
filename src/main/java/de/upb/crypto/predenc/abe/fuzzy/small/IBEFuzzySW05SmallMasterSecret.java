@@ -1,12 +1,12 @@
 package de.upb.crypto.predenc.abe.fuzzy.small;
 
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
+import de.upb.crypto.craco.common.attributes.Attribute;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
+import de.upb.crypto.predenc.MasterSecret;
 
 import java.util.Map;
 import java.util.Objects;
@@ -14,8 +14,6 @@ import java.util.Objects;
 /**
  * The {@link MasterSecret} for the {@link IBEFuzzySW05Small} generated
  * in the {@link IBEFuzzySW05SmallSetup}.
- *
- * @author Mirko Jürgens
  */
 public class IBEFuzzySW05SmallMasterSecret implements MasterSecret {
 

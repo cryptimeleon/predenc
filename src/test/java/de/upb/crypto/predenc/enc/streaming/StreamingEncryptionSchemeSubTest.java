@@ -2,12 +2,10 @@ package de.upb.crypto.predenc.enc.streaming;
 
 import de.upb.crypto.craco.enc.streaming.StreamingEncryptionSchemeParams;
 import de.upb.crypto.craco.enc.streaming.StreamingEncryptionSchemeTest;
-import de.upb.crypto.craco.enc.streaming.params.StreamingAESParams;
 import de.upb.crypto.predenc.enc.streaming.params.StreamingHybridCPLargeKEMParams;
 import org.junit.runners.Parameterized;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 
 public class StreamingEncryptionSchemeSubTest extends StreamingEncryptionSchemeTest {

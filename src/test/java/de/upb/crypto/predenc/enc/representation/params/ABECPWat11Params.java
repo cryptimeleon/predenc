@@ -1,15 +1,17 @@
 package de.upb.crypto.predenc.enc.representation.params;
 
-import de.upb.crypto.craco.abe.cp.large.*;
-import de.upb.crypto.craco.abe.interfaces.SetOfAttributes;
-import de.upb.crypto.craco.abe.interfaces.StringAttribute;
-import de.upb.crypto.craco.common.GroupElementPlainText;
-import de.upb.crypto.craco.common.PlainText;
-import de.upb.crypto.craco.common.interfaces.policy.ThresholdPolicy;
-import de.upb.crypto.craco.common.policy.Policy;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.StringAttribute;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
 import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.craco.enc.representation.RepresentationTestParams;
+import de.upb.crypto.predenc.abe.cp.large.*;
+import de.upb.crypto.predenc.enc.representation.PredEncRepresentationTestParams;
 
 public class ABECPWat11Params {
 
@@ -40,8 +42,8 @@ public class ABECPWat11Params {
 
         PlainText plaintext = new GroupElementPlainText(publicParams.getGroupGT().getUniformlyRandomElement());
 
-        CipherText ciphertext = (ABECPWat11CipherText) largeScheme.encrypt(plaintext, pk);
+        CipherText ciphertext = largeScheme.encrypt(plaintext, pk);
 
-        return new RepresentationTestParams(largeScheme, pk, validSK, plaintext, ciphertext, msk);
+        return new PredEncRepresentationTestParams(largeScheme, pk, validSK, plaintext, ciphertext, msk);
     }
 }

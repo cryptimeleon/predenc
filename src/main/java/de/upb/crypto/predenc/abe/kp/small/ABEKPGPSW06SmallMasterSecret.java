@@ -1,6 +1,7 @@
 package de.upb.crypto.predenc.abe.kp.small;
 
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.predenc.MasterSecret;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
 import de.upb.crypto.math.serialization.annotations.Represented;
@@ -13,8 +14,6 @@ import java.util.Objects;
 /**
  * The master secret for the {@link ABEKPGPSW06Small} generated in the
  * {@link ABEKPGPSW06SmallSetup}.
- *
- * @author Mirko Jürgens
  */
 public class ABEKPGPSW06SmallMasterSecret implements MasterSecret {
 

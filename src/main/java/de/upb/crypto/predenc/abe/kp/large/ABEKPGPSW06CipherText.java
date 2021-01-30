@@ -1,8 +1,9 @@
 package de.upb.crypto.predenc.abe.kp.large;
 
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.predenc.kem.abe.kp.large.ABEKPGPSW06KEMCipherText;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
@@ -13,8 +14,6 @@ import java.util.Objects;
 
 /**
  * A {@link CipherText} for the {@link ABEKPGPSW06}.
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens, Mirko Jürgens, Denis Diemert
  */
 public class ABEKPGPSW06CipherText extends ABEKPGPSW06KEMCipherText {
     /**

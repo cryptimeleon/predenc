@@ -1,8 +1,8 @@
 package de.upb.crypto.predenc.ser.standalone.params;
 
-import de.upb.crypto.craco.abe.cp.large.distributed.DistributedABECPWat11;
-import de.upb.crypto.craco.abe.cp.large.distributed.DistributedABECPWat11Setup;
-import de.upb.crypto.craco.ser.standalone.test.StandaloneTestParams;
+import de.upb.crypto.craco.ser.standalone.StandaloneTestParams;
+import de.upb.crypto.predenc.abe.cp.large.distributed.DistributedABECPWat11;
+import de.upb.crypto.predenc.abe.cp.large.distributed.DistributedABECPWat11Setup;
 
 import java.util.ArrayList;
 import java.util.Collection;

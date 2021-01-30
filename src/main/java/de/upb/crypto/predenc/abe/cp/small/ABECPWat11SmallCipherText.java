@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.abe.cp.small;
 
-import de.upb.crypto.predenc.common.interfaces.CipherText;
-import de.upb.crypto.predenc.common.interfaces.policy.Policy;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.enc.CipherText;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.serialization.annotations.ReprUtil;
@@ -13,8 +13,6 @@ import java.util.Objects;
 
 /**
  * A {@link CipherText} for the {@link ABECPWat11Small}.
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens, Mirko Jürgens, Raphael Heitjohann
  */
 public class ABECPWat11SmallCipherText implements CipherText {
 

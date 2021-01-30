@@ -1,10 +1,10 @@
 package de.upb.crypto.predenc.abe.distributed;
 
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.EncryptionScheme;
-import de.upb.crypto.predenc.common.interfaces.pe.KeyIndex;
-import de.upb.crypto.predenc.common.interfaces.pe.MasterSecret;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionScheme;
 import de.upb.crypto.math.serialization.Representation;
+import de.upb.crypto.predenc.MasterSecret;
 
 import java.util.List;
 
@@ -18,8 +18,6 @@ import java.util.List;
  * <p>
  * T out of L KeyShares are needed in order to successfully recreate a
  * DecryptionKey that can be used in an Encryption Scheme.
- *
- * @author Marius Dransfeld, refactoring: Mirko Jürgens
  */
 public interface DistributedEncryptionScheme extends EncryptionScheme {
 

@@ -1,11 +1,17 @@
 package de.upb.crypto.predenc.kem;
 
 
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
 import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.craco.enc.SymmetricKey;
-import de.upb.crypto.craco.secretsharing.policy.CiphertextIndex;
-import de.upb.crypto.craco.secretsharing.policy.KeyIndex;
+import de.upb.crypto.craco.kem.KeyDerivationFunction;
+import de.upb.crypto.craco.kem.KeyMaterial;
+import de.upb.crypto.craco.kem.SymmetricKeyKEM;
 import de.upb.crypto.math.serialization.Representation;
+import de.upb.crypto.predenc.MasterSecret;
+import de.upb.crypto.predenc.Predicate;
 
 /**
  * A KEM that is implemented by the composition of a {@link PredicateKEM} providing {@link KeyMaterial} and a
@@ -13,8 +19,6 @@ import de.upb.crypto.math.serialization.Representation;
  * <p>
  * This should be used in combination with an symmetric encryption scheme to implement the standard hybrid encryption
  * technique.
- *
- * @author Denis Diemert
  */
 public class SymmetricKeyPredicateKEM extends SymmetricKeyKEM implements PredicateKEM<SymmetricKey> {
 

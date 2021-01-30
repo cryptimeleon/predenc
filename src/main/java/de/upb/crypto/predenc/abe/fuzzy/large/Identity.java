@@ -1,28 +1,30 @@
 package de.upb.crypto.predenc.abe.fuzzy.large;
 
-import de.upb.crypto.predenc.common.interfaces.pe.CiphertextIndex;
-import de.upb.crypto.predenc.abe.interfaces.BigIntegerAttribute;
+import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
+import de.upb.crypto.craco.common.policies.Policy;
+import de.upb.crypto.craco.common.policies.ThresholdPolicy;
+import de.upb.crypto.craco.common.predicate.CiphertextIndex;
+import de.upb.crypto.craco.common.predicate.KeyIndex;
 import de.upb.crypto.math.hash.annotations.AnnotatedUbrUtil;
 import de.upb.crypto.math.hash.annotations.UniqueByteRepresented;
 import de.upb.crypto.math.hash.ByteAccumulator;
 import de.upb.crypto.math.hash.UniqueByteRepresentable;
 import de.upb.crypto.math.serialization.*;
+import de.upb.crypto.math.serialization.annotations.ReprUtil;
+import de.upb.crypto.math.serialization.annotations.Represented;
 
 import java.util.*;
 
 /**
  * An identity is a collection of {@link BigIntegerAttribute}
- *
- * @author Marius Dransfeld
  */
 public class Identity implements StandaloneRepresentable, KeyIndex, CiphertextIndex, UniqueByteRepresentable {
     @UniqueByteRepresented
+    @Represented
     private Set<BigIntegerAttribute> attributes;
 
     public Identity(Representation repr) {
-        attributes = new HashSet<>();
-        ListRepresentation listRepr = repr.obj().get("attributes").list();
-        listRepr.forEach((value) -> attributes.add(new BigIntegerAttribute(value.bigInt().get())));
+        new ReprUtil(this).deserialize(repr);
     }
 
     /**
@@ -82,11 +84,7 @@ public class Identity implements StandaloneRepresentable, KeyIndex, CiphertextIn
 
     @Override
     public Representation getRepresentation() {
-        ObjectRepresentation toReturn = new ObjectRepresentation();
-        ListRepresentation list = new ListRepresentation();
-        attributes.forEach((value) -> list.put(new BigIntegerRepresentation(value.getAttribute())));
-        toReturn.put("attributes", list);
-        return toReturn;
+        return ReprUtil.serialize(this);
     }
 
     @Override
@@ -119,7 +117,7 @@ public class Identity implements StandaloneRepresentable, KeyIndex, CiphertextIn
      * @return the resulting {@link ThresholdPolicy}
      */
     public Policy toPolicy(int threshold) {
-        return new de.upb.crypto.predenc.common.de.upb.crypto.predenc.interfaces.policy.ThresholdPolicy(threshold, attributes);
+        return new ThresholdPolicy(threshold, attributes);
     }
 
     @Override

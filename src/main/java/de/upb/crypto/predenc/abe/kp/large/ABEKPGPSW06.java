@@ -1,11 +1,12 @@
 package de.upb.crypto.predenc.abe.kp.large;
 
-import de.upb.crypto.predenc.common.GroupElementPlainText;
-import de.upb.crypto.predenc.common.interfaces.CipherText;
-import de.upb.crypto.predenc.common.interfaces.DecryptionKey;
-import de.upb.crypto.predenc.common.interfaces.PlainText;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
-import de.upb.crypto.predenc.abe.interfaces.SetOfAttributes;
+import de.upb.crypto.craco.common.attributes.Attribute;
+import de.upb.crypto.craco.common.attributes.SetOfAttributes;
+import de.upb.crypto.craco.common.plaintexts.GroupElementPlainText;
+import de.upb.crypto.craco.common.plaintexts.PlainText;
+import de.upb.crypto.craco.enc.CipherText;
+import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.craco.enc.EncryptionKey;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.serialization.Representation;
 import de.upb.crypto.math.structures.rings.zn.Zp;
@@ -31,8 +32,6 @@ import java.util.Map;
  * <p>
  * [SW05] Amit Sahai and Brent Waters. Fuzzy identity-based encryption. In Ronald Cramer, editor, Advances in Cryptology
  * – EUROCRYPT 2005, volume 3494 of Lecture Notes in Computer Science, pages 457–473. Springer Berlin Heidelberg, 2005.
- *
- * @author Marius Dransfeld, refactoring: Fabian Eidens
  */
 public class ABEKPGPSW06 extends AbstractABEKPGPSW06 implements PredicateEncryptionScheme {
 

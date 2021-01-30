@@ -1,7 +1,7 @@
 package de.upb.crypto.predenc.abe.fuzzy.small;
 
-import de.upb.crypto.predenc.common.interfaces.PublicParameters;
-import de.upb.crypto.predenc.abe.interfaces.Attribute;
+import de.upb.crypto.craco.common.PublicParameters;
+import de.upb.crypto.craco.common.attributes.Attribute;
 import de.upb.crypto.math.structures.groups.Group;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.structures.groups.elliptic.BilinearGroup;
@@ -18,8 +18,6 @@ import java.util.Objects;
 /**
  * The public parameters for the {@link IBEFuzzySW05Small} generated in
  * the {@link IBEFuzzySW05SmallSetup}.
- *
- * @author Mirko Jürgens
  */
 public class IBEFuzzySW05SmallPublicParameters implements PublicParameters {
 
