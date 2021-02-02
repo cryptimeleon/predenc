@@ -3,8 +3,8 @@ package de.upb.crypto.predenc.abe.cp.large.distributed;
 import de.upb.crypto.craco.common.attributes.Attribute;
 import de.upb.crypto.craco.common.attributes.SetOfAttributes;
 import de.upb.crypto.craco.common.predicate.KeyIndex;
-import de.upb.crypto.craco.common.utils.LagrangeUtil;
 import de.upb.crypto.craco.enc.DecryptionKey;
+import de.upb.crypto.math.structures.rings.polynomial.LagrangeUtils;
 import de.upb.crypto.predenc.MasterSecret;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11;
 import de.upb.crypto.predenc.abe.cp.large.ABECPWat11DecryptionKey;
@@ -147,7 +147,7 @@ public class DistributedABECPWat11 extends ABECPWat11 implements DistributedEncr
         for (DistributedABECPWat11KeyShare share : s_prime) {
             // not s_prime. Merge server ids in order of the keyshares
 
-            BigInteger delta_xi_S_prime_zero = LagrangeUtil.computeCoefficient(BigInteger.valueOf(share.getServerID()),
+            BigInteger delta_xi_S_prime_zero = LagrangeUtils.computeCoefficient(BigInteger.valueOf(share.getServerID()),
                     s_prime_server_ids, BigInteger.valueOf(0), zp);
 
             // interpolate D'

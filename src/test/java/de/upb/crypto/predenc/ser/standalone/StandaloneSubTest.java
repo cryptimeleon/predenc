@@ -40,6 +40,7 @@ public class StandaloneSubTest extends StandaloneTest {
         toReturn.addAll(LUDParams.get());
         toReturn.addAll(ABECPWat11AsymSmallParams.get());
         toReturn.add(StreamingHybridEncryptionSchemeParams.get());
+        toReturn.add(WatersHashParams.get());
 
         System.out.println("Finished creating objects...");
         // remove all provided params

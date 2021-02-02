@@ -3,9 +3,9 @@ package de.upb.crypto.predenc.abe.fuzzy.large;
 import de.upb.crypto.craco.common.attributes.BigIntegerAttribute;
 import de.upb.crypto.craco.common.predicate.CiphertextIndex;
 import de.upb.crypto.craco.common.predicate.KeyIndex;
-import de.upb.crypto.craco.common.utils.LagrangeUtil;
 import de.upb.crypto.craco.enc.DecryptionKey;
 import de.upb.crypto.craco.enc.EncryptionKey;
+import de.upb.crypto.math.structures.rings.polynomial.LagrangeUtils;
 import de.upb.crypto.predenc.MasterSecret;
 import de.upb.crypto.predenc.Predicate;
 import de.upb.crypto.predenc.abe.PredicateEncryptionScheme;
@@ -127,7 +127,7 @@ public class AbstractIBEFuzzySW05 {
 
         // lagrange coefficient lg(i) = \Delta_{i,S'}(0)
         Function<BigInteger, BigInteger> lg =
-                i -> LagrangeUtil.computeCoefficient(i, attributeSetPrime, BigInteger.ZERO, zp);
+                i -> LagrangeUtils.computeCoefficient(i, attributeSetPrime, BigInteger.ZERO, zp);
 
         // e( R_i^lg, E_i)
         Function<BigInteger, GroupElement> numeratorFactor = i -> pp.getE()

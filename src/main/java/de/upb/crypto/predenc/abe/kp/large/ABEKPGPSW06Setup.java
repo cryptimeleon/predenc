@@ -1,12 +1,12 @@
 package de.upb.crypto.predenc.abe.kp.large;
 
-import de.upb.crypto.craco.common.WatersHash;
 import de.upb.crypto.math.structures.groups.GroupElement;
 import de.upb.crypto.math.structures.groups.counting.CountingBilinearGroup;
 import de.upb.crypto.math.structures.groups.elliptic.BilinearGroup;
 import de.upb.crypto.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;
 import de.upb.crypto.math.structures.rings.zn.Zp;
 import de.upb.crypto.math.structures.rings.zn.Zp.ZpElement;
+import de.upb.crypto.predenc.WatersHash;
 
 import java.math.BigInteger;
 import java.util.HashMap;
