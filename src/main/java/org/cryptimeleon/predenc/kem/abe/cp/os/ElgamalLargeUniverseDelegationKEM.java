@@ -415,35 +415,35 @@ public class ElgamalLargeUniverseDelegationKEM
 
 
     @Override
-    public LUDDecryptionKey recreateTransformationKey(Representation repr) {
-        return this.getDecapsulationKey(repr);
+    public LUDDecryptionKey restoreTransformationKey(Representation repr) {
+        return this.restoreDecapsulationKey(repr);
     }
 
 
     @Override
-    public LUDMasterSecret getMasterSecret(Representation repr) {
-        ZpElement alpha = (new Zp(this.getPublicParameters().getGroupSize())).getElement(repr);
+    public LUDMasterSecret restoreMasterSecret(Representation repr) {
+        ZpElement alpha = (new Zp(this.getPublicParameters().getGroupSize())).restoreElement(repr);
         return new LUDMasterSecret(alpha);
     }
 
-    public ByteArrayImplementation getKey(Representation repr) {
+    public ByteArrayImplementation restoreKey(Representation repr) {
         return new ByteArrayImplementation(repr);
     }
 
 
     @Override
-    public LUDCipherText getEncapsulatedKey(Representation repr) {
+    public LUDCipherText restoreEncapsulatedKey(Representation repr) {
         return new LUDCipherText(repr, pp.getPairingParameters().getG2(), pp.getPairingParameters().getGT());
     }
 
     @Override
-    public LUDEncryptionKey getEncapsulationKey(Representation repr) {
+    public LUDEncryptionKey restoreEncapsulationKey(Representation repr) {
         return new LUDEncryptionKey(repr);
     }
 
 
     @Override
-    public LUDDecryptionKey getDecapsulationKey(Representation repr) {
+    public LUDDecryptionKey restoreDecapsulationKey(Representation repr) {
         return new LUDDecryptionKey(repr, pp.getPairingParameters().getG1());
     }
 

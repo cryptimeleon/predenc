@@ -211,27 +211,27 @@ public class ABECPWat11Small implements PredicateEncryptionScheme {
     }
 
     @Override
-    public PlainText getPlainText(Representation repr) {
+    public PlainText restorePlainText(Representation repr) {
         return new GroupElementPlainText(repr, pp.getGroupGT());
     }
 
     @Override
-    public CipherText getCipherText(Representation repr) {
+    public CipherText restoreCipherText(Representation repr) {
         return new ABECPWat11SmallCipherText(repr, pp);
     }
 
     @Override
-    public EncryptionKey getEncryptionKey(Representation repr) {
+    public EncryptionKey restoreEncryptionKey(Representation repr) {
         return new ABECPWat11SmallEncryptionKey(repr);
     }
 
     @Override
-    public DecryptionKey getDecryptionKey(Representation repr) {
+    public DecryptionKey restoreDecryptionKey(Representation repr) {
         return new ABECPWat11SmallDecryptionKey(repr, pp);
     }
 
     @Override
-    public MasterSecret getMasterSecret(Representation repr) {
+    public MasterSecret restoreMasterSecret(Representation repr) {
         return new ABECPWat11SmallMasterSecret(repr, pp.getGroupG1());
     }
 

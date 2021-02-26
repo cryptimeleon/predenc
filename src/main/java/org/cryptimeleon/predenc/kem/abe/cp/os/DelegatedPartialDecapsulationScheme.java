@@ -44,5 +44,5 @@ public interface DelegatedPartialDecapsulationScheme<T> extends KeyEncapsulation
     /**
      * Recreates a transformation key from representation.
      */
-    public TransformationKey recreateTransformationKey(Representation repr);
+    public TransformationKey restoreTransformationKey(Representation repr);
 }

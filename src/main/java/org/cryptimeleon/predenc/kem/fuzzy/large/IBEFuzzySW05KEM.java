@@ -122,17 +122,17 @@ public class IBEFuzzySW05KEM extends AbstractIBEFuzzySW05 implements PredicateKE
     }
 
     @Override
-    public CipherText getEncapsulatedKey(Representation repr) {
+    public CipherText restoreEncapsulatedKey(Representation repr) {
         return new IBEFuzzySW05KEMCipherText(repr, pp);
     }
 
     @Override
-    public EncryptionKey getEncapsulationKey(Representation repr) {
+    public EncryptionKey restoreEncapsulationKey(Representation repr) {
         return new IBEFuzzySW05EncryptionKey(repr);
     }
 
     @Override
-    public DecryptionKey getDecapsulationKey(Representation repr) {
+    public DecryptionKey restoreDecapsulationKey(Representation repr) {
         return new IBEFuzzySW05DecryptionKey(repr, pp);
     }
 

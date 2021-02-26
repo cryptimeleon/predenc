@@ -89,12 +89,12 @@ public class IBEFuzzySW05 extends AbstractIBEFuzzySW05 implements PredicateEncry
     }
 
     @Override
-    public PlainText getPlainText(Representation repr) {
+    public PlainText restorePlainText(Representation repr) {
         return new GroupElementPlainText(repr, pp.getGroupGT());
     }
 
     @Override
-    public CipherText getCipherText(Representation repr) {
+    public CipherText restoreCipherText(Representation repr) {
         return new IBEIBEFuzzySW05SW05CipherText(repr, pp);
     }
 

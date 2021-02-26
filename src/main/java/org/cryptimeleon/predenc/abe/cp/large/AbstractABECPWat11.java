@@ -176,7 +176,7 @@ public abstract class AbstractABECPWat11 {
      * different (PredicateEncryptionScheme and PredicateKEM), but share this method, the implementation is extracted
      * here to save duplicate code.
      */
-    public MasterSecret getMasterSecret(Representation repr) {
+    public MasterSecret restoreMasterSecret(Representation repr) {
         return new ABECPWat11MasterSecret(pp.getGroupG1(), repr);
     }
 

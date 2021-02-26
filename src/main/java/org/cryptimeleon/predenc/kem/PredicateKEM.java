@@ -26,7 +26,7 @@ public interface PredicateKEM<T> extends KeyEncapsulationMechanism<T> {
     /**
      * Recreates a master secret key from its representation.
      */
-    MasterSecret getMasterSecret(Representation repr);
+    MasterSecret restoreMasterSecret(Representation repr);
 
     /**
      * Generates a decryption key that will be able to
