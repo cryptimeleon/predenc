@@ -32,8 +32,8 @@ public class SymmetricKeyPredicateKEM extends SymmetricKeyKEM implements Predica
     }
 
     @Override
-    public MasterSecret getMasterSecret(Representation repr) {
-        return ((PredicateKEM<? extends KeyMaterial>) kem).getMasterSecret(repr);
+    public MasterSecret restoreMasterSecret(Representation repr) {
+        return ((PredicateKEM<? extends KeyMaterial>) kem).restoreMasterSecret(repr);
     }
 
     @Override

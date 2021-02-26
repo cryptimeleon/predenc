@@ -58,5 +58,5 @@ public interface DelegatedPartialDecryptionScheme extends EncryptionScheme {
     /**
      * Recreates a transformation key from representation
      */
-    public TransformationKey recreateTransformationKey(Representation repr);
+    public TransformationKey restoreTransformationKey(Representation repr);
 }

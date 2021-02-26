@@ -108,15 +108,15 @@ public class ABECPWat11KEM extends AbstractABECPWat11 implements PredicateKEM<Ke
         return new UniqueByteKeyMaterial(restoreYs(sk, encapsKey), pp.getGroupGT().size().bitLength());
     }
 
-    public CipherText getEncapsulatedKey(Representation repr) {
+    public CipherText restoreEncapsulatedKey(Representation repr) {
         return new ABECPWat11KEMCipherText(repr, pp);
     }
 
-    public EncryptionKey getEncapsulationKey(Representation repr) {
+    public EncryptionKey restoreEncapsulationKey(Representation repr) {
         return new ABECPWat11EncryptionKey(repr);
     }
 
-    public DecryptionKey getDecapsulationKey(Representation repr) {
+    public DecryptionKey restoreDecapsulationKey(Representation repr) {
         return new ABECPWat11DecryptionKey(repr, pp);
     }
 

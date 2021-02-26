@@ -39,7 +39,7 @@ public interface PredicateEncryptionScheme extends EncryptionScheme {
     /**
      * Recreates a master secret key from its representation.
      */
-    MasterSecret getMasterSecret(Representation repr);
+    MasterSecret restoreMasterSecret(Representation repr);
 
     /**
      * Generates a decryption key that will be able to

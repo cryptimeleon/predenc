@@ -300,7 +300,7 @@ public class AbstractIBEFuzzySW05 {
      * different (PredicateEncryptionScheme and PredicateKEM), but share this method, the implementation is extracted
      * here to save duplicate code.
      */
-    public EncryptionKey getEncryptionKey(Representation repr) {
+    public EncryptionKey restoreEncryptionKey(Representation repr) {
         return new IBEFuzzySW05EncryptionKey(repr);
     }
 
@@ -309,7 +309,7 @@ public class AbstractIBEFuzzySW05 {
      * different (PredicateEncryptionScheme and PredicateKEM), but share this method, the implementation is extracted
      * here to save duplicate code.
      */
-    public DecryptionKey getDecryptionKey(Representation repr) {
+    public DecryptionKey restoreDecryptionKey(Representation repr) {
         return new IBEFuzzySW05DecryptionKey(repr, pp);
     }
 
@@ -318,7 +318,7 @@ public class AbstractIBEFuzzySW05 {
      * different (PredicateEncryptionScheme and PredicateKEM), but share this method, the implementation is extracted
      * here to save duplicate code.
      */
-    public MasterSecret getMasterSecret(Representation repr) {
+    public MasterSecret restoreMasterSecret(Representation repr) {
         return new IBEFuzzySW05MasterSecret(repr, pp);
     }
 

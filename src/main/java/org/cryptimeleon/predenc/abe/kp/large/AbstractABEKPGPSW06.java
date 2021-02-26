@@ -35,15 +35,15 @@ public class AbstractABEKPGPSW06 {
         return pp.getRepresentation();
     }
 
-    public EncryptionKey getEncryptionKey(Representation repr) {
+    public EncryptionKey restoreEncryptionKey(Representation repr) {
         return new ABEKPGPSW06EncryptionKey(repr);
     }
 
-    public DecryptionKey getDecryptionKey(Representation repr) {
+    public DecryptionKey restoreDecryptionKey(Representation repr) {
         return new ABEKPGPSW06DecryptionKey(repr, pp);
     }
 
-    public MasterSecret getMasterSecret(Representation repr) {
+    public MasterSecret restoreMasterSecret(Representation repr) {
         return new ABEKPGPSW06MasterSecret(repr, pp);
     }
 

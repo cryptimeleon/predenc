@@ -25,7 +25,7 @@ public class PredEncRepresentationTest extends RepresentationTest {
     public void testMasterSecretRepresentation() {
         assertEquals(
                 masterSecret,
-                ((PredicateEncryptionScheme) scheme).getMasterSecret(masterSecret.getRepresentation())
+                ((PredicateEncryptionScheme) scheme).restoreMasterSecret(masterSecret.getRepresentation())
         );
     }
 

@@ -103,22 +103,22 @@ public class ABECPWat11 extends AbstractABECPWat11 implements PredicateEncryptio
     }
 
     @Override
-    public PlainText getPlainText(Representation repr) {
+    public PlainText restorePlainText(Representation repr) {
         return new GroupElementPlainText(repr, pp.getGroupGT());
     }
 
     @Override
-    public CipherText getCipherText(Representation repr) {
+    public CipherText restoreCipherText(Representation repr) {
         return new ABECPWat11CipherText(repr, pp);
     }
 
     @Override
-    public EncryptionKey getEncryptionKey(Representation repr) {
+    public EncryptionKey restoreEncryptionKey(Representation repr) {
         return new ABECPWat11EncryptionKey(repr);
     }
 
     @Override
-    public DecryptionKey getDecryptionKey(Representation repr) {
+    public DecryptionKey restoreDecryptionKey(Representation repr) {
         return new ABECPWat11DecryptionKey(repr, pp);
     }
 

@@ -51,8 +51,8 @@ public class ABECPWat11SmallKEM extends AbstractHybridPredicateKEM {
     }
 
     @Override
-    public MasterSecret getMasterSecret(Representation repr) {
-        return scheme.getMasterSecret(repr);
+    public MasterSecret restoreMasterSecret(Representation repr) {
+        return scheme.restoreMasterSecret(repr);
     }
 
     @Override

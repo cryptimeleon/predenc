@@ -320,7 +320,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
                 repr = ek.getRepresentation();
                 System.out.println("Representation of encryption key: ");
                 repr = checkConvert(repr);
-                LUDEncryptionKey ekprime = scheme.getEncapsulationKey(repr);
+                LUDEncryptionKey ekprime = scheme.restoreEncapsulationKey(repr);
                 assertEquals(ek, ekprime);
                 ek = ekprime;
             }
@@ -335,7 +335,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
                 repr = k.getRepresentation();
                 System.out.println("Representation of symmetric key: ");
                 repr = checkConvert(repr);
-                ByteArrayImplementation kprime = scheme.getKey(repr);
+                ByteArrayImplementation kprime = scheme.restoreKey(repr);
                 assertEquals(k, kprime);
                 k = kprime;
             }
@@ -345,7 +345,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
                 repr = ct.getRepresentation();
                 System.out.println("Representation of ciphertext: ");
                 repr = checkConvert(repr);
-                LUDCipherText ctprime = scheme.getEncapsulatedKey(repr);
+                LUDCipherText ctprime = scheme.restoreEncapsulatedKey(repr);
                 assertEquals(ct, ctprime);
                 ct = ctprime;
             }
@@ -356,7 +356,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
                 repr = dkSatisfy.getRepresentation();
                 System.out.println("Representation of matching key: ");
                 repr = checkConvert(repr);
-                LUDDecryptionKey prime = scheme.getDecapsulationKey(repr);
+                LUDDecryptionKey prime = scheme.restoreDecapsulationKey(repr);
                 assertEquals(dkSatisfy, prime);
                 dkSatisfy = prime;
             }
@@ -367,7 +367,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
                 repr = dkNonSatisfy.getRepresentation();
                 System.out.println("Representation of non matching key: ");
                 repr = checkConvert(repr);
-                LUDDecryptionKey prime = scheme.getDecapsulationKey(repr);
+                LUDDecryptionKey prime = scheme.restoreDecapsulationKey(repr);
                 assertEquals(dkNonSatisfy, prime);
                 dkNonSatisfy = prime;
             }
@@ -390,7 +390,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
                 repr = tkdk.decryptionKey.getRepresentation();
                 System.out.println("Representation of transformed decryption key: ");
                 repr = checkConvert(repr);
-                ElgamalPrivateKey prime = scheme.getSchemeForTransformedCiphertexts().getDecapsulationKey(repr);
+                ElgamalPrivateKey prime = scheme.getSchemeForTransformedCiphertexts().restoreDecapsulationKey(repr);
                 assertEquals(tkdk.decryptionKey, prime);
                 tkdk.decryptionKey = prime;
             }
@@ -402,7 +402,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
                 System.out.println("Representation of transformed cipher text: ");
                 repr = checkConvert(repr);
                 ElgamalKEMCiphertext prime = scheme.getSchemeForTransformedCiphertexts()
-                        .getEncapsulatedKey(repr);
+                        .restoreEncapsulatedKey(repr);
                 assertEquals(ctTransformed, prime);
                 ctTransformed = prime;
             }

@@ -86,17 +86,17 @@ public class ABEKPGPSW06KEM extends AbstractABEKPGPSW06 implements PredicateKEM<
     }
 
     @Override
-    public CipherText getEncapsulatedKey(Representation repr) {
+    public CipherText restoreEncapsulatedKey(Representation repr) {
         return new ABEKPGPSW06KEMCipherText(repr, pp);
     }
 
     @Override
-    public EncryptionKey getEncapsulationKey(Representation repr) {
+    public EncryptionKey restoreEncapsulationKey(Representation repr) {
         return new ABEKPGPSW06EncryptionKey(repr);
     }
 
     @Override
-    public DecryptionKey getDecapsulationKey(Representation repr) {
+    public DecryptionKey restoreDecapsulationKey(Representation repr) {
         return new ABEKPGPSW06DecryptionKey(repr, pp);
     }
 

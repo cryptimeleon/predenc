@@ -90,12 +90,12 @@ public class ABEKPGPSW06 extends AbstractABEKPGPSW06 implements PredicateEncrypt
     }
 
     @Override
-    public PlainText getPlainText(Representation repr) {
+    public PlainText restorePlainText(Representation repr) {
         return new GroupElementPlainText(repr, pp.getGroupGT());
     }
 
     @Override
-    public CipherText getCipherText(Representation repr) {
+    public CipherText restoreCipherText(Representation repr) {
         return new ABEKPGPSW06CipherText(repr, pp);
     }
 
