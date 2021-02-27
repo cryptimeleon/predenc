@@ -2,18 +2,26 @@ package org.cryptimeleon.predenc.ser.standalone.params;
 
 import org.cryptimeleon.craco.common.attributes.SetOfAttributes;
 import org.cryptimeleon.craco.common.attributes.StringAttribute;
-import org.cryptimeleon.craco.ser.standalone.StandaloneTestParams;
+import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06PublicParameters;
+import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06Setup;
 import org.cryptimeleon.predenc.abe.kp.small.ABEKPGPSW06Small;
 import org.cryptimeleon.predenc.abe.kp.small.ABEKPGPSW06SmallKEM;
 import org.cryptimeleon.predenc.abe.kp.small.ABEKPGPSW06SmallSetup;
+import org.cryptimeleon.predenc.kem.abe.kp.large.ABEKPGPSW06KEM;
 
-import java.util.ArrayList;
-import java.util.Collection;
+public class ABEKPKEMStandaloneReprTests extends StandaloneReprSubTest {
 
-public class ABEKPGPSW06SmallParams {
+    public void testKpLargeKem() {
+        ABEKPGPSW06Setup setup = new ABEKPGPSW06Setup();
+        setup.doKeyGen(80, 5, false, true);
 
-    public static Collection<StandaloneTestParams> get() {
-        ArrayList<StandaloneTestParams> toReturn = new ArrayList<>();
+        // add KP public org.cryptimeleon.groupsig.params to test
+        ABEKPGPSW06PublicParameters kpp = setup.getPublicParameters();
+        test(new ABEKPGPSW06KEM(kpp));
+    }
+
+    public void testKpSmallKem() {
         ABEKPGPSW06SmallSetup setup = new ABEKPGPSW06SmallSetup();
         SetOfAttributes universe = new SetOfAttributes(
                 new StringAttribute("A"), new StringAttribute("B"), new StringAttribute("C"),
@@ -21,10 +29,6 @@ public class ABEKPGPSW06SmallParams {
         );
         setup.doKeyGen(80, universe, true);
         ABEKPGPSW06Small scheme = new ABEKPGPSW06Small(setup.getPublicParameters());
-        ABEKPGPSW06SmallKEM kem = new ABEKPGPSW06SmallKEM(scheme);
-        toReturn.add(new StandaloneTestParams(scheme.getClass(), scheme));
-        toReturn.add(new StandaloneTestParams(kem.getClass(), kem));
-        toReturn.add(new StandaloneTestParams(setup.getPublicParameters().getClass(), setup.getPublicParameters()));
-        return toReturn;
+        test(new ABEKPGPSW06SmallKEM(scheme));
     }
 }
