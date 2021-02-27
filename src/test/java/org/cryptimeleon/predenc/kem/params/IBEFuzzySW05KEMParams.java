@@ -2,7 +2,7 @@ package org.cryptimeleon.predenc.kem.params;
 
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanismTest;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanismTestParams;
@@ -42,8 +42,8 @@ public class IBEFuzzySW05KEMParams {
         DecryptionKey validSecretKey = fuzzy.generateDecryptionKey(msk, omegaValid);
         DecryptionKey corruptedSecretKey = fuzzy.generateDecryptionKey(msk, omegaCorrupted);
 
-        KeyPair validKeyPair = new KeyPair(publicKey, validSecretKey);
-        KeyPair corruptedKeyPair = new KeyPair(publicKey, corruptedSecretKey);
+        EncryptionKeyPair validKeyPair = new EncryptionKeyPair(publicKey, validSecretKey);
+        EncryptionKeyPair corruptedKeyPair = new EncryptionKeyPair(publicKey, corruptedSecretKey);
 
         List<KeyEncapsulationMechanismTestParams> toReturn = new ArrayList<>();
         toReturn.add(new KeyEncapsulationMechanismTestParams(fuzzy, validKeyPair, corruptedKeyPair));

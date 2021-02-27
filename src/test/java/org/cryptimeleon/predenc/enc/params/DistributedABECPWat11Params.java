@@ -11,7 +11,7 @@ import org.cryptimeleon.craco.common.policies.ThresholdPolicy;
 import org.cryptimeleon.craco.common.predicate.CiphertextIndex;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.enc.TestParams;
 import org.cryptimeleon.predenc.abe.cp.large.distributed.DistributedABECPWat11;
 import org.cryptimeleon.predenc.abe.cp.large.distributed.DistributedABECPWat11MasterKeyShare;
@@ -104,8 +104,8 @@ public class DistributedABECPWat11Params {
 //		DecryptionKey validSK = scheme.combineKeyShares(validKeyShares);
         DecryptionKey invalidSK = scheme.combineKeyShares(invalidKeyShares);
 
-        KeyPair validKeyPair = new KeyPair(pk, validSK);
-        KeyPair invalidKeyPair = new KeyPair(pk, invalidSK);
+        EncryptionKeyPair validKeyPair = new EncryptionKeyPair(pk, validSK);
+        EncryptionKeyPair invalidKeyPair = new EncryptionKeyPair(pk, invalidSK);
 
         Supplier<PlainText> supplier = () -> ((PlainText) new GroupElementPlainText(
                 pp.getGroupGT().getUniformlyRandomElement()));

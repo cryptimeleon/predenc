@@ -11,8 +11,8 @@ import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.enc.SymmetricKey;
 import org.cryptimeleon.craco.enc.asym.elgamal.ElgamalCipherText;
 import org.cryptimeleon.craco.enc.asym.elgamal.ElgamalPrivateKey;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
+
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEM;
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEM.KeyAndCiphertextAndNonce;
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
@@ -161,7 +161,7 @@ public class ElgamalLargeUniverseDelegationKEM
     }
 
     @Override
-    public ByteArrayImplementation decaps(CipherText encapsulatedKey, DecryptionKey sk) throws UnqualifiedKeyException {
+    public ByteArrayImplementation decaps(CipherText encapsulatedKey, DecryptionKey sk) throws IllegalArgumentException {
 
         // generic implementation. Not efficient but adds maybe some SCA resistance
         // generate dummy transformation key with secret exponent 1
@@ -178,7 +178,7 @@ public class ElgamalLargeUniverseDelegationKEM
 
     @Override
     public ElgamalKEMCiphertext transform(CipherText original,
-                                          TransformationKey transformKey) throws UnqualifiedKeyException {
+                                          TransformationKey transformKey) throws IllegalArgumentException {
         if (!(transformKey instanceof LUDDecryptionKey))
             throw new IllegalArgumentException("Not a valid transformation key for this scheme");
         if (!(original instanceof LUDCipherText))
@@ -201,7 +201,7 @@ public class ElgamalLargeUniverseDelegationKEM
 
         /*check if attributes of transformation key fulfill policy of ciphertext*/
         if (!this.checkPredicate(tk.getKeyIndex(), ct.getPolicy()))
-            throw new UnqualifiedKeyException(
+            throw new IllegalArgumentException(
                     "The given transformation key does not satisfy the ciphertext's policy");
 
         Map<Integer, ZpElement> solvingVector = msp.getSolvingVector(attributes);

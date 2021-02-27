@@ -10,7 +10,7 @@ import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
@@ -119,7 +119,7 @@ public class ABECPWat11AsymSmall implements PredicateEncryptionScheme {
         Set<Attribute> S = sk.getMapKx().keySet();
 
         if (!msp.isQualified(S)) {
-            throw new UnqualifiedKeyException("The given decryption key does not satisfy the MSP.");
+            throw new IllegalArgumentException("The given decryption key does not satisfy the MSP.");
         }
 
         GroupElement message = c.getC();

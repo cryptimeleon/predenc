@@ -8,7 +8,7 @@ import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.enc.SymmetricKey;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism.KeyAndCiphertext;

@@ -2,7 +2,7 @@ package org.cryptimeleon.predenc.enc.params;
 
 import org.cryptimeleon.craco.common.plaintexts.GroupElementPlainText;
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.enc.TestParams;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11MasterSecret;
@@ -29,12 +29,12 @@ public class ABECPWat11Params {
                 publicParams.getGroupGT().getUniformlyRandomElement()));
 
         // string attributes parameters
-        List<KeyPair> stringAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk,
+        List<EncryptionKeyPair> stringAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk,
                 scheme, ABECPWat11TestParamGenerator.generateStringAttributesToTest());
         TestParams stringAttrParams = new TestParams(scheme, supplier, stringAttrKeys.get(0), stringAttrKeys.get(1));
 
         // integer attributes parameters
-        List<KeyPair> integerAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk,
+        List<EncryptionKeyPair> integerAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk,
                 scheme, ABECPWat11TestParamGenerator.generateIntegerAttributesToTest());
         TestParams integerAttrParams = new TestParams(scheme, supplier, integerAttrKeys.get(0), integerAttrKeys.get(1));
 

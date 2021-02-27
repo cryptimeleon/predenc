@@ -7,7 +7,7 @@ import org.cryptimeleon.craco.common.predicate.CiphertextIndex;
 import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.predenc.MasterSecret;
 import org.cryptimeleon.predenc.Predicate;
@@ -152,7 +152,7 @@ public class AbstractABEKPGPSW06 {
 
         // check if omega is qualified for the MSP
         if (!msp.isQualified(omega)) {
-            throw new UnqualifiedKeyException("The ciphertext's attributes do not satisfy the private key's policy.");
+            throw new IllegalArgumentException("The ciphertext's attributes do not satisfy the private key's policy.");
         }
 
         // obtain solving vector w s.t. internal matrix M of MSP fulfills: w * M = (1,0,...,0)

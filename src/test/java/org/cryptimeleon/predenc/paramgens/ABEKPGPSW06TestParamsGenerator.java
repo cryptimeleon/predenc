@@ -6,7 +6,7 @@ import org.cryptimeleon.craco.common.policies.Policy;
 import org.cryptimeleon.craco.common.policies.ThresholdPolicy;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06DecryptionKey;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06EncryptionKey;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06MasterSecret;
@@ -20,15 +20,15 @@ public class ABEKPGPSW06TestParamsGenerator {
      * @return a list of two key pairs attributed by the given {@code attributes}. The first key pair is valid and the
      * second one is invalid
      */
-    public static List<KeyPair> generateKeyPairs(AbstractABEKPGPSW06 scheme, ABEKPGPSW06MasterSecret msk,
+    public static List<EncryptionKeyPair> generateKeyPairs(AbstractABEKPGPSW06 scheme, ABEKPGPSW06MasterSecret msk,
                                                  Attribute[] attributes) {
         EncryptionKey validPK = ABEKPGPSW06TestParamsGenerator.generateValidPublicKey(scheme, msk, attributes);
 
         DecryptionKey validSK = ABEKPGPSW06TestParamsGenerator.generateValidPrivateKey(scheme, msk, attributes);
-        KeyPair validKeyPair = new KeyPair(validPK, validSK);
+        EncryptionKeyPair validKeyPair = new EncryptionKeyPair(validPK, validSK);
 
         DecryptionKey invalidSK = ABEKPGPSW06TestParamsGenerator.generateInvalidPrivateKey(scheme, msk, attributes);
-        KeyPair invalidKeyPair = new KeyPair(validPK, invalidSK);
+        EncryptionKeyPair invalidKeyPair = new EncryptionKeyPair(validPK, invalidSK);
 
         return Arrays.asList(validKeyPair, invalidKeyPair);
     }

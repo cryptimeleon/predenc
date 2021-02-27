@@ -53,7 +53,7 @@ public class StreamingHybridCPLargeKEMParams {
 
         DecryptionKey validSK = largeScheme.generateDecryptionKey(msk, validAttributes);
 
-        KeyPair keyPair = new KeyPair(pk, validSK);
+        EncryptionKeyPair keyPair = new EncryptionKeyPair(pk, validSK);
         StreamingEncryptionScheme streamingAESGCMPacketMode = new StreamingGCMAESPacketMode();
         StreamingEncryptionScheme streamingAESGCMScheme = new StreamingGCMAES();
         StreamingEncryptionScheme streamingAESCBCScheme = new StreamingCBCAES();

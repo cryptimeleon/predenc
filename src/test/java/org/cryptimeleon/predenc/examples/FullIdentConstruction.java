@@ -6,7 +6,7 @@ import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.predenc.MasterSecret;
 import org.cryptimeleon.predenc.abe.PredicateEncryptionScheme;
 import org.cryptimeleon.predenc.abe.ibe.FullIdent;

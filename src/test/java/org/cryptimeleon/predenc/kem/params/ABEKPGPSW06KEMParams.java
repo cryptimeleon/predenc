@@ -1,7 +1,7 @@
 package org.cryptimeleon.predenc.kem.params;
 
 import org.cryptimeleon.craco.common.attributes.Attribute;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanismTestParams;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06MasterSecret;
@@ -30,7 +30,7 @@ public class ABEKPGPSW06KEMParams {
 
         // test string attributes, test with 5 attributes
         Attribute[] stringAttr = ABEKPGPSW06TestParamsGenerator.generateStringAttributes();
-        List<KeyPair> strKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, stringAttr);
+        List<EncryptionKeyPair> strKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, stringAttr);
         toReturn.add(new KeyEncapsulationMechanismTestParams(scheme, strKeyPairs.get(0), strKeyPairs.get(1)));
         // can reuse the keys generated for the underlying KEM scheme
         toReturn.add(new KeyEncapsulationMechanismTestParams(symmetricKeyPredicateKEM, strKeyPairs.get(0),
@@ -38,7 +38,7 @@ public class ABEKPGPSW06KEMParams {
 
         // test integer attributes, test with 5 attributes
         Attribute[] intAttr = ABEKPGPSW06TestParamsGenerator.generateIntegerAttributes();
-        List<KeyPair> intKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, intAttr);
+        List<EncryptionKeyPair> intKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, intAttr);
         toReturn.add(new KeyEncapsulationMechanismTestParams(scheme, intKeyPairs.get(0), intKeyPairs.get(1)));
         // can reuse the keys generated for the underlying KEM scheme
         toReturn.add(new KeyEncapsulationMechanismTestParams(symmetricKeyPredicateKEM, strKeyPairs.get(0),

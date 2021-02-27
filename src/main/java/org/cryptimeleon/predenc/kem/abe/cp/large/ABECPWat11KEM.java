@@ -7,7 +7,7 @@ import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.kem.KeyMaterial;
 import org.cryptimeleon.craco.kem.UniqueByteKeyMaterial;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
@@ -93,10 +93,10 @@ public class ABECPWat11KEM extends AbstractABECPWat11 implements PredicateKEM<Ke
      * @param encapsulatedKey encapsulation of Y^s
      * @param secretKey       decapsulation key
      * @return key material Y^s
-     * @throws UnqualifiedKeyException thrown if the attributes given by the decryption key do not match the
+     * @throws IllegalArgumentException thrown if the attributes given by the decryption key do not match the
      *                                 ciphertext's policy
      */
-    public KeyMaterial decaps(CipherText encapsulatedKey, DecryptionKey secretKey) throws UnqualifiedKeyException {
+    public KeyMaterial decaps(CipherText encapsulatedKey, DecryptionKey secretKey) throws IllegalArgumentException {
         if (!(secretKey instanceof ABECPWat11DecryptionKey))
             throw new IllegalArgumentException("Not a valid private key for this scheme");
         if (!(encapsulatedKey instanceof ABECPWat11KEMCipherText))

@@ -6,7 +6,7 @@ import org.cryptimeleon.craco.common.plaintexts.GroupElementPlainText;
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.enc.TestParams;
 import org.cryptimeleon.predenc.abe.fuzzy.small.IBEFuzzySW05Small;
 import org.cryptimeleon.predenc.abe.fuzzy.small.IBEFuzzySW05SmallMasterSecret;
@@ -68,8 +68,8 @@ public class IBEFuzzySW05SmallParams {
         Supplier<PlainText> supplier =
                 () -> ((PlainText) new GroupElementPlainText(pp.getGroupGT().getUniformlyRandomElement()));
 
-        KeyPair validKeyPair = new KeyPair(publicKey, validSecretKey);
-        KeyPair corruptedKeyPair = new KeyPair(publicKey, corruptedSecretKey);
+        EncryptionKeyPair validKeyPair = new EncryptionKeyPair(publicKey, validSecretKey);
+        EncryptionKeyPair corruptedKeyPair = new EncryptionKeyPair(publicKey, corruptedSecretKey);
         return new TestParams(fuzzy, supplier, validKeyPair, corruptedKeyPair);
     }
 }

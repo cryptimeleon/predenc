@@ -10,7 +10,7 @@ import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism.KeyAndCiphertext;
 import org.cryptimeleon.craco.kem.KeyMaterial;
 import org.cryptimeleon.craco.kem.UniqueByteKeyMaterial;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
@@ -112,7 +112,7 @@ public class IBEFuzzySW05KEM extends AbstractIBEFuzzySW05 implements PredicateKE
         intersection.retainAll(ct.getOmegaPrime().getAttributes());
 
         if (intersection.size() < pp.getIdentityThresholdD().intValue()) {
-            throw new UnqualifiedKeyException("Not enough intersection, therefore decryption failed");
+            throw new IllegalArgumentException("Not enough intersection, therefore decryption failed");
         }
 
         Set<BigIntegerAttribute> attributeSet = subset(intersection, pp.getIdentityThresholdD().intValue());
