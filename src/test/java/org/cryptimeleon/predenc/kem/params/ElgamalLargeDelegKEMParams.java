@@ -1,7 +1,7 @@
 package org.cryptimeleon.predenc.kem.params;
 
 import org.cryptimeleon.craco.common.policies.Policy;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanismTestParams;
 import org.cryptimeleon.math.hash.impl.SHA256HashFunction;
 import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
@@ -38,8 +38,8 @@ public class ElgamalLargeDelegKEMParams {
 				schemeFactory.getMasterSecretKey(), ElgamalLargeUniverseDelegationKEMTest.getNonFulfilling()
 		);
 
-		KeyPair validKeyPair = new KeyPair(encKey, dkSatisfy);
-		KeyPair invalidKeyPair = new KeyPair(encKey, dkNonSatisfy);
+		EncryptionKeyPair validKeyPair = new EncryptionKeyPair(encKey, dkSatisfy);
+		EncryptionKeyPair invalidKeyPair = new EncryptionKeyPair(encKey, dkNonSatisfy);
 
 		return Stream.of(
 				new KeyEncapsulationMechanismTestParams(scheme, validKeyPair, invalidKeyPair)

@@ -3,9 +3,9 @@ package org.cryptimeleon.predenc.enc.params;
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.enc.TestParams;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.predenc.abe.ibe.FullIdent;
 import org.cryptimeleon.predenc.abe.ibe.FullIdentMasterSecret;
 import org.cryptimeleon.predenc.abe.ibe.FullIdentPublicParameters;
@@ -42,8 +42,8 @@ public class FullIdentParams {
                     "schuerma@mail.upb.de".getBytes("UTF-8"));
             DecryptionKey corruptedPrivateKey = fi.generateDecryptionKey(msk, corruptedIdentity);
 
-            KeyPair validKeyPair = new KeyPair(publicKey, privateKey);
-            KeyPair invalidKeyPair = new KeyPair(publicKey, corruptedPrivateKey);
+            EncryptionKeyPair validKeyPair = new EncryptionKeyPair(publicKey, privateKey);
+            EncryptionKeyPair invalidKeyPair = new EncryptionKeyPair(publicKey, corruptedPrivateKey);
 
             return new TestParams(fi, supplier, validKeyPair, invalidKeyPair);
         } catch (UnsupportedEncodingException e) {

@@ -76,8 +76,8 @@ public class ABECPWat11SmallParams {
         DecryptionKey validSK = smallScheme.generateDecryptionKey(msk, validAttributes);
         DecryptionKey invalidSK = smallScheme.generateDecryptionKey(msk, invalidAttributes);
 
-        KeyPair validKeyPair = new KeyPair(validPK, validSK);
-        KeyPair invalidKeyPair = new KeyPair(validPK, invalidSK);
+        EncryptionKeyPair validKeyPair = new EncryptionKeyPair(validPK, validSK);
+        EncryptionKeyPair invalidKeyPair = new EncryptionKeyPair(validPK, invalidSK);
 
         Supplier<PlainText> abeCPSmallSupplier = () -> ((PlainText) new GroupElementPlainText(
                 publicParams.getGroupGT().getUniformlyRandomElement()));

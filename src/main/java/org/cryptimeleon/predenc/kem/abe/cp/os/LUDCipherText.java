@@ -1,8 +1,9 @@
 package org.cryptimeleon.predenc.kem.abe.cp.os;
 
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.common.policies.Policy;
 import org.cryptimeleon.craco.enc.CipherText;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
 import org.cryptimeleon.math.structures.groups.Group;
 import org.cryptimeleon.math.structures.groups.GroupElement;

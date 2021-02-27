@@ -7,7 +7,7 @@ import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.kem.KeyMaterial;
 import org.cryptimeleon.craco.kem.UniqueByteKeyMaterial;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
@@ -70,7 +70,7 @@ public class ABEKPGPSW06KEM extends AbstractABEKPGPSW06 implements PredicateKEM<
     }
 
     @Override
-    public KeyMaterial decaps(CipherText encapsulatedKey, DecryptionKey privateKey) throws UnqualifiedKeyException {
+    public KeyMaterial decaps(CipherText encapsulatedKey, DecryptionKey privateKey) throws IllegalArgumentException {
         if (!(encapsulatedKey instanceof ABEKPGPSW06KEMCipherText))
             throw new IllegalArgumentException("Not a valid cipher text for this scheme");
         if (!(privateKey instanceof ABEKPGPSW06DecryptionKey))

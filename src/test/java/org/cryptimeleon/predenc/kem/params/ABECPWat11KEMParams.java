@@ -1,6 +1,6 @@
 package org.cryptimeleon.predenc.kem.params;
 
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanismTest;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanismTestParams;
@@ -34,7 +34,7 @@ public class ABECPWat11KEMParams {
         SymmetricKeyPredicateKEM kemSchemeHBKDF = new SymmetricKeyPredicateKEM(kemScheme, hashBasedKDF);
 
         // string attributes parameters
-        List<KeyPair> stringAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk, kemScheme,
+        List<EncryptionKeyPair> stringAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk, kemScheme,
                 ABECPWat11TestParamGenerator.generateStringAttributesToTest());
         KeyEncapsulationMechanismTestParams stringAttrParams = new KeyEncapsulationMechanismTestParams(kemScheme,
                 stringAttrKeys.get(0), stringAttrKeys.get(1));
@@ -44,7 +44,7 @@ public class ABECPWat11KEMParams {
                 kemSchemeHBKDF, stringAttrKeys.get(0), stringAttrKeys.get(1));
 
         // integer attributes parameters
-        List<KeyPair> integerAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk, kemScheme,
+        List<EncryptionKeyPair> integerAttrKeys = ABECPWat11TestParamGenerator.generateLargeUniverseTestKeys(msk, kemScheme,
                 ABECPWat11TestParamGenerator.generateIntegerAttributesToTest());
         KeyEncapsulationMechanismTestParams integerAttrParams = new KeyEncapsulationMechanismTestParams(kemScheme,
                 integerAttrKeys.get(0), integerAttrKeys.get(1));

@@ -8,9 +8,9 @@ import org.cryptimeleon.craco.common.policies.ThresholdPolicy;
 import org.cryptimeleon.craco.enc.SymmetricKey;
 import org.cryptimeleon.craco.enc.asym.elgamal.ElgamalCipherText;
 import org.cryptimeleon.craco.enc.asym.elgamal.ElgamalPrivateKey;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism.KeyAndCiphertext;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.math.hash.impl.SHA256HashFunction;
@@ -379,7 +379,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
             boolean except = false;
             try {
                 kprime = scheme.decaps(ct, dkNonSatisfy);
-            } catch (UnqualifiedKeyException e) {
+            } catch (IllegalArgumentException e) {
                 except = true;
             }
             assertTrue(except);

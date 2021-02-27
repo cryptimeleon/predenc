@@ -7,8 +7,8 @@ import org.cryptimeleon.craco.common.utils.ByteUtil;
 import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
+
 import org.cryptimeleon.math.hash.impl.ByteArrayAccumulator;
 import org.cryptimeleon.math.hash.impl.SHA256HashFunction;
 import org.cryptimeleon.math.hash.ByteAccumulator;
@@ -159,7 +159,7 @@ public class FullIdent implements PredicateEncryptionScheme {
         BigInteger r = H3(sigma, message);
 
         if (!U.equals(pp.getP().pow(r)))
-            throw new UnqualifiedKeyException("Decrypting failed");
+            throw new IllegalArgumentException("Decrypting failed");
 
         return new ByteArrayImplementation(message);
     }
