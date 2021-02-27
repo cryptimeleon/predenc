@@ -17,6 +17,17 @@ Furthermore, it contains key encapsulation mechanisms based on predicate encrypt
         * Identity based encryption from the Weil pairing [BF01]
 * **Key encapsulation mechanisms (KEM)**: We implement several KEMs based on the encryption schemes implemented in this library. Predenc provides KEMs for [Wat11], [GPSW06] and [SW05].
 
+## Miscellaneous Information
+
+- Official Documentation can be found [here](https://cryptimeleon.github.io/).
+    - The *For Contributors* area includes information on how to contribute.
+- Craco adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+- The changelog can be found [here](CHANGELOG.md).
+- Craco is licensed under Apache License 2.0, see [LICENSE file](LICENSE).
+
+## Authors
+The library was implemented at Paderborn University in the research group ["Codes und Cryptography"](https://cs.uni-paderborn.de/en/cuk/).
+
 ## References
 
 [BF01] Dan Boneh and Matt Franklin. "Identity-Based Encryption from the Weil Pairing". In: Advances in Cryptology — CRYPTO 2001. CRYPTO 2001. Ed. by Joe Kilian. Vol. 2139. Lecture Notes in Computer Science.  Springer, Berlin, Heidelberg, August 2001, pp. 213-229.
