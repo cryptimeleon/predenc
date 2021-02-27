@@ -11,7 +11,7 @@ public class DistributedABECPWat11StandaloneReprTests extends StandaloneReprSubT
     DistributedABECPWat11Setup setup;
 
     public DistributedABECPWat11StandaloneReprTests() {
-        DistributedABECPWat11Setup setup = new DistributedABECPWat11Setup();
+        setup = new DistributedABECPWat11Setup();
         setup.doKeyGen(80, 5, 4, 2, 2, true);
         scheme = new DistributedABECPWat11(setup.getPublicParameters());
     }
