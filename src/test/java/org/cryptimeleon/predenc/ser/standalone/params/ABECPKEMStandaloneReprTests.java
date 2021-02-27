@@ -4,8 +4,8 @@ import org.cryptimeleon.craco.common.attributes.SetOfAttributes;
 import org.cryptimeleon.craco.common.attributes.StringAttribute;
 import org.cryptimeleon.craco.common.policies.BooleanPolicy;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.math.hash.impl.SHA256HashFunction;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11Setup;
@@ -16,7 +16,6 @@ import org.cryptimeleon.predenc.kem.SymmetricKeyPredicateKEM;
 import org.cryptimeleon.predenc.kem.abe.cp.large.ABECPWat11KEM;
 import org.cryptimeleon.predenc.kem.abe.cp.os.ElgamalLargeUniverseDelegationKEM;
 import org.cryptimeleon.predenc.kem.abe.cp.os.LUDEncryptionKey;
-import org.cryptimeleon.predenc.kem.abe.cp.os.LUDPublicParameters;
 import org.cryptimeleon.predenc.kem.abe.cp.os.LUDSetup;
 
 public class ABECPKEMStandaloneReprTests extends StandaloneReprSubTest {

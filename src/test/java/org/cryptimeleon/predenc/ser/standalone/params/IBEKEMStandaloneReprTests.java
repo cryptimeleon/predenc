@@ -1,6 +1,6 @@
 package org.cryptimeleon.predenc.ser.standalone.params;
 
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.predenc.abe.ibe.FullIdent;
 import org.cryptimeleon.predenc.abe.ibe.FullIdentKEM;
 import org.cryptimeleon.predenc.abe.ibe.FullIdentSetup;

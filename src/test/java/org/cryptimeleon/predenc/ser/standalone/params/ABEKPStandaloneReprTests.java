@@ -2,7 +2,7 @@ package org.cryptimeleon.predenc.ser.standalone.params;
 
 import org.cryptimeleon.craco.common.attributes.SetOfAttributes;
 import org.cryptimeleon.craco.common.attributes.StringAttribute;
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06Setup;
 import org.cryptimeleon.predenc.abe.kp.small.ABEKPGPSW06Small;

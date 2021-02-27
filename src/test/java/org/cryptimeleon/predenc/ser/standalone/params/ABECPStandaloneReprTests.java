@@ -2,7 +2,7 @@ package org.cryptimeleon.predenc.ser.standalone.params;
 
 import org.cryptimeleon.craco.common.attributes.SetOfAttributes;
 import org.cryptimeleon.craco.common.attributes.StringAttribute;
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11Setup;
 import org.cryptimeleon.predenc.abe.cp.large.distributed.DistributedABECPWat11;
@@ -14,11 +14,7 @@ import org.cryptimeleon.predenc.abe.cp.small.asymmetric.ABECPWat11AsymSmallSetup
 
 public class ABECPStandaloneReprTests extends StandaloneReprSubTest {
 
-    public void testCpLarge() {
-        ABECPWat11Setup setup = new ABECPWat11Setup();
-        setup.doKeyGen(80, 5, 5, false, true);
-        test(new ABECPWat11(setup.getPublicParameters()));
-    }
+
 
     public void testCpSmall() {
         ABECPWat11SmallSetup setup = new ABECPWat11SmallSetup();
@@ -38,9 +34,5 @@ public class ABECPStandaloneReprTests extends StandaloneReprSubTest {
         test(new ABECPWat11AsymSmall(setup.getPublicParameters()));
     }
 
-    public void testCpDistributed() {
-        DistributedABECPWat11Setup setup = new DistributedABECPWat11Setup();
-        setup.doKeyGen(80, 5, 4, 2, 2, true);
-        test(new DistributedABECPWat11(setup.getPublicParameters()));
-    }
+
 }

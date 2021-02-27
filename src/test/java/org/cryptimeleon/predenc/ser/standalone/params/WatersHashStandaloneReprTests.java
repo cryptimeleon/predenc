@@ -1,6 +1,6 @@
 package org.cryptimeleon.predenc.ser.standalone.params;
 
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.predenc.WatersHash;

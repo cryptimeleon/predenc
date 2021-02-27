@@ -1,8 +1,7 @@
 package org.cryptimeleon.predenc.ser.standalone.params;
 
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.predenc.abe.ibe.FullIdent;
-import org.cryptimeleon.predenc.abe.ibe.FullIdentPublicParameters;
 import org.cryptimeleon.predenc.abe.ibe.FullIdentSetup;
 
 import java.math.BigInteger;

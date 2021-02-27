@@ -6,7 +6,7 @@ import org.cryptimeleon.craco.enc.sym.streaming.aes.StreamingGCMAESPacketMode;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism;
 import org.cryptimeleon.craco.kem.StreamingHybridEncryptionScheme;
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11Setup;
 import org.cryptimeleon.predenc.kem.SymmetricKeyPredicateKEM;
 import org.cryptimeleon.predenc.kem.abe.cp.large.ABECPWat11KEM;

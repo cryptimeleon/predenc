@@ -2,7 +2,7 @@ package org.cryptimeleon.predenc.ser.standalone.params;
 
 import org.cryptimeleon.craco.common.attributes.BigIntegerAttribute;
 import org.cryptimeleon.craco.common.attributes.SetOfAttributes;
-import org.cryptimeleon.craco.ser.standalone.StandaloneReprSubTest;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.predenc.abe.fuzzy.large.IBEFuzzySW05;
 import org.cryptimeleon.predenc.abe.fuzzy.large.IBEFuzzySW05Setup;
 import org.cryptimeleon.predenc.abe.fuzzy.small.IBEFuzzySW05Small;
