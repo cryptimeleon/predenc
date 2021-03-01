@@ -5,7 +5,7 @@ import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.enc.representation.RepresentationTestParams;
-import org.cryptimeleon.craco.enc.sym.streaming.aes.ByteArrayImplementation;
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.predenc.abe.ibe.FullIdent;
 import org.cryptimeleon.predenc.abe.ibe.FullIdentMasterSecret;
 import org.cryptimeleon.predenc.abe.ibe.FullIdentPublicParameters;

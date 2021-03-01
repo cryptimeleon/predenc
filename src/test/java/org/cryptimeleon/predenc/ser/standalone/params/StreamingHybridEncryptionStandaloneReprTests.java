@@ -6,15 +6,13 @@ import org.cryptimeleon.craco.enc.sym.streaming.aes.StreamingGCMAESPacketMode;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism;
 import org.cryptimeleon.craco.kem.StreamingHybridEncryptionScheme;
-import org.cryptimeleon.craco.ser.standalone.StandaloneTestParams;
+import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11Setup;
 import org.cryptimeleon.predenc.kem.SymmetricKeyPredicateKEM;
 import org.cryptimeleon.predenc.kem.abe.cp.large.ABECPWat11KEM;
 
-public class StreamingHybridEncryptionSchemeParams {
-
-    public static StandaloneTestParams get() {
-
+public class StreamingHybridEncryptionStandaloneReprTests extends StandaloneReprSubTest {
+    public void testStreamingHybridEncryptionScheme() {
         ABECPWat11Setup setup = new ABECPWat11Setup();
 
         // 80=SecrurityParameter, 5 = n = AttributeCount, l_max = 5 (max number
@@ -27,6 +25,6 @@ public class StreamingHybridEncryptionSchemeParams {
 
         StreamingHybridEncryptionScheme hybridAESGCMPacketModeScheme = new StreamingHybridEncryptionScheme(
                 streamingAESGCMPacketMode, kem);
-        return new StandaloneTestParams(StreamingHybridEncryptionScheme.class, hybridAESGCMPacketModeScheme);
+        test(hybridAESGCMPacketModeScheme);
     }
 }

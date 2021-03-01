@@ -10,7 +10,7 @@ import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.craco.secretsharing.accessstructure.exceptions.NoSatisfyingSet;
 import org.cryptimeleon.craco.secretsharing.accessstructure.exceptions.WrongAccessStructureException;
@@ -137,7 +137,7 @@ public class IBEFuzzySW05Small implements PredicateEncryptionScheme {
         try {
             solvingVector = msp.getSolvingVector(ct.getOmega_prime());
         } catch (NoSatisfyingSet e) {
-            throw new UnqualifiedKeyException("The given key does not solve the msp");
+            throw new IllegalArgumentException("The given key does not solve the msp");
         }
         try {
             for (Entry<Integer, ZpElement> a : solvingVector.entrySet()) {

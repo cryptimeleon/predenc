@@ -8,7 +8,7 @@ import org.cryptimeleon.craco.common.predicate.CiphertextIndex;
 import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.kem.UnqualifiedKeyException;
+
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.predenc.MasterSecret;
 import org.cryptimeleon.predenc.Predicate;
@@ -109,7 +109,7 @@ public abstract class AbstractABECPWat11 {
         Set<Attribute> attributeSetS = d.keySet();
 
         if (!msp.isQualified(attributeSetS))
-            throw new UnqualifiedKeyException("The given private key does not satisfy the MSP");
+            throw new IllegalArgumentException("The given private key does not satisfy the MSP");
 
         Map<Integer, Zp.ZpElement> solvingVector = msp.getSolvingVector(attributeSetS);
         // get index i of omega in solving vector

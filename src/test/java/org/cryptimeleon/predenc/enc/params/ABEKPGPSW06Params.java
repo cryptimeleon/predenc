@@ -4,7 +4,7 @@ import org.cryptimeleon.craco.common.attributes.Attribute;
 import org.cryptimeleon.craco.common.plaintexts.GroupElementPlainText;
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
 import org.cryptimeleon.craco.enc.EncryptionSchemeTest;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.enc.TestParams;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06;
 import org.cryptimeleon.predenc.abe.kp.large.ABEKPGPSW06MasterSecret;
@@ -38,12 +38,12 @@ public class ABEKPGPSW06Params {
 
         // test string attributes, test with 5 attributes
         Attribute[] stringAttr = ABEKPGPSW06TestParamsGenerator.generateStringAttributes();
-        List<KeyPair> strKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, stringAttr);
+        List<EncryptionKeyPair> strKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, stringAttr);
         toReturn.add(new TestParams(scheme, supplier, strKeyPairs.get(0), strKeyPairs.get(1)));
 
         // test integer attributes, test with 5 attributes
         Attribute[] intAttr = ABEKPGPSW06TestParamsGenerator.generateIntegerAttributes();
-        List<KeyPair> intKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, intAttr);
+        List<EncryptionKeyPair> intKeyPairs = ABEKPGPSW06TestParamsGenerator.generateKeyPairs(scheme, msk, intAttr);
         toReturn.add(new TestParams(scheme, supplier, intKeyPairs.get(0), intKeyPairs.get(1)));
 
         return toReturn;

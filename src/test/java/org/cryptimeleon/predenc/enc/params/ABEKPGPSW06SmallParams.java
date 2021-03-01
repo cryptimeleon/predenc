@@ -10,7 +10,7 @@ import org.cryptimeleon.craco.common.policies.Policy;
 import org.cryptimeleon.craco.common.policies.ThresholdPolicy;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.craco.enc.TestParams;
 import org.cryptimeleon.predenc.abe.kp.small.ABEKPGPSW06Small;
 import org.cryptimeleon.predenc.abe.kp.small.ABEKPGPSW06SmallMasterSecret;
@@ -70,8 +70,8 @@ public class ABEKPGPSW06SmallParams {
 
         EncryptionKey validPK = scheme.generateEncryptionKey(validPublicAttributes);
 
-        KeyPair validKeyPair = new KeyPair(validPK, validSK);
-        KeyPair invalidKeyPair = new KeyPair(validPK, invalidSK);
+        EncryptionKeyPair validKeyPair = new EncryptionKeyPair(validPK, validSK);
+        EncryptionKeyPair invalidKeyPair = new EncryptionKeyPair(validPK, invalidSK);
 
         Supplier<PlainText> supplier = () -> ((PlainText) new GroupElementPlainText(
                 publicParams.getGroupGT().getUniformlyRandomElement()));

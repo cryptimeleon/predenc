@@ -8,7 +8,7 @@ import org.cryptimeleon.craco.common.policies.Policy;
 import org.cryptimeleon.craco.common.policies.ThresholdPolicy;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.enc.KeyPair;
+import org.cryptimeleon.craco.enc.EncryptionKeyPair;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11;
 import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11MasterSecret;
 import org.cryptimeleon.predenc.abe.cp.large.AbstractABECPWat11;
@@ -32,7 +32,7 @@ public class ABECPWat11TestParamGenerator {
      * @param attributes attributes to build a policy on size should be 4
      * @return List of two keys: 1. is valid, 2. is invalid
      */
-    public static List<KeyPair> generateLargeUniverseTestKeys(ABECPWat11MasterSecret msk,
+    public static List<EncryptionKeyPair> generateLargeUniverseTestKeys(ABECPWat11MasterSecret msk,
                                                               AbstractABECPWat11 scheme, Attribute[] attributes) {
         if (attributes.length != 5) {
             throw new IllegalArgumentException("This test only supports attribute sets of size 5.");
@@ -57,8 +57,8 @@ public class ABECPWat11TestParamGenerator {
         DecryptionKey validSK = scheme.generateDecryptionKey(msk, validAttributes);
         DecryptionKey invalidSK = scheme.generateDecryptionKey(msk, invalidAttributes);
 
-        KeyPair validKeyPair = new KeyPair(pk, validSK);
-        KeyPair invalidKeyPair = new KeyPair(pk, invalidSK);
+        EncryptionKeyPair validKeyPair = new EncryptionKeyPair(pk, validSK);
+        EncryptionKeyPair invalidKeyPair = new EncryptionKeyPair(pk, invalidSK);
 
         return Arrays.asList(validKeyPair, invalidKeyPair);
     }
