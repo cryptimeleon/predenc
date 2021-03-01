@@ -5,12 +5,12 @@ import org.cryptimeleon.predenc.abe.cp.large.distributed.DistributedABECPWat11;
 import org.cryptimeleon.predenc.abe.cp.large.distributed.DistributedABECPWat11MasterKeyShare;
 import org.cryptimeleon.predenc.abe.cp.large.distributed.DistributedABECPWat11Setup;
 
-public class DistributedABECPWat11StandaloneReprTests extends StandaloneReprSubTest {
+public class ABECPWat11DistributedStandaloneReprTests extends StandaloneReprSubTest {
 
     DistributedABECPWat11 scheme;
     DistributedABECPWat11Setup setup;
 
-    public DistributedABECPWat11StandaloneReprTests() {
+    public ABECPWat11DistributedStandaloneReprTests() {
         setup = new DistributedABECPWat11Setup();
         setup.doKeyGen(80, 5, 4, 2, 2, true);
         scheme = new DistributedABECPWat11(setup.getPublicParameters());

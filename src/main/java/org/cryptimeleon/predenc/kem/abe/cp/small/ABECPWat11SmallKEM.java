@@ -1,4 +1,4 @@
-package org.cryptimeleon.predenc.abe.fuzzy.small;
+package org.cryptimeleon.predenc.kem.abe.cp.small;
 
 import org.cryptimeleon.craco.common.plaintexts.GroupElementPlainText;
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
@@ -10,6 +10,8 @@ import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.predenc.MasterSecret;
 import org.cryptimeleon.predenc.Predicate;
+import org.cryptimeleon.predenc.abe.cp.small.ABECPWat11Small;
+import org.cryptimeleon.predenc.abe.cp.small.ABECPWat11SmallPublicParameters;
 import org.cryptimeleon.predenc.kem.AbstractHybridPredicateKEM;
 import org.cryptimeleon.math.serialization.Representation;
 
@@ -18,17 +20,17 @@ import java.util.Objects;
 /**
  * A KEM that produces AES keys encapsulated via ABE
  */
-public class IBEFuzzySW05SmallKEM extends AbstractHybridPredicateKEM {
+public class ABECPWat11SmallKEM extends AbstractHybridPredicateKEM {
 
-    private IBEFuzzySW05Small scheme;
+    private ABECPWat11Small scheme;
 
-    public IBEFuzzySW05SmallKEM(IBEFuzzySW05Small scheme) {
+    public ABECPWat11SmallKEM(ABECPWat11Small scheme) {
         super(scheme, new HashBasedKeyDerivationFunction());
         this.scheme = scheme;
     }
 
-    public IBEFuzzySW05SmallKEM(Representation repr) {
-        this(new IBEFuzzySW05Small(repr));
+    public ABECPWat11SmallKEM(Representation repr) {
+        this(new ABECPWat11Small(repr));
     }
 
     @Override
@@ -70,7 +72,7 @@ public class IBEFuzzySW05SmallKEM extends AbstractHybridPredicateKEM {
         return scheme.getPredicate();
     }
 
-    public IBEFuzzySW05SmallPublicParameters getPublicParameters() {
+    public ABECPWat11SmallPublicParameters getPublicParameters() {
         return scheme.getPublicParameters();
     }
 
@@ -90,7 +92,7 @@ public class IBEFuzzySW05SmallKEM extends AbstractHybridPredicateKEM {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        IBEFuzzySW05SmallKEM other = (IBEFuzzySW05SmallKEM) obj;
+        ABECPWat11SmallKEM other = (ABECPWat11SmallKEM) obj;
         return Objects.equals(scheme, other.scheme);
     }
 

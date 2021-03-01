@@ -1,4 +1,4 @@
-package org.cryptimeleon.predenc.abe.ibe;
+package org.cryptimeleon.predenc.kem.ibe;
 
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
 import org.cryptimeleon.craco.enc.SymmetricKey;
@@ -6,6 +6,7 @@ import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.kem.AbstractHybridConstructionKEM;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
 import org.cryptimeleon.math.serialization.Representation;
+import org.cryptimeleon.predenc.abe.ibe.FullIdent;
 
 import java.security.SecureRandom;
 import java.util.Objects;

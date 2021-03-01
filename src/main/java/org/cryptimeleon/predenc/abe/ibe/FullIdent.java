@@ -272,7 +272,7 @@ public class FullIdent implements PredicateEncryptionScheme {
         };
     }
 
-    protected FullIdentPublicParameters getPublicParameters() {
+    public FullIdentPublicParameters getPublicParameters() {
         return pp;
     }
 }

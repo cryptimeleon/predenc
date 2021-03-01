@@ -13,7 +13,6 @@ import org.cryptimeleon.predenc.kem.abe.cp.large.ABECPWat11KEM;
 
 public class StreamingHybridEncryptionStandaloneReprTests extends StandaloneReprSubTest {
     public void testStreamingHybridEncryptionScheme() {
-
         ABECPWat11Setup setup = new ABECPWat11Setup();
 
         // 80=SecrurityParameter, 5 = n = AttributeCount, l_max = 5 (max number
