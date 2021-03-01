@@ -35,7 +35,7 @@ To add the newest Predenc version as a dependency, add this to your project's PO
 
 Predenc is published via Maven Central.
 Therefore, you need to add `mavenCentral()` to the `repositories` section of your project's `build.gradle` file.
-Then, add `implementation group: 'org.cryptimeleon', name: 'craco', version: '1.0.0'` to the `dependencies` section of your `build.gradle` file.
+Then, add `implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.0'` to the `dependencies` section of your `build.gradle` file.
 
 For example:
 
@@ -45,7 +45,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.cryptimeleon', name: 'craco', version: '1.0.0'
+    implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.0'
 }
 ```
 
