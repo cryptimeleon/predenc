@@ -49,7 +49,7 @@ public class FullIdent implements PredicateEncryptionScheme {
     }
 
     /**
-     * Hash function: {0,1}^* -> G_1
+     * Hash function: \(\{0,1\}^* \rightarrow \mathbb{G}_1\)
      *
      * @param data
      * @return group element
@@ -59,7 +59,7 @@ public class FullIdent implements PredicateEncryptionScheme {
     }
 
     /**
-     * Hash function: G_T -> {0,1}^n
+     * Hash function: \(\mathbb{G}_T \rightarrow \{0,1\}^n\)
      *
      * @param groupElement target group element
      * @return
@@ -70,7 +70,7 @@ public class FullIdent implements PredicateEncryptionScheme {
     }
 
     /**
-     * Hash function: {0,1}^n x {0,1}^n -> Z_p
+     * Hash function: \(\{0,1\}^n \times \{0,1\}^n \rightarrow \mathbb{Z}_p\)
      *
      * @param s1
      * @param s2
@@ -87,7 +87,7 @@ public class FullIdent implements PredicateEncryptionScheme {
     }
 
     /**
-     * Hash function {0,1}^n -> {0,1}^n
+     * Hash function \(\{0,1\}^n \rightarrow \{0,1\}^n\)
      *
      * @param s
      * @return
