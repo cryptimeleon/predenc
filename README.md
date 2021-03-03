@@ -1,4 +1,4 @@
-![Build Status](https://github.com/upbcuk/upb.crypto.craco/workflows/Java%20CI/badge.svg)
+![Build Status](https://github.com/cryptimeleon/predenc/workflows/Java%20CI/badge.svg)
 # Predenc
 
 The Cryptimeleon Predenc project contains various predicate encryption implementations such as attribute-based encryption or identity-based encryption.
@@ -48,6 +48,11 @@ dependencies {
     implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.0'
 }
 ```
+
+### Tutorials
+
+Predenc uses the mathematical facilities of our [Math library](https://github.com/cryptimeleon/math).
+Therefore, we recommend you go through our [short Math tutorial](https://cryptimeleon.github.io/getting-started/5-minute-tutorial.html) to get started.
 
 ## Miscellaneous Information
 
