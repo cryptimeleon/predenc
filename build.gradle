@@ -77,16 +77,21 @@ test {
     }
 }
 
-task javadocLink(type: Javadoc) {
+task javadocLatex(type: Javadoc) {
     source = sourceSets.main.allJava
     classpath = sourceSets.main.runtimeClasspath
     // link to math and craco javadocs
     options {
         links "https://javadoc.io/doc/org.cryptimeleon/math/" + mathVersionNoSuffix, "https://javadoc.io/doc/org.cryptimeleon/craco/" + cracoVersionNoSuffix
     }
+    // enable latex rendering via mathjax
+    options.addBooleanOption("-allow-script-in-comments", true)
+    options.header = "<script type\"text/javascript&\" src=\"" +
+            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?" +
+            "config=TeX-MML-AM_CHTML\"></script>"
 }
 
-task javadocJar(type: Jar, dependsOn: javadocLink) {
+task javadocJar(type: Jar, dependsOn: javadocLatex) {
     from javadoc.destinationDir
     archiveClassifier.set('javadoc')
 }
