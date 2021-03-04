@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - 'release/**'
+  pull_request:
+    branches:
+      - main
+      - 'release/**'
   # Nightly builds to ensure dependencies don't break anything
   schedule:
     - cron: '0 0 * * *'
