@@ -1,12 +1,20 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'signing'
 }
 
 group 'org.cryptimeleon'
 archivesBaseName = project.name
 boolean isRelease = project.hasProperty("release")
 version = '1.0.0'  + (isRelease ? "" : "-SNAPSHOT")
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 
 repositories {
     mavenLocal()
@@ -69,16 +77,100 @@ test {
     }
 }
 
-task javadocLink(type: Javadoc) {
+task javadocLatex(type: Javadoc) {
     source = sourceSets.main.allJava
     classpath = sourceSets.main.runtimeClasspath
     // link to math and craco javadocs
     options {
         links "https://javadoc.io/doc/org.cryptimeleon/math/" + mathVersionNoSuffix, "https://javadoc.io/doc/org.cryptimeleon/craco/" + cracoVersionNoSuffix
     }
+    // enable latex rendering via mathjax
+    options.addBooleanOption("-allow-script-in-comments", true)
+    options.header = "<script type\"text/javascript&\" src=\"" +
+            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?" +
+            "config=TeX-MML-AM_CHTML\"></script>"
 }
 
-task javadocJar(type: Jar, dependsOn: javadocLink) {
+task javadocJar(type: Jar, dependsOn: javadocLatex) {
     from javadoc.destinationDir
     archiveClassifier.set('javadoc')
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier.set('sources')
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            artifacts {
+                archives javadocJar, sourcesJar
+            }
+
+            pom {
+                name = 'Predenc'
+                url = 'https://cryptimeleon.org'
+                description = 'The Cryptimeleon Predenc project contains various predicate encryption ' +
+                        'implementations such as attribute-based encryption or identity-based encryption. ' +
+                        'Furthermore, it contains key encapsulation mechanisms based on predicate encryption schemes.'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'cryptimeleon-dev'
+                        name = 'cryptimeleon Developers'
+                        email = 'dev@cryptimeleon.org'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/cryptimeleon/predenc.git'
+                    developerConnection = 'scm:git:https://github.com/cryptimeleon/predenc.git'
+                    url = 'https://github.com/cryptimeleon/predenc/'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username = System.getenv("OSSRH_USERNAME")
+                password = System.getenv("OSSRH_TOKEN")
+            }
+            name = 'OSSRH'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            url = version.endsWith('SNAPSHOT') ? '' : releasesRepoUrl
+        }
+    }
+}
+
+signing {
+    required(project.hasProperty("release"))
+    def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.mavenJava
 }
