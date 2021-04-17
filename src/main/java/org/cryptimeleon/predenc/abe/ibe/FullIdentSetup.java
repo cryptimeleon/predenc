@@ -1,6 +1,6 @@
 package org.cryptimeleon.predenc.abe.ibe;
 
-import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
+import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
@@ -26,7 +26,7 @@ public class FullIdentSetup {
         // Generate bilinear group
         BilinearGroup group;
         if (debug) {
-            group = new CountingBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }
