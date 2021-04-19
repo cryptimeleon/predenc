@@ -1,7 +1,7 @@
 package org.cryptimeleon.predenc.abe.kp.large;
 
 import org.cryptimeleon.math.structures.groups.GroupElement;
-import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
+import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
@@ -41,7 +41,7 @@ public class ABEKPGPSW06Setup {
     public void doKeyGen(int securityParameter, int n, boolean watersHash, boolean debug) {
         BilinearGroup group;
         if (debug) {
-            group = new CountingBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }

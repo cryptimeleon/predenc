@@ -21,7 +21,7 @@ import org.cryptimeleon.math.serialization.converter.JSONConverter;
 import org.cryptimeleon.math.structures.HashIntoStructure;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.basic.BasicBilinearGroup;
-import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
+import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearMap;
 import org.cryptimeleon.math.structures.groups.elliptic.type3.bn.BarretoNaehrigBilinearGroupImpl;
@@ -70,7 +70,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
     public static void setup() throws NoSuchAlgorithmException {
         BilinearGroup bilinearGroup;
         if (debugPairing) {
-            bilinearGroup = new CountingBilinearGroup(100, BilinearGroup.Type.TYPE_3);
+            bilinearGroup = new DebugBilinearGroup(100, BilinearGroup.Type.TYPE_3);
         } else {
             bilinearGroup = new BasicBilinearGroup(new BarretoNaehrigBilinearGroupImpl("SFC-256"));
         }

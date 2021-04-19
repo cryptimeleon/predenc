@@ -2,7 +2,7 @@ package org.cryptimeleon.predenc.abe.cp.small;
 
 import org.cryptimeleon.craco.common.attributes.Attribute;
 import org.cryptimeleon.math.structures.groups.GroupElement;
-import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
+import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
@@ -34,7 +34,7 @@ public class ABECPWat11SmallSetup {
     public void doKeyGen(int securityParameter, Collection<? extends Attribute> universe, boolean debug) {
         BilinearGroup group;
         if (debug) {
-            group = new CountingBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }
