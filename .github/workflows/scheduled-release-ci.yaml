@@ -1,16 +1,17 @@
-name: Release Java CI
+name: Scheduled Release Java CI
 
 on:
-  push:
-    branches:
-      - main
-      - 'release/**'
+  # Nightly builds to ensure dependencies don't break anything
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: main
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
