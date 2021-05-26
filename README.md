@@ -71,6 +71,8 @@ The library was implemented at Paderborn University in the research group ["Code
 
 [BF01] Dan Boneh and Matt Franklin. "Identity-Based Encryption from the Weil Pairing". In: Advances in Cryptology — CRYPTO 2001. CRYPTO 2001. Ed. by Joe Kilian. Vol. 2139. Lecture Notes in Computer Science.  Springer, Berlin, Heidelberg, August 2001, pp. 213-229.
 
+[SW05] Amit Sahai and Brent Waters. "Fuzzy Identity-Based Encryption". In: Advances in Cryptology – EUROCRYPT 2005 (pp. 457–473). Springer Berlin Heidelberg.
+
 [GPSW06] Vipul Goyal, Omkant Pandey, Amit Sahai, and Brent Waters. "Attribute-based encryption for fine-grained access control of encrypted data". In: ACM Conference on Computer and Communications Security. ACM, 2006, pages 89–98.
 
 [Wat11] Brent Waters. Ciphertext-policy attribute-based encryption: An
