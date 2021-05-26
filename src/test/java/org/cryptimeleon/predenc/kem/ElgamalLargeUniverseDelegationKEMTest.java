@@ -20,11 +20,10 @@ import org.cryptimeleon.math.serialization.StandaloneRepresentable;
 import org.cryptimeleon.math.serialization.converter.JSONConverter;
 import org.cryptimeleon.math.structures.HashIntoStructure;
 import org.cryptimeleon.math.structures.groups.GroupElement;
-import org.cryptimeleon.math.structures.groups.basic.BasicBilinearGroup;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearMap;
-import org.cryptimeleon.math.structures.groups.elliptic.type3.bn.BarretoNaehrigBilinearGroupImpl;
+import org.cryptimeleon.math.structures.groups.elliptic.type3.bn.BarretoNaehrigBasicBilinearGroup;
 import org.cryptimeleon.math.structures.rings.zn.Zn.ZnElement;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
 import org.cryptimeleon.math.structures.rings.zn.Zp.ZpElement;
@@ -72,7 +71,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
         if (debugPairing) {
             bilinearGroup = new DebugBilinearGroup(100, BilinearGroup.Type.TYPE_3);
         } else {
-            bilinearGroup = new BasicBilinearGroup(new BarretoNaehrigBilinearGroupImpl("SFC-256"));
+            bilinearGroup = new BarretoNaehrigBasicBilinearGroup("SFC-256");
         }
 
         LUDSetup schemeFactory;
