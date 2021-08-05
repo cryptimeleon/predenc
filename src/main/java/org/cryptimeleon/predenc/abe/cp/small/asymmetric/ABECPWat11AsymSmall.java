@@ -132,7 +132,7 @@ public class ABECPWat11AsymSmall implements PredicateEncryptionScheme {
             // the party linked to this share
             Attribute rhoI = (Attribute) msp.getShareReceiver(omegaI.getKey());
 
-            if (!omegaI.getValue().getInteger().equals(BigInteger.ZERO)) {
+            if (!omegaI.getValue().asInteger().equals(BigInteger.ZERO)) {
                 GroupElement cElementI = c.getMapC().get(i);
                 GroupElement dElementI = c.getMapD().get(i);
                 GroupElement kElementRhoI = sk.getMapKx().get(rhoI);
@@ -141,7 +141,7 @@ public class ABECPWat11AsymSmall implements PredicateEncryptionScheme {
                 GroupElement map2 = pp.getE().apply(kElementRhoI, dElementI);
 
                 map1 = map1.op(map2);
-                map1 = map1.pow(omegaI.getValue().getInteger());
+                map1 = map1.pow(omegaI.getValue().asInteger());
                 zList.add(map1);
             }
         }

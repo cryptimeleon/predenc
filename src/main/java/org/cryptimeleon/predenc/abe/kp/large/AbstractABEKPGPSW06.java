@@ -188,7 +188,7 @@ public class AbstractABEKPGPSW06 {
         // the terms would be 1 anyway.
         Supplier<Stream<Map.Entry<Integer, Zp.ZpElement>>> nonZeroSVElements = () ->
                 solvingVector.entrySet().parallelStream()
-                        .filter(elem -> !value.apply(elem).getInteger().equals(BigInteger.ZERO));
+                        .filter(elem -> !value.apply(elem).asInteger().equals(BigInteger.ZERO));
 
         // \prod_{i \in \omega} e(R_i^{-w_i}, E_{\rho(i)})
         GroupElement factor1 = nonZeroSVElements.get()
