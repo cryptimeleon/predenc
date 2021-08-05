@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
-- Made Craco an api dependency such that its API can be used. Removed Math dependency as it is now unnecessary.
+- Made Craco an api dependency such that its API can be used. Removed Math dependency as it is now unnecessary
+- Update Craco dependency to version 3.0.0
 
 ## [1.0.0] - 2021-03-05
 

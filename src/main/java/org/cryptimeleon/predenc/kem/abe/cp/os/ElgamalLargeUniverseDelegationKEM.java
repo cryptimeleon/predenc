@@ -276,7 +276,7 @@ public class ElgamalLargeUniverseDelegationKEM
         /*get blinding for ElGamal private key*/
         ZnElement z = zp.getUniformlyRandomElement();
 
-        return generateTransformationKey(original, z.getInteger());
+        return generateTransformationKey(original, z.asInteger());
     }
 
     public TransformationAndDecryptionKey generateTransformationKey(
