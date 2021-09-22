@@ -1,6 +1,6 @@
 ![Build Status](https://github.com/cryptimeleon/predenc/workflows/Development%20Java%20CI/badge.svg)
-![Build Status](https://github.com/cryptimeleon/predenc/workflows/Release%20Java%20CI/badge.svg)
-![Build Status](https://github.com/cryptimeleon/predenc/workflows/Scheduled%20Release%20Java%20CI/badge.svg)
+![Build Status](https://github.com/cryptimeleon/predenc/workflows/Main%20Java%20CI/badge.svg)
+![Build Status](https://github.com/cryptimeleon/predenc/workflows/Scheduled%20Main%20Java%20CI/badge.svg)
 # Predenc
 
 The Cryptimeleon Predenc project contains various predicate encryption implementations such as attribute-based encryption or identity-based encryption.
