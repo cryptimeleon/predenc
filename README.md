@@ -29,7 +29,7 @@ To add the newest Predenc version as a dependency, add this to your project's PO
 <dependency>
     <groupId>org.cryptimeleon</groupId>
     <artifactId>predenc</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ To add the newest Predenc version as a dependency, add this to your project's PO
 
 Predenc is published via Maven Central.
 Therefore, you need to add `mavenCentral()` to the `repositories` section of your project's `build.gradle` file.
-Then, add `implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.0'` to the `dependencies` section of your `build.gradle` file.
+Then, add `implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.1'` to the `dependencies` section of your `build.gradle` file.
 
 For example:
 
@@ -47,7 +47,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.0'
+    implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.1'
 }
 ```
 
