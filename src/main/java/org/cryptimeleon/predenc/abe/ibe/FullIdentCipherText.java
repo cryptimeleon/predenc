@@ -2,10 +2,10 @@ package org.cryptimeleon.predenc.abe.ibe;
 
 import org.cryptimeleon.craco.common.predicate.CiphertextIndex;
 import org.cryptimeleon.craco.enc.CipherText;
-import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.math.structures.groups.GroupElement;
 
 import java.util.Arrays;
 import java.util.Objects;

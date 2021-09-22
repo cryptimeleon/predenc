@@ -1,6 +1,7 @@
 package org.cryptimeleon.predenc.abe.fuzzy.large;
 
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;
@@ -40,7 +41,7 @@ public class IBEFuzzySW05Setup {
                          boolean debug) {
         BilinearGroup group;
         if (debug) {
-            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(RandomGenerator.getRandomPrime(securityParameter), BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }

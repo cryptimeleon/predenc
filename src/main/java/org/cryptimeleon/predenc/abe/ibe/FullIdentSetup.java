@@ -1,5 +1,6 @@
 package org.cryptimeleon.predenc.abe.ibe;
 
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;
@@ -26,7 +27,7 @@ public class FullIdentSetup {
         // Generate bilinear group
         BilinearGroup group;
         if (debug) {
-            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(RandomGenerator.getRandomPrime(securityParameter), BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }

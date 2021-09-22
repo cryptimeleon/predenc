@@ -1,10 +1,10 @@
 package org.cryptimeleon.predenc.abe.cp.large.distributed;
 
-import org.cryptimeleon.predenc.abe.distributed.MasterKeyShare;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.StandaloneRepresentable;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.predenc.abe.distributed.MasterKeyShare;
 
 import java.math.BigInteger;
 import java.util.Objects;

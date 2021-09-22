@@ -5,11 +5,12 @@ import org.cryptimeleon.craco.common.policies.Policy;
 import org.cryptimeleon.craco.common.policies.ThresholdPolicy;
 import org.cryptimeleon.craco.common.predicate.CiphertextIndex;
 import org.cryptimeleon.craco.common.predicate.KeyIndex;
-import org.cryptimeleon.math.hash.annotations.AnnotatedUbrUtil;
-import org.cryptimeleon.math.hash.annotations.UniqueByteRepresented;
 import org.cryptimeleon.math.hash.ByteAccumulator;
 import org.cryptimeleon.math.hash.UniqueByteRepresentable;
-import org.cryptimeleon.math.serialization.*;
+import org.cryptimeleon.math.hash.annotations.AnnotatedUbrUtil;
+import org.cryptimeleon.math.hash.annotations.UniqueByteRepresented;
+import org.cryptimeleon.math.serialization.Representation;
+import org.cryptimeleon.math.serialization.StandaloneRepresentable;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
 

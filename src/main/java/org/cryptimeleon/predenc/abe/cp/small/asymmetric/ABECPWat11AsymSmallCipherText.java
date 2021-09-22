@@ -2,10 +2,10 @@ package org.cryptimeleon.predenc.abe.cp.small.asymmetric;
 
 import org.cryptimeleon.craco.common.policies.Policy;
 import org.cryptimeleon.craco.enc.CipherText;
-import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.math.structures.groups.GroupElement;
 
 import java.math.BigInteger;
 import java.util.Map;

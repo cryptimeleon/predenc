@@ -1,10 +1,10 @@
 package org.cryptimeleon.predenc.abe.fuzzy.large;
 
-import org.cryptimeleon.predenc.kem.fuzzy.large.IBEFuzzySW05KEMCipherText;
-import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.math.structures.groups.GroupElement;
+import org.cryptimeleon.predenc.kem.fuzzy.large.IBEFuzzySW05KEMCipherText;
 
 import java.math.BigInteger;
 import java.util.Map;

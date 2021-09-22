@@ -2,9 +2,9 @@ package org.cryptimeleon.predenc.abe.fuzzy.large;
 
 import org.cryptimeleon.craco.common.predicate.CiphertextIndex;
 import org.cryptimeleon.craco.enc.EncryptionKey;
+import org.cryptimeleon.math.hash.ByteAccumulator;
 import org.cryptimeleon.math.hash.annotations.AnnotatedUbrUtil;
 import org.cryptimeleon.math.hash.annotations.UniqueByteRepresented;
-import org.cryptimeleon.math.hash.ByteAccumulator;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;

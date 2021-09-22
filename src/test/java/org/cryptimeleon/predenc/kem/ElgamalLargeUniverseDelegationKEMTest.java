@@ -14,6 +14,7 @@ import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism.KeyAndCiphertext;
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.math.hash.impl.SHA256HashFunction;
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.serialization.RepresentableRepresentation;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.StandaloneRepresentable;
@@ -69,7 +70,7 @@ public class ElgamalLargeUniverseDelegationKEMTest {
     public static void setup() throws NoSuchAlgorithmException {
         BilinearGroup bilinearGroup;
         if (debugPairing) {
-            bilinearGroup = new DebugBilinearGroup(100, BilinearGroup.Type.TYPE_3);
+            bilinearGroup = new DebugBilinearGroup(RandomGenerator.getRandomPrime(100), BilinearGroup.Type.TYPE_3);
         } else {
             bilinearGroup = new BarretoNaehrigBasicBilinearGroup("SFC-256");
         }

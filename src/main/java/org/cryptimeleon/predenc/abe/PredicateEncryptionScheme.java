@@ -7,9 +7,9 @@ import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionScheme;
+import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.predenc.MasterSecret;
 import org.cryptimeleon.predenc.Predicate;
-import org.cryptimeleon.math.serialization.Representation;
 
 /**
  * A {@code PredicateEncryptionScheme} is an advanced form of {@code EncryptionScheme}

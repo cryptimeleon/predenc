@@ -1,12 +1,12 @@
 package org.cryptimeleon.predenc.abe.kp.small;
 
 import org.cryptimeleon.craco.common.attributes.Attribute;
-import org.cryptimeleon.predenc.MasterSecret;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
 import org.cryptimeleon.math.structures.rings.zn.Zp.ZpElement;
+import org.cryptimeleon.predenc.MasterSecret;
 
 import java.util.Map;
 import java.util.Objects;

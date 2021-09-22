@@ -1,5 +1,6 @@
 package org.cryptimeleon.predenc.kem.abe.cp.os;
 
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.common.attributes.Attribute;
 import org.cryptimeleon.craco.common.attributes.SetOfAttributes;
 import org.cryptimeleon.craco.common.policies.Policy;
@@ -11,16 +12,14 @@ import org.cryptimeleon.craco.enc.EncryptionKey;
 import org.cryptimeleon.craco.enc.SymmetricKey;
 import org.cryptimeleon.craco.enc.asym.elgamal.ElgamalCipherText;
 import org.cryptimeleon.craco.enc.asym.elgamal.ElgamalPrivateKey;
-import org.cryptimeleon.craco.common.ByteArrayImplementation;
-
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEM;
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEM.KeyAndCiphertextAndNonce;
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
+import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.structures.HashIntoStructure;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearMap;
-import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.structures.rings.zn.HashIntoZn;
 import org.cryptimeleon.math.structures.rings.zn.Zn.ZnElement;
 import org.cryptimeleon.math.structures.rings.zn.Zp;

@@ -1,5 +1,6 @@
 package org.cryptimeleon.predenc.abe.cp.large;
 
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
@@ -41,7 +42,7 @@ public class ABECPWat11Setup {
         // Generate bilinear group
         BilinearGroup group;
         if (debug) {
-            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(RandomGenerator.getRandomPrime(securityParameter), BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }

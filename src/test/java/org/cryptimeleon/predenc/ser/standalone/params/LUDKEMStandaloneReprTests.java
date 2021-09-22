@@ -3,6 +3,7 @@ package org.cryptimeleon.predenc.ser.standalone.params;
 import org.cryptimeleon.craco.common.attributes.StringAttribute;
 import org.cryptimeleon.craco.common.policies.BooleanPolicy;
 import org.cryptimeleon.math.hash.impl.SHA256HashFunction;
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.serialization.standalone.StandaloneReprSubTest;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
@@ -17,7 +18,7 @@ public class LUDKEMStandaloneReprTests extends StandaloneReprSubTest {
     LUDSetup schemeFactory;
 
     public LUDKEMStandaloneReprTests() {
-        BilinearGroup group = new DebugBilinearGroup(80, BilinearGroup.Type.TYPE_3);
+        BilinearGroup group = new DebugBilinearGroup(RandomGenerator.getRandomPrime(80), BilinearGroup.Type.TYPE_3);
         schemeFactory = new LUDSetup();
         schemeFactory.setup(group, new SHA256HashFunction());
         ludkem = new ElgamalLargeUniverseDelegationKEM(

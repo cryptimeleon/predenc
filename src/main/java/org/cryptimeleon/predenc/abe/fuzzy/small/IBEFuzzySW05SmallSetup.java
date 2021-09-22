@@ -2,13 +2,14 @@ package org.cryptimeleon.predenc.abe.fuzzy.small;
 
 import org.cryptimeleon.craco.common.attributes.Attribute;
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
-import org.cryptimeleon.predenc.abe.fuzzy.large.Identity;
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.type1.supersingular.SupersingularBilinearGroup;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
 import org.cryptimeleon.math.structures.rings.zn.Zp.ZpElement;
+import org.cryptimeleon.predenc.abe.fuzzy.large.Identity;
 
 import java.math.BigInteger;
 import java.util.Collection;
@@ -38,7 +39,7 @@ public class IBEFuzzySW05SmallSetup {
                          boolean debug) {
         BilinearGroup group;
         if (debug) {
-            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(RandomGenerator.getRandomPrime(securityParameter), BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }

@@ -1,10 +1,10 @@
 package org.cryptimeleon.predenc.kem.fuzzy.large;
 
 import org.cryptimeleon.craco.enc.CipherText;
-import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.predenc.abe.fuzzy.large.IBEFuzzySW05;
 import org.cryptimeleon.predenc.abe.fuzzy.large.IBEFuzzySW05PublicParameters;
 import org.cryptimeleon.predenc.abe.fuzzy.large.IBEIBEFuzzySW05SW05CipherText;

@@ -1,6 +1,7 @@
 package org.cryptimeleon.predenc.abe.kp.small;
 
 import org.cryptimeleon.craco.common.attributes.Attribute;
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
@@ -35,7 +36,7 @@ public class ABEKPGPSW06SmallSetup {
     public void doKeyGen(int securityParameter, Collection<? extends Attribute> universe, boolean debug) {
         BilinearGroup group;
         if (debug) {
-            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(RandomGenerator.getRandomPrime(securityParameter), BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }

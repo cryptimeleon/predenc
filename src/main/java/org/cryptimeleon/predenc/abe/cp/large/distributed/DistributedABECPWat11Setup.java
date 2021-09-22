@@ -1,6 +1,6 @@
 package org.cryptimeleon.predenc.abe.cp.large.distributed;
 
-import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11MasterSecret;
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
@@ -9,6 +9,7 @@ import org.cryptimeleon.math.structures.rings.RingElement;
 import org.cryptimeleon.math.structures.rings.polynomial.PolynomialRing;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
 import org.cryptimeleon.math.structures.rings.zn.Zp.ZpElement;
+import org.cryptimeleon.predenc.abe.cp.large.ABECPWat11MasterSecret;
 
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -41,7 +42,7 @@ public class DistributedABECPWat11Setup {
         // Generate bilinear group
         BilinearGroup group;
         if (debug) {
-            group = new DebugBilinearGroup(securityParameter, BilinearGroup.Type.TYPE_1);
+            group = new DebugBilinearGroup(RandomGenerator.getRandomPrime(securityParameter), BilinearGroup.Type.TYPE_1);
         } else {
             group = new SupersingularBilinearGroup(securityParameter);
         }
