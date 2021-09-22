@@ -3,11 +3,11 @@ package org.cryptimeleon.predenc.kem.abe.cp.os;
 import org.cryptimeleon.craco.common.attributes.Attribute;
 import org.cryptimeleon.craco.common.attributes.SetOfAttributes;
 import org.cryptimeleon.craco.enc.DecryptionKey;
-import org.cryptimeleon.math.structures.groups.Group;
-import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.math.structures.groups.Group;
+import org.cryptimeleon.math.structures.groups.GroupElement;
 
 import java.util.Arrays;
 import java.util.Map;

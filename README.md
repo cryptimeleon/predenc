@@ -1,5 +1,6 @@
 ![Build Status](https://github.com/cryptimeleon/predenc/workflows/Development%20Java%20CI/badge.svg)
 ![Build Status](https://github.com/cryptimeleon/predenc/workflows/Release%20Java%20CI/badge.svg)
+![Build Status](https://github.com/cryptimeleon/predenc/workflows/Scheduled%20Release%20Java%20CI/badge.svg)
 # Predenc
 
 The Cryptimeleon Predenc project contains various predicate encryption implementations such as attribute-based encryption or identity-based encryption.
@@ -28,7 +29,7 @@ To add the newest Predenc version as a dependency, add this to your project's PO
 <dependency>
     <groupId>org.cryptimeleon</groupId>
     <artifactId>predenc</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
@@ -36,7 +37,7 @@ To add the newest Predenc version as a dependency, add this to your project's PO
 
 Predenc is published via Maven Central.
 Therefore, you need to add `mavenCentral()` to the `repositories` section of your project's `build.gradle` file.
-Then, add `implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.0'` to the `dependencies` section of your `build.gradle` file.
+Then, add `implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.1'` to the `dependencies` section of your `build.gradle` file.
 
 For example:
 
@@ -46,7 +47,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.0'
+    implementation group: 'org.cryptimeleon', name: 'predenc', version: '1.0.1'
 }
 ```
 
@@ -69,6 +70,8 @@ The library was implemented at Paderborn University in the research group ["Code
 ## References
 
 [BF01] Dan Boneh and Matt Franklin. "Identity-Based Encryption from the Weil Pairing". In: Advances in Cryptology — CRYPTO 2001. CRYPTO 2001. Ed. by Joe Kilian. Vol. 2139. Lecture Notes in Computer Science.  Springer, Berlin, Heidelberg, August 2001, pp. 213-229.
+
+[SW05] Amit Sahai and Brent Waters. "Fuzzy Identity-Based Encryption". In: Advances in Cryptology – EUROCRYPT 2005 (pp. 457–473). Springer Berlin Heidelberg.
 
 [GPSW06] Vipul Goyal, Omkant Pandey, Amit Sahai, and Brent Waters. "Attribute-based encryption for fine-grained access control of encrypted data". In: ACM Conference on Computer and Communications Security. ACM, 2006, pages 89–98.
 

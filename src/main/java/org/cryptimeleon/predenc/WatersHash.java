@@ -52,7 +52,7 @@ public class WatersHash implements HashIntoGroup {
         for (int i = 1; i <= T.size(); ++i) {
             knownPoints.put(BigInteger.valueOf(i), T.get(i-1));
         }
-        return LagrangeUtils.interpolateInTheExponent(knownPoints, baseHash.hash(x).getInteger());
+        return LagrangeUtils.interpolateInTheExponent(knownPoints, baseHash.hash(x).asInteger());
     }
 
     public List<GroupElement> getT() {

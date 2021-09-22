@@ -2,14 +2,14 @@ package org.cryptimeleon.predenc.abe.kp.small;
 
 import org.cryptimeleon.craco.common.PublicParameters;
 import org.cryptimeleon.craco.common.attributes.Attribute;
-import org.cryptimeleon.predenc.abe.cp.small.ABECPWat11SmallSetup;
+import org.cryptimeleon.math.serialization.Representation;
+import org.cryptimeleon.math.serialization.annotations.ReprUtil;
+import org.cryptimeleon.math.serialization.annotations.Represented;
 import org.cryptimeleon.math.structures.groups.Group;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearMap;
-import org.cryptimeleon.math.serialization.Representation;
-import org.cryptimeleon.math.serialization.annotations.ReprUtil;
-import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.predenc.abe.cp.small.ABECPWat11SmallSetup;
 
 import java.util.Map;
 import java.util.Objects;

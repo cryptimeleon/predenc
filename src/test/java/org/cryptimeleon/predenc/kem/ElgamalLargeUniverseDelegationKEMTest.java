@@ -14,17 +14,17 @@ import org.cryptimeleon.craco.kem.KeyEncapsulationMechanism.KeyAndCiphertext;
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEMCiphertext;
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.math.hash.impl.SHA256HashFunction;
+import org.cryptimeleon.math.random.RandomGenerator;
 import org.cryptimeleon.math.serialization.RepresentableRepresentation;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.StandaloneRepresentable;
 import org.cryptimeleon.math.serialization.converter.JSONConverter;
 import org.cryptimeleon.math.structures.HashIntoStructure;
 import org.cryptimeleon.math.structures.groups.GroupElement;
-import org.cryptimeleon.math.structures.groups.basic.BasicBilinearGroup;
-import org.cryptimeleon.math.structures.groups.counting.CountingBilinearGroup;
+import org.cryptimeleon.math.structures.groups.debug.DebugBilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearMap;
-import org.cryptimeleon.math.structures.groups.elliptic.type3.bn.BarretoNaehrigBilinearGroupImpl;
+import org.cryptimeleon.math.structures.groups.elliptic.type3.bn.BarretoNaehrigBasicBilinearGroup;
 import org.cryptimeleon.math.structures.rings.zn.Zn.ZnElement;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
 import org.cryptimeleon.math.structures.rings.zn.Zp.ZpElement;
@@ -70,9 +70,9 @@ public class ElgamalLargeUniverseDelegationKEMTest {
     public static void setup() throws NoSuchAlgorithmException {
         BilinearGroup bilinearGroup;
         if (debugPairing) {
-            bilinearGroup = new CountingBilinearGroup(100, BilinearGroup.Type.TYPE_3);
+            bilinearGroup = new DebugBilinearGroup(RandomGenerator.getRandomPrime(100), BilinearGroup.Type.TYPE_3);
         } else {
-            bilinearGroup = new BasicBilinearGroup(new BarretoNaehrigBilinearGroupImpl("SFC-256"));
+            bilinearGroup = new BarretoNaehrigBasicBilinearGroup("SFC-256");
         }
 
         LUDSetup schemeFactory;

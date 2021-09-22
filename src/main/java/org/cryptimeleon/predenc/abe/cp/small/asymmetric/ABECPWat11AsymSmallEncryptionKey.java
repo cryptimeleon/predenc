@@ -2,8 +2,8 @@ package org.cryptimeleon.predenc.abe.cp.small.asymmetric;
 
 import org.cryptimeleon.craco.common.policies.Policy;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.math.hash.annotations.AnnotatedUbrUtil;
 import org.cryptimeleon.math.hash.ByteAccumulator;
+import org.cryptimeleon.math.hash.annotations.AnnotatedUbrUtil;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;

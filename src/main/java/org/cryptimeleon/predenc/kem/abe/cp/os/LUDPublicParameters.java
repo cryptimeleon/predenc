@@ -3,11 +3,11 @@ package org.cryptimeleon.predenc.kem.abe.cp.os;
 import org.cryptimeleon.craco.common.PublicParameters;
 import org.cryptimeleon.craco.enc.asym.elgamal.ElgamalPublicKey;
 import org.cryptimeleon.craco.kem.asym.elgamal.ElgamalKEM;
-import org.cryptimeleon.math.structures.groups.GroupElement;
-import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.math.serialization.annotations.ReprUtil;
 import org.cryptimeleon.math.serialization.annotations.Represented;
+import org.cryptimeleon.math.structures.groups.GroupElement;
+import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 
 import java.math.BigInteger;
 import java.util.Objects;

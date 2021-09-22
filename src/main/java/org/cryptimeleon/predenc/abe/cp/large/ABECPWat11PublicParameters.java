@@ -1,14 +1,14 @@
 package org.cryptimeleon.predenc.abe.cp.large;
 
 import org.cryptimeleon.craco.common.PublicParameters;
+import org.cryptimeleon.math.serialization.Representation;
+import org.cryptimeleon.math.serialization.annotations.ReprUtil;
+import org.cryptimeleon.math.serialization.annotations.Represented;
 import org.cryptimeleon.math.structures.groups.Group;
 import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.groups.HashIntoGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearGroup;
 import org.cryptimeleon.math.structures.groups.elliptic.BilinearMap;
-import org.cryptimeleon.math.serialization.Representation;
-import org.cryptimeleon.math.serialization.annotations.ReprUtil;
-import org.cryptimeleon.math.serialization.annotations.Represented;
 
 import java.util.Objects;
 

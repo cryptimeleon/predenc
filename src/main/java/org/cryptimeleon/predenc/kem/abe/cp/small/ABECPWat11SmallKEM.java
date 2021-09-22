@@ -1,19 +1,19 @@
 package org.cryptimeleon.predenc.kem.abe.cp.small;
 
+import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.common.plaintexts.GroupElementPlainText;
 import org.cryptimeleon.craco.common.plaintexts.PlainText;
 import org.cryptimeleon.craco.common.predicate.CiphertextIndex;
 import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-import org.cryptimeleon.craco.common.ByteArrayImplementation;
 import org.cryptimeleon.craco.kem.HashBasedKeyDerivationFunction;
+import org.cryptimeleon.math.serialization.Representation;
 import org.cryptimeleon.predenc.MasterSecret;
 import org.cryptimeleon.predenc.Predicate;
 import org.cryptimeleon.predenc.abe.cp.small.ABECPWat11Small;
 import org.cryptimeleon.predenc.abe.cp.small.ABECPWat11SmallPublicParameters;
 import org.cryptimeleon.predenc.kem.AbstractHybridPredicateKEM;
-import org.cryptimeleon.math.serialization.Representation;
 
 import java.util.Objects;
 

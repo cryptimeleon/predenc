@@ -10,18 +10,17 @@ import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
 import org.cryptimeleon.craco.secretsharing.accessstructure.exceptions.NoSatisfyingSet;
 import org.cryptimeleon.craco.secretsharing.accessstructure.exceptions.WrongAccessStructureException;
-import org.cryptimeleon.predenc.MasterSecret;
-import org.cryptimeleon.predenc.Predicate;
-import org.cryptimeleon.predenc.abe.fuzzy.large.Identity;
-import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
+import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
 import org.cryptimeleon.math.structures.rings.zn.Zp.ZpElement;
+import org.cryptimeleon.predenc.MasterSecret;
+import org.cryptimeleon.predenc.Predicate;
 import org.cryptimeleon.predenc.abe.PredicateEncryptionScheme;
+import org.cryptimeleon.predenc.abe.fuzzy.large.Identity;
 
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -146,7 +145,7 @@ public class IBEFuzzySW05Small implements PredicateEncryptionScheme {
                 // the attribute of this row number
                 Attribute rho_i = (Attribute) msp.getShareReceiver(a.getKey());
                 // the result of alpha * row_i = S_i
-                BigInteger alpha = a.getValue().getInteger();
+                BigInteger alpha = a.getValue().asInteger();
                 if (!alpha.equals(BigInteger.ZERO)) {
                     tmp = tmp.op(pp.getE().apply(d.get(i), ct.getE().get(rho_i).pow(alpha)));
                 }
@@ -248,7 +247,7 @@ public class IBEFuzzySW05Small implements PredicateEncryptionScheme {
                 // M_i_u = M_i_u / t_p_i
                 m_i_u = (ZpElement) m_i_u.div(t_p_i);
                 // D_i = g^M_i_u
-                d.put(BigInteger.valueOf(i), pp.getG().pow(m_i_u.getInteger()).compute());
+                d.put(BigInteger.valueOf(i), pp.getG().pow(m_i_u.asInteger()).compute());
             }
         } catch (NullPointerException e) {
             throw new WrongAccessStructureException("The attributes provided in the identity are not in the universe.");

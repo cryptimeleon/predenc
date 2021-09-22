@@ -10,10 +10,9 @@ import org.cryptimeleon.craco.common.predicate.KeyIndex;
 import org.cryptimeleon.craco.enc.CipherText;
 import org.cryptimeleon.craco.enc.DecryptionKey;
 import org.cryptimeleon.craco.enc.EncryptionKey;
-
 import org.cryptimeleon.craco.secretsharing.accessstructure.MonotoneSpanProgram;
-import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.serialization.Representation;
+import org.cryptimeleon.math.structures.groups.GroupElement;
 import org.cryptimeleon.math.structures.rings.zn.Zp;
 import org.cryptimeleon.math.structures.rings.zn.Zp.ZpElement;
 import org.cryptimeleon.predenc.MasterSecret;
@@ -175,7 +174,7 @@ public class ABECPWat11Small implements PredicateEncryptionScheme {
             // the party linked to this share
             Attribute rhoI = (Attribute) msp.getShareReceiver(omegaI.getKey());
 
-            if (!omegaI.getValue().getInteger().equals(BigInteger.ZERO)) {
+            if (!omegaI.getValue().asInteger().equals(BigInteger.ZERO)) {
                 GroupElement cI = c.getMapC().get(i);
                 GroupElement dI = c.getMapD().get(i);
                 GroupElement kRhoI = mapK.get(rhoI);
@@ -188,7 +187,7 @@ public class ABECPWat11Small implements PredicateEncryptionScheme {
                 // e(C_i, L) \cdot e(D_i, K_{\rho(i)}
                 map1 = map1.op(map2);
                 // (e(C_i, L) \cdot e(D_i, K_{\rho(i)})^{\omega_i}
-                map1 = map1.pow(omegaI.getValue().getInteger());
+                map1 = map1.pow(omegaI.getValue().asInteger());
                 productList.add(map1);
             }
         }
