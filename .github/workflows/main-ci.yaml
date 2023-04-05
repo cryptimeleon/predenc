@@ -1,10 +1,13 @@
-name: Release Java CI
+name: Main Java CI
 
 on:
   push:
     branches:
       - main
       - 'release/**'
+  # Nightly builds to ensure dependencies don't break anything
+  #schedule:
+  #  - cron: '0 0 * * *'
 
 jobs:
   build:
