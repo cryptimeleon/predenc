@@ -2,7 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: Cryptimeleon Craco
+title: Cryptimeleon Predicate Encryption
 message: >-
   When writing research papers, please cite our paper https://eprint.iacr.org/2021/961.
 type: software
@@ -15,8 +15,6 @@ authors:
     family-names: Eidens
   - given-names: Raphael
     family-names: Heitjohann
-  - given-names: Paul
-    family-names: Kramer
   - name: "Open-Source Contributors"
 repository-code: 'https://github.com/cryptimeleon/predenc'
 url: 'https://cryptimeleon.org'
